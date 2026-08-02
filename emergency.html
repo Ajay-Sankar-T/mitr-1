@@ -126,7 +126,6 @@
   <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Home</a>
   <a href="emergency.html" class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md text-body-md">Emergency</a>
   <a href="directory.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Directory</a>
-  <a href="about.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">All About MITR</a>
   <a href="yearbook.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Year Book</a>
 </nav><div class="flex items-center gap-6"><button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200">Support</button><span class="material-symbols-outlined text-primary text-3xl cursor-pointer hover:opacity-70 transition-opacity">account_circle</span></div></div></header>
 <main class="pt-24 min-h-screen">
@@ -265,7 +264,7 @@
 </div>
 </div>
 <div class="flex md:flex-col gap-3 min-w-[150px]">
-<button type="button" id="book-slot-btn" class="flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all">
+<button type="button" id="book-slot-btn" data-open-booking class="flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all">
 <span class="material-symbols-outlined text-sm">calendar_month</span>
 <span>Book Slot</span>
 </button>
@@ -434,10 +433,6 @@ Chennai, Tamil Nadu 600036
 <label class="font-label-sm text-on-surface-variant block mb-1" for="booking-venue">Venue</label>
 <select class="w-full rounded border border-outline-variant/50 px-3 py-2 focus:border-primary focus:ring-primary" id="booking-venue" name="venue" required="">
 <option disabled="" selected="" value="">Select a venue</option>
-<option>Institute Hospital</option>
-<option>Wellness Centre</option>
-<option>DoSt Office</option>
-<option>Second Floor Central Library</option>
 </select>
 </div>
 <div>
@@ -595,151 +590,6 @@ Chennai, Tamil Nadu 600036
             window.addEventListener('scroll', function () { popover.classList.add('hidden'); }, true);
         })();
 
-        // ---- Booking modal (Professional Counsellors -> Book Slot) ----
-        (function () {
-            var modal = document.getElementById('booking-modal');
-            var openBtn = document.getElementById('book-slot-btn');
-            var closeBtn = document.getElementById('booking-modal-close');
-            var cancelBtn = document.getElementById('booking-cancel');
-            var form = document.getElementById('booking-form');
-            var dateInput = document.getElementById('booking-date');
-            var timeInput = document.getElementById('booking-time');
-            var venueInput = document.getElementById('booking-venue');
-            var messageInput = document.getElementById('booking-message');
-            var errorEl = document.getElementById('booking-error');
-            var successEl = document.getElementById('booking-success');
-
-            // Venue -> recipient email. No backend/storage involved: submitting
-            // just opens a pre-filled Gmail compose window addressed to the
-            // venue, and the visitor sends it themselves from their own inbox.
-            var venueEmails = {
-                'Institute Hospital': 'cmo@iitm.ac.in',
-                'Wellness Centre': 'wellness1@smail.iitm.ac.in',
-                'DoSt Office': 'dostoffice@smail.iitm.ac.in',
-                // Placeholder — no real desk email was given for the library;
-                // swap this for the actual address before deploy.
-                'Second Floor Central Library': 'library.counsellor@iitm.ac.in'
-            };
-
-            function todayStr() {
-                var d = new Date();
-                var yyyy = d.getFullYear();
-                var mm = String(d.getMonth() + 1).padStart(2, '0');
-                var dd = String(d.getDate()).padStart(2, '0');
-                return yyyy + '-' + mm + '-' + dd;
-            }
-
-            function formatDateForEmail(dateVal) {
-                var parts = dateVal.split('-');
-                var d = new Date(parts[0], parts[1] - 1, parts[2]);
-                return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
-            }
-
-            function formatTimeForEmail(timeVal) {
-                var parts = timeVal.split(':');
-                var d = new Date();
-                d.setHours(parseInt(parts[0], 10), parseInt(parts[1], 10));
-                return d.toLocaleTimeString('en-IN', { hour: 'numeric', minute: '2-digit', hour12: true });
-            }
-
-            function openModal() {
-                form.reset();
-                form.classList.remove('hidden');
-                errorEl.classList.add('hidden');
-                successEl.classList.add('hidden');
-                dateInput.min = todayStr();
-                modal.classList.remove('hidden');
-            }
-
-            function closeModal() {
-                modal.classList.add('hidden');
-            }
-
-            if (openBtn) openBtn.addEventListener('click', openModal);
-            closeBtn.addEventListener('click', closeModal);
-            cancelBtn.addEventListener('click', closeModal);
-            modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
-            });
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                errorEl.classList.add('hidden');
-
-                var dateVal = dateInput.value;
-                var timeVal = timeInput.value;
-                var venueVal = venueInput.value;
-
-                if (!dateVal || !venueVal) {
-                    errorEl.textContent = 'Please fill in date and venue.';
-                    errorEl.classList.remove('hidden');
-                    return;
-                }
-
-                // Time is optional. With a time, the whole moment must be in the
-                // future; without one, the date alone just can't be in the past.
-                var chosen = timeVal
-                    ? new Date(dateVal + 'T' + timeVal)
-                    : new Date(dateVal + 'T23:59');
-                if (isNaN(chosen.getTime()) || chosen.getTime() <= Date.now()) {
-                    errorEl.textContent = timeVal
-                        ? 'Please choose a date and time in the future.'
-                        : 'Please choose a date in the future.';
-                    errorEl.classList.remove('hidden');
-                    return;
-                }
-
-                var recipient = venueEmails[venueVal];
-                if (!recipient) {
-                    errorEl.textContent = 'This venue is not set up for booking yet.';
-                    errorEl.classList.remove('hidden');
-                    return;
-                }
-
-                var messageVal = messageInput ? messageInput.value.trim() : '';
-
-                var subject = 'Counselling Session Request via MITR Website — '
-                    + formatDateForEmail(dateVal) + ', ' + venueVal;
-
-                var body = 'Hello,\n\n' +
-                    'I am a member of the IIT Madras campus community and I am reaching out '
-                    + 'because I would like support for my emotional wellbeing. I am requesting '
-                    + 'a counselling session at the slot below.\n\n' +
-                    'Requested date:  ' + formatDateForEmail(dateVal) + '\n' +
-                    'Requested time:  ' + (timeVal
-                        ? formatTimeForEmail(timeVal)
-                        : 'No specific time — any slot that works for you') + '\n' +
-                    'Preferred venue: ' + venueVal + '\n\n';
-
-                if (messageVal) {
-                    body += 'What I would like you to know beforehand:\n'
-                        + messageVal + '\n\n';
-                }
-
-                body += 'Please confirm whether this slot works, or suggest the nearest '
-                    + 'available one. If this request needs to be redirected to a different '
-                    + 'desk, kindly let me know.\n\n' +
-                    'Thank you for your time and support.\n\n' +
-                    '—\n' +
-                    'Sent from the Team MITR wellness portal (Emergency & Support page).\n' +
-                    'This request was submitted through the website booking form and is '
-                    + 'awaiting confirmation.';
-
-                var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1'
-                    + '&to=' + encodeURIComponent(recipient)
-                    + '&su=' + encodeURIComponent(subject)
-                    + '&body=' + encodeURIComponent(body);
-
-                // Opened synchronously in response to the click, so it isn't
-                // blocked as an unrequested popup.
-                window.open(gmailUrl, '_blank');
-
-                form.classList.add('hidden');
-                successEl.textContent = 'Opening Gmail with your request filled in — just hit send from there.';
-                successEl.classList.remove('hidden');
-                setTimeout(closeModal, 1800);
-            });
-        })();
     </script>
+<script src="booking.js"></script>
 </body></html>

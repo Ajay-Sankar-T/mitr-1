@@ -226,11 +226,6 @@
             >Directory</a
           >
           <a
-            href="about.html"
-            class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
-            >All About MITR</a
-          >
-          <a
             href="yearbook.html"
             class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
             >Year Book</a
@@ -279,6 +274,8 @@
         <div class="flex flex-wrap gap-4">
           <button
             class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg transition-all flex items-center gap-2 group"
+            data-open-booking
+            type="button"
           >
             Schedule a Session
             <span
@@ -287,11 +284,12 @@
               >arrow_forward</span
             >
           </button>
-          <button
+          <a
             class="border-2 border-secondary text-secondary px-8 py-4 rounded-full font-bold text-lg hover:bg-secondary/5 transition-all"
+            href="emergency.html"
           >
             Explore Resources
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -365,12 +363,13 @@
             Campus Hospital
           </h3>
           <p class="font-body-md text-on-surface-variant mb-6 flex-grow">
-            Information on medical services, psychiatry department, and
-            outpatient support services.
+            Medical emergencies and clinical psychological consultation for all
+            campus residents. Counselling available 10:00 am &ndash; 6:00 pm and
+            8:00 pm &ndash; 6:00 am, 365 days.
           </p>
           <a
             class="text-primary-container font-bold flex items-center gap-2"
-            href="#"
+            href="emergency.html"
           >
             View Details
             <span class="material-symbols-outlined" data-icon="info">info</span>
@@ -654,9 +653,16 @@
           <div
             class="bg-primary p-10 rounded-xl flex flex-col justify-center items-center text-center text-on-primary"
           >
-            <span class="font-headline-lg text-2xl mb-2 block"
-              >ISO 45001:2018</span
+            <span
+              class="inline-flex items-center gap-2 whitespace-nowrap font-headline-lg text-xl bg-on-primary text-primary rounded-full px-4 py-1.5 mb-3"
             >
+              <span
+                class="material-symbols-outlined text-base"
+                data-icon="verified"
+                >verified</span
+              >
+              ISO 45001:2018
+            </span>
             <span class="font-label-sm opacity-80 uppercase tracking-widest"
               >Certified Wellness Centre</span
             >
@@ -1017,7 +1023,7 @@
         <div class="flex flex-wrap justify-center gap-8">
           <a
             class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline"
-            href="about.html"
+            href="#"
             >Privacy Policy</a
           ><a
             class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline"
@@ -1058,6 +1064,117 @@
         </div>
       </div>
     </footer>
+    <!-- Book a Session (shared with the emergency page via booking.js) -->
+    <div
+      class="hidden fixed inset-0 z-[110] bg-black/50 items-center justify-center p-4"
+      id="booking-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="booking-modal-title"
+    >
+      <div class="bg-surface rounded-xl shadow-2xl w-full max-w-md p-6 relative">
+        <button
+          aria-label="Close"
+          class="absolute top-4 right-4 material-symbols-outlined text-on-surface-variant hover:text-primary"
+          id="booking-modal-close"
+          type="button"
+        >
+          close
+        </button>
+        <h3
+          class="font-headline-lg text-xl mb-1 text-primary"
+          id="booking-modal-title"
+        >
+          Book a Session
+        </h3>
+        <p class="text-sm text-on-surface-variant mb-6">
+          Choose a date, time, and venue that works for you.
+        </p>
+        <form class="space-y-4" id="booking-form">
+          <div>
+            <label
+              class="font-label-sm text-on-surface-variant block mb-1"
+              for="booking-date"
+              >Date</label
+            >
+            <input
+              class="w-full rounded border border-outline-variant/50 px-3 py-2 focus:border-primary focus:ring-primary"
+              id="booking-date"
+              name="date"
+              required
+              type="date"
+            />
+          </div>
+          <div>
+            <label
+              class="font-label-sm text-on-surface-variant block mb-1"
+              for="booking-time"
+              >Time
+              <span class="text-on-surface-variant/70">(optional)</span></label
+            >
+            <input
+              class="w-full rounded border border-outline-variant/50 px-3 py-2 focus:border-primary focus:ring-primary"
+              id="booking-time"
+              name="time"
+              type="time"
+            />
+          </div>
+          <div>
+            <label
+              class="font-label-sm text-on-surface-variant block mb-1"
+              for="booking-venue"
+              >Venue</label
+            >
+            <select
+              class="w-full rounded border border-outline-variant/50 px-3 py-2 focus:border-primary focus:ring-primary"
+              id="booking-venue"
+              name="venue"
+              required
+            >
+              <option disabled selected value="">Select a venue</option>
+            </select>
+          </div>
+          <div>
+            <label
+              class="font-label-sm text-on-surface-variant block mb-1"
+              for="booking-message"
+              >Message
+              <span class="text-on-surface-variant/70">(optional)</span></label
+            >
+            <textarea
+              class="w-full rounded border border-outline-variant/50 px-3 py-2 focus:border-primary focus:ring-primary resize-y"
+              id="booking-message"
+              name="message"
+              placeholder="Anything you would like the counsellor to know beforehand."
+              rows="3"
+            ></textarea>
+          </div>
+          <p class="hidden text-sm text-error font-bold" id="booking-error"></p>
+          <div class="flex gap-3 pt-2">
+            <button
+              class="flex-1 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all"
+              type="submit"
+            >
+              Confirm Request
+            </button>
+            <button
+              class="flex-1 border border-secondary text-secondary px-4 py-2 rounded font-bold hover:bg-secondary/5 transition-all"
+              id="booking-cancel"
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+        <p
+          class="hidden text-sm text-primary font-bold mt-4"
+          id="booking-success"
+        >
+          Request noted — our team will confirm your slot by email shortly.
+        </p>
+      </div>
+    </div>
+
     <!-- SOS: pick a desk, then dial it directly -->
     <div
       aria-labelledby="sos-modal-title"
@@ -1300,5 +1417,6 @@
         });
       });
     </script>
+    <script src="booking.js"></script>
   </body>
 </html>
