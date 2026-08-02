@@ -95,7 +95,10 @@
         },
       }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
 <style>
+        
         .glass-card {
             background: rgba(252, 249, 248, 0.6);
             backdrop-filter: blur(12px);
@@ -136,6 +139,105 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        
+        .yearbook-viewer-shell {
+            background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(240,237,237,0.88));
+            border: 1px solid rgba(129, 85, 24, 0.12);
+            box-shadow: 0 20px 60px rgba(72, 43, 0, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .flipbook-stage {
+            width: 100%;
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        #yearbook {
+            margin: 0 auto;
+        }
+
+        .page {
+            background: #fff;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page--cover {
+            background: linear-gradient(160deg, #815518, #c48f4d);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .page canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            background: white;
+        }
+
+        .flipbook-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .flipbook-toolbar .controls {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .flipbook-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.1rem;
+            border-radius: 999px;
+            border: 1px solid rgba(129, 85, 24, 0.14);
+            background: rgba(255,255,255,0.75);
+            color: #815518;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .flipbook-btn:hover {
+            transform: translateY(-1px);
+            background: #815518;
+            color: white;
+        }
+
+        .flipbook-meta {
+            color: #504539;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .flipbook-empty {
+            min-height: 500px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: #504539;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .flipbook-stage {
+                min-height: 540px;
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-surface font-body-md text-on-surface leading-relaxed overflow-x-hidden">
@@ -163,6 +265,58 @@
 </div>
 </div>
 </section>
+<section class="py-section-gap px-margin-page max-w-screen-2xl mx-auto">
+  <div class="mb-12 max-w-3xl">
+    <h2 class="font-headline-lg text-headline-xl text-primary mb-4">Year Book Viewer</h2>
+    <p class="font-body-lg text-on-surface-variant">
+      Open your MITR year book PDF as a realistic two-page reading experience with click-to-flip navigation.
+    </p>
+  </div>
+
+  <div class="yearbook-viewer-shell rounded-[28px] p-6 md:p-8">
+
+
+    <div class="flipbook-stage rounded-2xl bg-surface-container-low">
+      <div id="yearbook-wrapper" class="w-full">
+        <div id="yearbook" class="mx-auto"></div>
+        <div id="yearbook-empty" class="flipbook-empty">
+            <div>
+                <p id="empty-title" class="text-2xl font-semibold text-primary mb-3">Loading yearbook.pdf</p>
+                <p id="empty-message" class="font-body-md text-on-surface-variant mb-4">
+                The year book viewer is preparing your PDF.
+                </p>
+                <button id="retry-load" class="flipbook-btn" type="button" style="display:none;">
+                <span class="material-symbols-outlined">restart_alt</span>
+                <span>Try Again</span>
+                </button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="flipbook-toolbar mb-6">
+  <div class="controls">
+    <button id="reload-pdf" class="flipbook-btn" type="button">
+      <span class="material-symbols-outlined">refresh</span>
+    </button>
+
+    <button id="prev-page" class="flipbook-btn" type="button">
+      <span class="material-symbols-outlined">arrow_back</span>
+      <span>Previous</span>
+    </button>
+
+    <button id="next-page" class="flipbook-btn" type="button">
+      <span>Next</span>
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </button>
+  </div>
+
+  <div class="flipbook-meta">
+    <span id="book-status">Loading yearbook.pdf...</span>
+  </div>
+</div>
+  </div>
+</section>
+
 <!-- Upcoming Events: Bento Grid Layout -->
 <section class="py-section-gap px-margin-page max-w-screen-2xl mx-auto">
 <div class="mb-12">
@@ -173,9 +327,6 @@
 <!-- Primary Event Card -->
 <div class="col-span-12 lg:col-span-8 group">
 <div class="glass-card rounded-xl overflow-hidden flex flex-col md:flex-row h-full hover:shadow-xl transition-shadow duration-300">
-<div class="md:w-1/2 h-64 md:h-auto overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-quality photo of a serene outdoor wellness workshop at IIT Madras, with students sitting in a circle on a lush green lawn during a soft sunrise. The setting is peaceful and focused, with gentle morning light filtering through the trees. The image conveys a sense of calm and community support within an academic environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwt39YutYyKscQC691PvGQ3AYU3VGdoGX7AUZvHCt8wXCY4GxlRBBogVN-Ayyx4U6vCzPJd20oV7tcWLF4KobLdaoH2bj5zPlOS9hTXHSZ6MmO-nvbWssKH6prmuAPsIxEUcLo4TX-doymcPlb2Xefp5IsRaiATO5pa3SQOWYHhbRDpvShw9d5y9L_Neo3ol6eR2knlzOEomsUKrLE5yoM0PUEoWIZKa683JVBLKusfc0mrfPFQLE"/>
-</div>
 <div class="p-10 md:w-1/2 flex flex-col justify-between">
 <div class="space-y-4">
 <span class="px-3 py-1 bg-primary-container text-on-primary-container text-label-sm font-bold rounded-full uppercase tracking-wider">Major Workshop</span>
@@ -192,7 +343,6 @@
 </div>
 </div>
 </div>
-<button class="mt-8 w-full py-4 bg-primary text-white font-bold rounded-lg hover:scale-[0.98] transition-transform">Register Now</button>
 </div>
 </div>
 </div>
@@ -355,12 +505,6 @@
 </div>
 </div>
 </div>
-<div class="mt-16 flex justify-center">
-<button class="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
-<span>Join the Alumni Network</span>
-<span class="material-symbols-outlined">arrow_forward</span>
-</button>
-</div>
 </div>
 </section>
 <!-- Subtle Campus Divider -->
@@ -373,26 +517,199 @@
 <!-- Footer -->
 <footer class="w-full px-margin-page py-section-gap flex flex-col items-center space-y-8 bg-surface-container border-t border-outline-variant/50"><div class="flex flex-col items-center space-y-6"><div class="flex items-center space-x-3"><img alt="Footer Logo" class="h-16 w-16 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpmZIoxlCn2Lsg7_x9N7QoLqWIk6yddBaZonLCFUDRotGSG5vYMYzD-DqPvBRMHXSrUNlkcEjHZAZ-PVzP1ORqNi0r3M-T6FbpbG8JuCH8G2X516JCYez_BobmVQfmWRmNu8EadmTbTVVxt2WKqS-nhlsvGQnc__srd_TFDkJlgIHwUyi8FUstbymupm8Xh6htGfEe_Mq19GeTUx5gp10K56AQqYddgwP7rIi8XWde3wWdbxxP1dMj_KIFCcZW36K"/><div class="text-center md:text-left"><h2 class="font-headline-lg text-headline-lg font-bold text-primary">IITM MITR</h2><p class="font-label-sm text-on-surface-variant">Empowering Wellbeing Since 2010</p></div></div><div class="flex flex-wrap justify-center gap-8"><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Privacy Policy</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Terms of Service</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Campus Map</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="directory.html">Directory</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Feedback</a></div></div><div class="w-full max-w-screen-xl border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-70"><p class="font-body-md text-sm text-on-surface-variant text-center">© 2024 Indian Institute of Technology Madras. All rights reserved.</p><div class="flex space-x-6"><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">qr_code_2</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">alternate_email</span></div></div></footer>
 <script>
-        // Interactive Hover Effects for Cards
-        document.querySelectorAll('.glass-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-5px)';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
+    // Existing card hover effect
+    document.querySelectorAll('.glass-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px)';
         });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
 
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 20) {
-                header.classList.add('py-2', 'h-16');
-                header.classList.remove('h-20');
-            } else {
-                header.classList.remove('py-2', 'h-16');
-                header.classList.add('h-20');
-            }
+    // Existing header scroll effect
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 20) {
+            header.classList.add('py-2', 'h-16');
+            header.classList.remove('h-20');
+        } else {
+            header.classList.remove('py-2', 'h-16');
+            header.classList.add('h-20');
+        }
+    });
+
+    // ---------- PDF Flipbook with error handling ----------
+    const PDF_URL = 'yearbook.pdf';
+
+    const prevBtn = document.getElementById('prev-page');
+    const nextBtn = document.getElementById('next-page');
+    const reloadBtn = document.getElementById('reload-pdf');
+    const retryBtn = document.getElementById('retry-load');
+
+    const yearbook = document.getElementById('yearbook');
+    const emptyState = document.getElementById('yearbook-empty');
+    const statusEl = document.getElementById('book-status');
+    const emptyTitle = document.getElementById('empty-title');
+    const emptyMessage = document.getElementById('empty-message');
+
+    let pageFlipInstance = null;
+    let currentPdf = null;
+    let isBookReady = false;
+    let isLoading = false;
+    let loadToken = 0;
+
+    function updateStatus(text) {
+        if (statusEl) statusEl.textContent = text;
+    }
+
+    function setButtonsDisabled(disabled) {
+        [prevBtn, nextBtn, reloadBtn].forEach(btn => {
+            if (!btn) return;
+            btn.disabled = disabled;
+            btn.style.opacity = disabled ? '0.5' : '1';
+            btn.style.pointerEvents = disabled ? 'none' : 'auto';
         });
-    </script>
+    }
+
+    function showEmptyState(title, message, showRetry = false) {
+        emptyTitle.textContent = title;
+        emptyMessage.textContent = message;
+        retryBtn.style.display = showRetry ? 'inline-flex' : 'none';
+        emptyState.style.display = 'grid';
+    }
+
+    function hideEmptyState() {
+        emptyState.style.display = 'none';
+    }
+
+    function resetViewerState() {
+        isBookReady = false;
+        currentPdf = null;
+        setButtonsDisabled(true);
+    }
+
+    function clearFlipbook() {
+        try {
+            if (pageFlipInstance) {
+                pageFlipInstance.destroy();
+                pageFlipInstance = null;
+            }
+        } catch (error) {
+            console.warn('Failed to destroy previous flipbook instance:', error);
+        }
+
+        yearbook.innerHTML = '';
+    }
+
+    function getReadablePdfError(error) {
+        const name = error?.name || '';
+        const message = error?.message || '';
+
+        if (name === 'MissingPDFException') {
+            return {
+                title: 'PDF file not found',
+                message: 'Could not find yearbook.pdf. Place it in the same folder as this HTML file.'
+            };
+        }
+
+        if (name === 'InvalidPDFException') {
+            return {
+                title: 'Invalid PDF file',
+                message: 'yearbook.pdf exists, but it is not a valid PDF or may be corrupted.'
+            };
+        }
+
+        if (name === 'PasswordException') {
+            return {
+                title: 'Password-protected PDF',
+                message: 'This PDF is protected by a password. Use an unlocked copy of yearbook.pdf.'
+            };
+        }
+
+        if (name === 'UnexpectedResponseException') {
+            return {
+                title: 'Unable to fetch PDF',
+                message: 'The browser could not fetch yearbook.pdf. Check the path and make sure the site is served correctly.'
+            };
+        }
+
+        if (message) {
+            return {
+                title: 'Failed to load PDF',
+                message
+            };
+        }
+
+        return {
+            title: 'Failed to load PDF',
+            message: 'Something went wrong while opening yearbook.pdf.'
+        };
+    }
+
+    async function renderPdfToFlipbook(url = 'yearbook.pdf') {
+        try {
+            pdfjsLib.GlobalWorkerOptions.workerSrc =
+            'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+            const response = await fetch(url);
+            if (!response.ok) {
+            throw new Error(`Failed to fetch PDF: ${response.status} ${response.statusText}`);
+            }
+
+            const arrayBuffer = await response.arrayBuffer();
+            const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+            const pdf = await loadingTask.promise;
+
+            console.log('PDF loaded:', pdf.numPages);
+        } catch (error) {
+            console.error('PDF flipbook error:', error);
+        }
+        }
+    prevBtn.addEventListener('click', () => {
+        if (!isBookReady || !pageFlipInstance) return;
+        try {
+            pageFlipInstance.flipPrev();
+        } catch (error) {
+            console.error('Failed to go to previous page:', error);
+            updateStatus('Could not flip to previous page');
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (!isBookReady || !pageFlipInstance) return;
+        try {
+            pageFlipInstance.flipNext();
+        } catch (error) {
+            console.error('Failed to go to next page:', error);
+            updateStatus('Could not flip to next page');
+        }
+    });
+
+    reloadBtn.addEventListener('click', () => {
+        if (isLoading) return;
+        renderPdfToFlipbook();
+    });
+
+    retryBtn.addEventListener('click', () => {
+        if (isLoading) return;
+        renderPdfToFlipbook();
+    });
+
+    window.addEventListener('resize', () => {
+        if (!pageFlipInstance || !isBookReady) return;
+    });
+
+    window.addEventListener('error', (event) => {
+        console.error('Window error:', event.error || event.message);
+    });
+
+    window.addEventListener('unhandledrejection', (event) => {
+        console.error('Unhandled promise rejection:', event.reason);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        renderPdfToFlipbook();
+    });
+</script>
 </body></html>
