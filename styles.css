@@ -1,0 +1,148 @@
+/* Custom Design System & Glassmorphism Styles for MITR Wellness Portal */
+
+:root {
+  --color-surface: #fcf9f8;
+  --color-surface-container: #f0eded;
+  --color-surface-container-high: #eae7e7;
+  --color-surface-container-highest: #e5e2e1;
+  --color-on-surface: #1c1b1b;
+  --color-on-surface-variant: #504539;
+  --color-primary: #815518;
+  --color-primary-hover: #9c6820;
+  --color-primary-container: #c48f4d;
+  --color-secondary: #a43b37;
+  --color-outline: #827567;
+  --color-outline-variant: #d4c4b4;
+  --glass-bg: rgba(252, 249, 248, 0.85);
+  --glass-dark-bg: rgba(240, 237, 237, 0.9);
+  --glass-border: rgba(130, 117, 103, 0.2);
+}
+
+.dark {
+  --color-surface: #161412;
+  --color-surface-container: #221f1c;
+  --color-surface-container-high: #2c2925;
+  --color-surface-container-highest: #383430;
+  --color-on-surface: #f5f0eb;
+  --color-on-surface-variant: #d4c4b4;
+  --color-primary: #f6bc75;
+  --color-primary-hover: #ffcf92;
+  --color-primary-container: #815518;
+  --color-secondary: #ff8078;
+  --color-outline: #a09283;
+  --color-outline-variant: #48413a;
+  --glass-bg: rgba(22, 20, 18, 0.85);
+  --glass-dark-bg: rgba(34, 31, 28, 0.9);
+  --glass-border: rgba(212, 196, 180, 0.15);
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: 'Work Sans', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, .font-serif-headline {
+  font-family: 'Newsreader', serif;
+}
+
+/* Glassmorphism components */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-dark {
+  background: var(--glass-dark-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 196, 180, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .glass-card {
+  background: rgba(34, 31, 28, 0.65);
+  border: 1px solid rgba(212, 196, 180, 0.1);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(129, 85, 24, 0.15);
+}
+
+/* Pulse animation for emergency SOS */
+@keyframes emergency-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(164, 59, 55, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(164, 59, 55, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(164, 59, 55, 0);
+  }
+}
+
+.pulse-sos {
+  animation: emergency-pulse 2s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface-container);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Smooth tab view transitions */
+.tab-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-content.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modal styles */
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+/* Flipbook Card Hover Effect */
+.yearbook-card {
+  perspective: 1000px;
+}
+
+.yearbook-card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.yearbook-card:hover .yearbook-card-inner {
+  transform: rotateY(5deg) scale(1.02);
+}

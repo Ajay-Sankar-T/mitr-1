@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coordinator Directory | IITM MITR</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#313030",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-surface": "#1c1b1b",
+                        "on-surface-variant": "#504539",
+                        "primary-fixed": "#ffddb8",
+                        "tertiary-fixed-dim": "#c9c6c2",
+                        "on-secondary-container": "#741818",
+                        "on-primary-container": "#482b00",
+                        "error-container": "#ffdad6",
+                        "surface": "#fcf9f8",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#2b1700",
+                        "surface-container": "#f0eded",
+                        "outline-variant": "#d4c4b4",
+                        "tertiary-container": "#9b9995",
+                        "surface-container-high": "#eae7e7",
+                        "on-secondary-fixed-variant": "#842322",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e5e2e1",
+                        "primary": "#815518",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#c48f4d",
+                        "surface-variant": "#e5e2e1",
+                        "surface-tint": "#815518",
+                        "secondary-container": "#ff8078",
+                        "background": "#fcf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-bright": "#fcf9f8",
+                        "outline": "#827567",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "secondary": "#a43b37",
+                        "on-tertiary-container": "#32312f",
+                        "on-secondary-fixed": "#410004",
+                        "on-tertiary-fixed-variant": "#484744",
+                        "on-primary-fixed-variant": "#653e00",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#605e5b",
+                        "secondary-fixed-dim": "#ffb3ad",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#ffdad7",
+                        "inverse-primary": "#f6bc75",
+                        "on-background": "#1c1b1b",
+                        "tertiary-fixed": "#e6e2de",
+                        "primary-fixed-dim": "#f6bc75"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "1.5rem",
+                        "section-gap": "8rem",
+                        "margin-page": "4rem",
+                        "gutter": "2rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Newsreader"],
+                        "body-lg": ["Work Sans"],
+                        "headline-xl": ["Newsreader"],
+                        "label-sm": ["Work Sans"],
+                        "headline-lg": ["Newsreader"],
+                        "body-md": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "fontWeight": "600"}],
+                        "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(252, 249, 248, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(129, 85, 24, 0.1);
+        }
+        .campus-line-art {
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .coordinator-card:hover .action-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 z-50 w-full bg-surface/60 backdrop-blur-md border-b border-transparent transition-all duration-500 h-20" id="main-header">
+<div class="flex justify-between items-center w-full px-margin-page max-w-screen-2xl mx-auto h-full">
+<div class="flex items-center gap-4">
+<img alt="IIT Madras Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4"/>
+<div class="h-10 w-px bg-outline-variant/40"></div>
+<img alt="Team MITR Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBatdEDATg7nysstGcJ53RjnlY1CzzXLGNGJVvyTOH_XXlb5bv--Bcfjii0-_UgBwypk4Cpt1h23dbzpNPxTLcWLoGZzuDNG2Uu-9_rU0zTgDaO9NStzQHMLbWRqpuHuDkklzhvUSkt-1HuK3I3ClIWP0TpBjIf7qHgss_dU___A_U9MJl6jFW9FkWa0Pb6NjCXZ64HBHu3CIKd6HNIO4EcNgPI1sI0gt5tEI-0oXNUL17hsE8TsM9U0aealroAQ9zX"/>
+<span class="font-headline-lg text-headline-lg font-bold text-primary ml-2 hidden lg:block">Team Mitr</span>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+  <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Home</a>
+  <a href="emergency.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Emergency</a>
+  <a href="directory.html" class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md text-body-md">Directory</a>
+  <a href="what_we_do.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">What We Do</a>
+  <a href="about.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">All About MITR</a>
+  <a href="yearbook.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Year Book</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200">Support</button>
+<span class="material-symbols-outlined text-primary text-3xl cursor-pointer hover:opacity-70 transition-opacity">account_circle</span>
+</div>
+</div>
+</header>
+<main class="relative pt-32 pb-24 min-h-screen">
+<!-- Subtle Watermark Background -->
+<div class="absolute inset-0 z-0 campus-line-art overflow-hidden">
+<svg class="w-full h-full opacity-10" viewbox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,350 Q250,300 500,350 T1000,350" fill="none" stroke="currentColor" stroke-width="1"></path>
+<path d="M0,360 Q250,310 500,360 T1000,360" fill="none" stroke="currentColor" stroke-width="1"></path>
+</svg>
+</div>
+<div class="relative z-10 max-w-screen-2xl mx-auto px-margin-page">
+<!-- Header Section -->
+<header class="mb-12">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-4">Coordinator Directory</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Connect with our dedicated network of faculty and student coordinators across hostels and departments. We are here to support your well-being journey.
+                </p>
+</header>
+<!-- Search & Filters -->
+<div class="glass-panel rounded-xl p-6 mb-16 shadow-lg shadow-primary/5 flex flex-col md:flex-row gap-6 items-end">
+<div class="flex-1 w-full">
+<label class="block font-label-sm text-label-sm mb-2 text-primary">SEARCH BY NAME OR ROLE</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border-none border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all rounded-t-lg font-body-md" placeholder="Search coordinators..." type="text"/>
+</div>
+</div>
+<div class="w-full md:w-64">
+<label class="block font-label-sm text-label-sm mb-2 text-primary">DEPARTMENT</label>
+<select class="w-full py-3 bg-surface-container-low border-none border-b-2 border-outline-variant focus:border-primary focus:ring-0 rounded-t-lg font-body-md text-on-surface-variant">
+<option>All Departments</option>
+<option>Aerospace Engineering</option>
+<option>Computer Science</option>
+<option>Electrical Engineering</option>
+<option>Mechanical Engineering</option>
+<option>Physics</option>
+</select>
+</div>
+<div class="w-full md:w-64">
+<label class="block font-label-sm text-label-sm mb-2 text-primary">HOSTEL</label>
+<select class="w-full py-3 bg-surface-container-low border-none border-b-2 border-outline-variant focus:border-primary focus:ring-0 rounded-t-lg font-body-md text-on-surface-variant">
+<option>All Hostels</option>
+<option>Mandakini</option>
+<option>Jamuna</option>
+<option>Alakananda</option>
+<option>Brahmaputra</option>
+<option>Saraswathi</option>
+</select>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold hover:bg-primary/90 transition-all flex items-center justify-center gap-2 w-full md:w-auto">
+<span class="material-symbols-outlined">filter_list</span> Apply Filters
+                </button>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Faculty Advisors Header/Sidebar -->
+<div class="md:col-span-12 lg:col-span-3">
+<div class="sticky top-32">
+<div class="border-l-4 border-primary pl-6 py-4 mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Faculty Advisors</h2>
+<p class="font-body-md text-on-surface-variant">Our senior faculty mentors providing guidance for the MITR initiative.</p>
+</div>
+</div>
+</div>
+<!-- Faculty Advisor Cards -->
+<div class="md:col-span-12 lg:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+<!-- Advisor 1 -->
+<div class="coordinator-card group relative overflow-hidden bg-white/70 backdrop-blur-md rounded-3xl flex flex-col md:flex-row items-center md:items-stretch gap-6 p-6 transition-all hover:translate-y-[-4px] shadow-sm border border-white/20 hover:shadow-primary/10"><div class="w-32 h-32 md:w-40 md:h-full shrink-0 overflow-hidden rounded-lg bg-surface-container-highest">
+<img alt="Faculty Advisor" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMJhBidji0iYmYVky6b6FZBYnkWLvb-1r9fq5fJchsZVbiSkgd6lJTr0PZMgzhq3FAOAlXgZPV23uCxMAq8k0ZWlRAYJUi_NGamjoWeaUSoz20smckQ5-gos56PpJ1Q-SPoxOqMLqMi3dwhr3z0ty0AcUeFS5E0OykRpFF6Pd4fJhOiLqJR8fIRvoYQ2HErtuzBfNJgj581S6P2obt_1tbYIkMzR10N4JV95CXYSj-1NwKBsz3gcjucwmiQpPxLORM"/>
+</div>
+<div class="flex flex-col justify-center text-center md:text-left">
+<span class="font-label-sm text-label-sm text-primary uppercase mb-1">Lead Advisor</span>
+<h3 class="font-headline-lg text-2xl mb-2">Dr. Aranya Sharma</h3>
+<p class="font-body-md text-on-surface-variant mb-6 italic">Dept. of Humanities</p>
+<div class="flex gap-3 justify-center md:justify-start">
+<a class="w-10 h-10 rounded-full flex items-center justify-center bg-secondary text-on-secondary hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full flex items-center justify-center bg-secondary text-on-secondary hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">call</span>
+</a>
+<a class="w-10 h-10 rounded-full flex items-center justify-center bg-secondary text-on-secondary hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">calendar_month</span>
+</a>
+</div>
+</div></div>
+<!-- Advisor 2 -->
+<div class="coordinator-card group relative overflow-hidden bg-white/70 backdrop-blur-md rounded-3xl flex flex-col md:flex-row items-center md:items-stretch gap-6 p-6 transition-all hover:translate-y-[-4px] shadow-sm border border-white/20 hover:shadow-primary/10"><div class="w-32 h-32 md:w-40 md:h-full shrink-0 overflow-hidden rounded-lg bg-surface-container-highest">
+<img alt="Faculty Advisor" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMJhBidji0iYmYVky6b6FZBYnkWLvb-1r9fq5fJchsZVbiSkgd6lJTr0PZMgzhq3FAOAlXgZPV23uCxMAq8k0ZWlRAYJUi_NGamjoWeaUSoz20smckQ5-gos56PpJ1Q-SPoxOqMLqMi3dwhr3z0ty0AcUeFS5E0OykRpFF6Pd4fJhOiLqJR8fIRvoYQ2HErtuzBfNJgj581S6P2obt_1tbYIkMzR10N4JV95CXYSj-1NwKBsz3gcjucwmiQpPxLORM"/>
+</div>
+<div class="flex flex-col justify-center text-center md:text-left">
+<span class="font-label-sm text-label-sm text-primary uppercase mb-1">Lead Advisor</span>
+<h3 class="font-headline-lg text-2xl mb-2">Dr. Aranya Sharma</h3>
+<p class="font-body-md text-on-surface-variant mb-6 italic">Dept. of Humanities</p>
+<div class="flex gap-3 justify-center md:justify-start">
+<a class="w-10 h-10 rounded-full flex items-center justify-center bg-secondary text-on-secondary hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full flex items-center justify-center bg-secondary text-on-secondary hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">call</span>
+</a>
+<a class="w-10 h-10 rounded-full flex items-center justify-center bg-secondary text-on-secondary hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">calendar_month</span>
+</a>
+</div>
+</div></div>
+</div>
+<!-- Hostel Coordinators Section -->
+<div class="md:col-span-12 border-t border-outline-variant/30 pt-16 mb-8">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-lg text-headline-xl text-primary">Hostel Coordinators</h2>
+<div class="h-1 flex-1 mx-8 bg-gradient-to-r from-primary/20 to-transparent"></div>
+</div>
+</div>
+<!-- Main Content Directory Area -->
+<div class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<!-- Coordinator Item -->
+<div class="coordinator-card bg-white/70 backdrop-blur-md rounded-3xl p-6 transition-all shadow-sm border border-white/20 hover:translate-y-[-4px] hover:shadow-primary/10">
+<div class="mb-4 aspect-square rounded-lg overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a friendly student mentor, soft lighting, warm gold tones, campus-inspired minimalist background, Work Sans aesthetic, high quality photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9hMkPs58XZSmxTB5XncNhpue7K9fgoRexKvAKj5w7Lku4ITjHhiSGxg2P6Rw-zwwJySaSrulQNFrWV1QM_aloOaetqGH06k28Q19jnskpaRuMvG3AgCzHRIGG3k9NgAEQAgr-CpEcNIZ1iEQKABDMrMvuyA1ZKcmQlGKaSDrvXxEduzZNctWYDt42ps4uqEkEp0oPzcrjBOUKF_sLRFBrIcSqcnIeIKU1QsuUyJbZswctP1_WRRY"/>
+<div class="absolute bottom-2 right-2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded uppercase tracking-widest font-bold">Mandakini</div>
+</div>
+<h4 class="font-headline-lg text-xl mb-1 text-on-surface">Ishaan Malhotra</h4>
+<p class="font-body-md text-on-surface-variant text-sm mb-4">Post-Graduate Coordinator</p>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span class="text-sm font-body-md truncate">i.malhotra@mitr.iitm.ac.in</span>
+</div>
+<div class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-sm">call</span>
+<span class="text-sm font-body-md">+91 98765 43210</span>
+</div>
+</div>
+</div>
+<!-- Coordinator Item -->
+<div class="coordinator-card bg-white/70 backdrop-blur-md rounded-3xl p-6 transition-all shadow-sm border border-white/20 hover:translate-y-[-4px] hover:shadow-primary/10">
+<div class="mb-4 aspect-square rounded-lg overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A portrait of a serene female student coordinator in a university campus setting, natural soft sunlight, professional attire, modern academic feel, gold and maroon color accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnHB6fuK-AVmJvoK6VIHe1w0vrhTG850QEAO9aPHxQ4MwW2zjbit3qDnMC3f1bi5W32Xqya1XchLDVXM94v8lDadNrsOhrUjeVRrxRkvW6L0zSbOChxXbdTXTqej_S1aLnIKRMSYNvmvYSogH8nhfovy-G4aQzYK50UGv4eeD3c-vkBhDXo-okE1hJy9MAbMBQ0kGBRt_ZStQ4oPXJM3zPW_nBd75xo1FlxX3xZuRDFp-yTKgMRB8"/>
+<div class="absolute bottom-2 right-2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded uppercase tracking-widest font-bold">Jamuna</div>
+</div>
+<h4 class="font-headline-lg text-xl mb-1 text-on-surface">Meera Reddy</h4>
+<p class="font-body-md text-on-surface-variant text-sm mb-4">Hostel Peer Coordinator</p>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span class="text-sm font-body-md truncate">m.reddy@mitr.iitm.ac.in</span>
+</div>
+<div class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-sm">call</span>
+<span class="text-sm font-body-md">+91 98765 43211</span>
+</div>
+</div>
+</div>
+<!-- Coordinator Item -->
+<div class="coordinator-card bg-white/70 backdrop-blur-md rounded-3xl p-6 transition-all shadow-sm border border-white/20 hover:translate-y-[-4px] hover:shadow-primary/10">
+<div class="mb-4 aspect-square rounded-lg overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A bright portrait of a male engineering student, friendly and approachable expression, IIT Madras campus background blurred, clean professional headshot style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWh1RE-_zejbS1jsZsxgnsZpT8ce1wyTMb-WV4vInyZ2kBmvJc_n7PrEkL8KNmNDIiILyhvLfPzaaW7S5OVhnHPmLMHAQEzgEbm7ahn4PnQDLBfYUjD-pQoT4c4hL0-1DO6oLXlRPopnou4ukyR8Jbhd-QZ-0x6Lec7DUx6v1RoidyBX1i1TOdp9m-0owhv71HgmrrpXPupA9UOXEUvNfnbiVWx2d7rmjNJRcUEF8YnP4viDzqlLA"/>
+<div class="absolute bottom-2 right-2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded uppercase tracking-widest font-bold">Alakananda</div>
+</div>
+<h4 class="font-headline-lg text-xl mb-1 text-on-surface">Arjun Nair</h4>
+<p class="font-body-md text-on-surface-variant text-sm mb-4">Dept. Liaison Officer</p>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span class="text-sm font-body-md truncate">a.nair@mitr.iitm.ac.in</span>
+</div>
+<div class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-sm">call</span>
+<span class="text-sm font-body-md">+91 98765 43212</span>
+</div>
+</div>
+</div>
+<!-- Coordinator Item -->
+<div class="coordinator-card bg-white/70 backdrop-blur-md rounded-3xl p-6 transition-all shadow-sm border border-white/20 hover:translate-y-[-4px] hover:shadow-primary/10">
+<div class="mb-4 aspect-square rounded-lg overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a confident female student in a campus environment, soft focus background, high-end institutional aesthetics, warm gold lighting palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnIclUGurd68_qlJfrl56taloKZhRErPwsnI-_t3Ky5iky2C3qZe8UbDMcAVISMpNc6O8IabyAqlb1FO4_hkT4We3l43HcdYzXQ4-N_j616crN1eq09ZAwls52y_1yUia_r6twuaaZtskwBki2BADUJTPcC4DMNz4eWGHnCa83jgI444bstPCcjmevY3_j_4INXDrn-9bgmcypSMFRAplPGJLV63-ejiLOhRX02vAEkfA_7n2NTYA"/>
+<div class="absolute bottom-2 right-2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded uppercase tracking-widest font-bold">Saraswathi</div>
+</div>
+<h4 class="font-headline-lg text-xl mb-1 text-on-surface">Kavya Singhania</h4>
+<p class="font-body-md text-on-surface-variant text-sm mb-4">Wellness Ambassador</p>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span class="text-sm font-body-md truncate">k.singhania@mitr.iitm.ac.in</span>
+</div>
+<div class="flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-sm">call</span>
+<span class="text-sm font-body-md">+91 98765 43213</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Statistics Banner -->
+<section class="mt-section-gap grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="glass-panel p-8 rounded-xl text-center">
+<div class="font-headline-xl text-primary text-5xl mb-2">15+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Faculty Advisors</div>
+</div>
+<div class="glass-panel p-8 rounded-xl text-center">
+<div class="font-headline-xl text-primary text-5xl mb-2">40+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Hostel Coords</div>
+</div>
+<div class="glass-panel p-8 rounded-xl text-center">
+<div class="font-headline-xl text-primary text-5xl mb-2">25+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Dept. Coords</div>
+</div>
+<div class="glass-panel p-8 rounded-xl text-center">
+<div class="font-headline-xl text-primary text-5xl mb-2">24/7</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Peer Support</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-page py-section-gap flex flex-col items-center space-y-8 bg-surface-container border-t border-outline-variant/50">
+<div class="flex flex-col items-center space-y-6">
+<div class="flex items-center space-x-3">
+<img alt="Footer Logo" class="h-16 w-16 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpmZIoxlCn2Lsg7_x9N7QoLqWIk6yddBaZonLCFUDRotGSG5vYMYzD-DqPvBRMHXSrUNlkcEjHZAZ-PVzP1ORqNi0r3M-T6FbpbG8JuCH8G2X516JCYez_BobmVQfmWRmNu8EadmTbTVVxt2WKqS-nhlsvGQnc__srd_TFDkJlgIHwUyi8FUstbymupm8Xh6htGfEe_Mq19GeTUx5gp10K56AQqYddgwP7rIi8XWde3wWdbxxP1dMj_KIFCcZW36K"/>
+<div class="text-center md:text-left">
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary">IITM MITR</h2>
+<p class="font-label-sm text-on-surface-variant">Empowering Wellbeing Since 2010</p>
+</div>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Terms of Service</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Campus Map</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="directory.html">Directory</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Feedback</a>
+</div>
+</div>
+<div class="w-full max-w-screen-xl border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-70">
+<p class="font-body-md text-sm text-on-surface-variant text-center">© 2024 Indian Institute of Technology Madras. All rights reserved.</p>
+<div class="flex space-x-6">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">qr_code_2</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">alternate_email</span>
+</div>
+</div>
+</footer>
+<script>
+        // Simple search interaction
+        document.querySelector('input[type="text"]').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.coordinator-card');
+            
+            cards.forEach(card => {
+                const name = card.querySelector('h3, h4').textContent.toLowerCase();
+                if (name.includes(term)) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => {
+                        if(card.style.opacity === '0') card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IITM MITR Wellness Portal | Indian Institute of Technology Madras</title>
+  <meta name="description" content="Official Wellness Portal of Team MITR at IIT Madras. Peer counselling, barefoot training, emergency helpline, coordinator directory, and mental health resources." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=Work+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CDN with Config -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#815518",
+            "primary-container": "#c48f4d",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#482b00",
+            "secondary": "#a43b37",
+            "secondary-container": "#ff8078",
+            "on-secondary": "#ffffff",
+            "surface": "#fcf9f8",
+            "surface-dim": "#dcd9d9",
+            "surface-bright": "#fcf9f8",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f6f3f2",
+            "surface-container": "#f0eded",
+            "surface-container-high": "#eae7e7",
+            "surface-container-highest": "#e5e2e1",
+            "on-surface": "#1c1b1b",
+            "on-surface-variant": "#504539",
+            "outline": "#827567",
+            "outline-variant": "#d4c4b4"
+          },
+          fontFamily: {
+            "serif": ["Newsreader", "serif"],
+            "sans": ["Work Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <script type="module" crossorigin src="/assets/index-mz1T_4b8.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-COd8wFG8.css">
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary/20 selection:text-primary">
+
+  <!-- TOP ANNOUNCEMENT / MOTTO RIBBON -->
+  <div class="bg-primary text-on-primary py-2 px-4 text-center text-xs md:text-sm font-medium tracking-wide flex items-center justify-center gap-2 shadow-inner">
+    <span class="material-symbols-outlined text-base">format_quote</span>
+    <span><strong>MOTTO:</strong> “No one in the campus should be unattended in their emotional distress”</span>
+    <span class="hidden md:inline-block">| IIT Madras Wellness Initiative</span>
+  </div>
+
+  <!-- MAIN NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 glass border-b border-outline-variant/30 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGO & BRANDING -->
+      <a href="#home" class="flex items-center gap-3 group nav-tab-link">
+        <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-primary text-3xl">favorite</span>
+        </div>
+        <div>
+          <div class="font-serif font-bold text-xl md:text-2xl text-primary leading-none tracking-tight">IITM MITR</div>
+          <div class="text-[10px] md:text-xs font-semibold text-on-surface-variant uppercase tracking-widest mt-1">Wellness Body of IITM</div>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAVIGATION LINKS -->
+      <nav class="hidden lg:flex items-center space-x-1 font-medium text-sm">
+        <a href="#home" class="nav-tab-link px-4 py-2 rounded-lg hover:text-primary hover:bg-surface-container transition-colors text-primary font-bold border-b-2 border-primary">Home</a>
+        <a href="#what-we-do" class="nav-tab-link px-4 py-2 rounded-lg hover:text-primary hover:bg-surface-container transition-colors text-on-surface-variant">What We Do</a>
+        <a href="#about" class="nav-tab-link px-4 py-2 rounded-lg hover:text-primary hover:bg-surface-container transition-colors text-on-surface-variant">All About MITR</a>
+        <a href="#yearbook" class="nav-tab-link px-4 py-2 rounded-lg hover:text-primary hover:bg-surface-container transition-colors text-on-surface-variant flex items-center gap-1.5">
+          <span>Year Book</span>
+          <span class="bg-secondary/10 text-secondary text-[10px] px-1.5 py-0.5 rounded-full font-bold uppercase">New</span>
+        </a>
+        <a href="#directory" class="nav-tab-link px-4 py-2 rounded-lg hover:text-primary hover:bg-surface-container transition-colors text-on-surface-variant">Directory</a>
+        <a href="#emergency" class="nav-tab-link px-4 py-2 rounded-lg hover:text-secondary hover:bg-secondary/10 transition-colors text-secondary font-bold">Emergency Support</a>
+      </nav>
+
+      <!-- HEADER ACTION CONTROLS -->
+      <div class="flex items-center gap-3">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle-btn" title="Toggle Dark/Light Mode" class="p-2.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors">
+          <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+          <span class="material-symbols-outlined hidden dark:inline-block text-amber-400">light_mode</span>
+        </button>
+
+        <!-- SOS Call Quick Action Button -->
+        <button class="trigger-sos-btn pulse-sos bg-secondary text-on-secondary px-4 py-2.5 rounded-full font-bold text-xs md:text-sm flex items-center gap-2 hover:bg-secondary/90 transition-all shadow-md active:scale-95">
+          <span class="material-symbols-outlined text-base">emergency</span>
+          <span class="hidden sm:inline">24/7 SOS Helpline</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-surface-container text-on-surface">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE NAVIGATION MENU -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-surface border-b border-outline-variant/40 px-4 pt-2 pb-6 space-y-2">
+      <a href="#home" class="nav-tab-link block px-4 py-2.5 rounded-lg text-base font-semibold text-primary bg-surface-container">Home</a>
+      <a href="#what-we-do" class="nav-tab-link block px-4 py-2.5 rounded-lg text-base font-medium text-on-surface-variant hover:bg-surface-container">What We Do</a>
+      <a href="#about" class="nav-tab-link block px-4 py-2.5 rounded-lg text-base font-medium text-on-surface-variant hover:bg-surface-container">All About MITR</a>
+      <a href="#yearbook" class="nav-tab-link block px-4 py-2.5 rounded-lg text-base font-medium text-on-surface-variant hover:bg-surface-container">Year Book</a>
+      <a href="#directory" class="nav-tab-link block px-4 py-2.5 rounded-lg text-base font-medium text-on-surface-variant hover:bg-surface-container">Coordinator Directory</a>
+      <a href="#emergency" class="nav-tab-link block px-4 py-2.5 rounded-lg text-base font-bold text-secondary bg-secondary/10">Emergency Support (+91 44 2257 8000)</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-grow">
+
+    <!-- ==================== TAB 1: HOME PAGE ==================== -->
+    <div id="tab-home" class="tab-content active">
+      
+      <!-- HERO BANNER SECTION -->
+      <section class="relative overflow-hidden py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-surface-container-low/50 via-surface to-surface">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-7 space-y-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs md:text-sm font-semibold">
+              <span class="material-symbols-outlined text-base">verified_user</span>
+              <span>Official Wellness Body of IIT Madras</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-on-surface leading-tight">
+              Your Emotional Wellbeing is <span class="text-primary italic">Our Shared Priority.</span>
+            </h1>
+
+            <!-- REQUIRED HEADER CONTENT TEXT -->
+            <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed border-l-4 border-primary/40 pl-4 py-1">
+              <strong>MITR</strong>, A Wellness body of IITM comprising of Faculty and Students trained appropriately with counselling skills and empathy to offer counselling to peers. We MITR are available in all departments, Hostels to enhance approachability. We go by the Motto:
+            </p>
+
+            <blockquote class="bg-surface-container-high/60 p-6 rounded-2xl border border-outline-variant/30 text-primary font-serif italic text-lg md:text-xl shadow-sm">
+              “No one in the campus should be unattended in their emotional distress”
+            </blockquote>
+
+            <div class="flex flex-wrap gap-4 pt-2">
+              <a href="#emergency" class="nav-tab-link bg-secondary text-on-secondary px-8 py-4 rounded-full font-bold text-base flex items-center gap-3 hover:bg-secondary/90 transition-all shadow-lg active:scale-95">
+                <span>Immediate Support</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+              <a href="#what-we-do" class="nav-tab-link glass-card px-8 py-4 rounded-full font-semibold text-base text-on-surface hover:text-primary transition-all flex items-center gap-2">
+                <span>Discover What We Do</span>
+                <span class="material-symbols-outlined">expand_more</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- HERO GRAPHIC & STAT CARDS -->
+          <div class="lg:col-span-5 relative">
+            <div class="glass-dark p-8 md:p-10 rounded-3xl border border-outline-variant/40 space-y-6 shadow-2xl relative z-10">
+              <div class="flex items-center justify-between border-b border-outline-variant/30 pb-6">
+                <div>
+                  <h3 class="font-serif font-bold text-2xl text-primary">24/7 Wellness Guard</h3>
+                  <p class="text-xs text-on-surface-variant mt-1">Available across all Hostels & Departments</p>
+                </div>
+                <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                  <span class="material-symbols-outlined text-2xl">support_agent</span>
+                </div>
+              </div>
+
+              <!-- Quick Action List -->
+              <div class="space-y-4">
+                <a href="#emergency" class="nav-tab-link flex items-center justify-between p-4 rounded-2xl bg-surface hover:bg-surface-container-high transition-all border border-outline-variant/20 group">
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-secondary text-2xl">call</span>
+                    <div>
+                      <div class="font-bold text-sm text-on-surface">Emergency SOS Hotline</div>
+                      <div class="text-xs text-on-surface-variant">+91 44 2257 8000</div>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+                </a>
+
+                <a href="#directory" class="nav-tab-link flex items-center justify-between p-4 rounded-2xl bg-surface hover:bg-surface-container-high transition-all border border-outline-variant/20 group">
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-2xl">group</span>
+                    <div>
+                      <div class="font-bold text-sm text-on-surface">Hostel & Dept Coordinators</div>
+                      <div class="text-xs text-on-surface-variant">Find mentor in your block</div>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+                </a>
+
+                <a href="#yearbook" class="nav-tab-link flex items-center justify-between p-4 rounded-2xl bg-surface hover:bg-surface-container-high transition-all border border-outline-variant/20 group">
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-amber-700 text-2xl">auto_stories</span>
+                    <div>
+                      <div class="font-bold text-sm text-on-surface">MITR Year Book</div>
+                      <div class="text-xs text-on-surface-variant">Explore campus wellness legacy</div>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+                </a>
+              </div>
+
+              <!-- Badges -->
+              <div class="pt-4 border-t border-outline-variant/30 flex items-center justify-between text-xs text-on-surface-variant font-medium">
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> 100% Confidential</span>
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Peer Empathy</span>
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Barefoot Trained</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- KEY HIGHLIGHTS STRIP -->
+      <section class="py-12 bg-surface-container border-y border-outline-variant/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="space-y-1">
+              <div class="font-serif font-extrabold text-3xl md:text-4xl text-primary">18+ Hostels</div>
+              <div class="text-xs md:text-sm font-semibold uppercase tracking-wider text-on-surface-variant">Dedicated Coordinators</div>
+            </div>
+            <div class="space-y-1">
+              <div class="font-serif font-extrabold text-3xl md:text-4xl text-primary">16+ Depts</div>
+              <div class="text-xs md:text-sm font-semibold uppercase tracking-wider text-on-surface-variant">Academic Representation</div>
+            </div>
+            <div class="space-y-1">
+              <div class="font-serif font-extrabold text-3xl md:text-4xl text-primary">500+</div>
+              <div class="text-xs md:text-sm font-semibold uppercase tracking-wider text-on-surface-variant">Barefoot Peer Mentors</div>
+            </div>
+            <div class="space-y-1">
+              <div class="font-serif font-extrabold text-3xl md:text-4xl text-primary">24/7</div>
+              <div class="text-xs md:text-sm font-semibold uppercase tracking-wider text-on-surface-variant">Crisis Support Availability</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEADERSHIP QUOTE SECTION -->
+      <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="glass-dark p-8 md:p-14 rounded-3xl border border-primary/20 relative">
+          <div class="max-w-3xl space-y-6">
+            <span class="material-symbols-outlined text-primary text-5xl opacity-40">format_quote</span>
+            <h2 class="font-serif text-2xl md:text-3xl font-bold text-on-surface">
+              Message from Dean of Students
+            </h2>
+            <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+              “At IIT Madras, we believe that academic excellence is deeply intertwined with emotional well-being. MITR stands as a testament to our collective responsibility—to listen without judgment, to support without hesitation, and to ensure every student thrives emotionally and academically.”
+            </p>
+            <div class="pt-4 border-t border-outline-variant/30 flex items-center gap-4">
+              <div>
+                <div class="font-bold text-lg text-primary">Prof. Sathyanarayana N Gummadi</div>
+                <div class="text-xs uppercase tracking-wider font-semibold text-on-surface-variant">Dean of Students, IIT Madras</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ==================== TAB 2: WHAT WE DO ==================== -->
+    <div id="tab-what-we-do" class="tab-content">
+      <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+        
+        <!-- SECTION HEADER -->
+        <div class="text-center space-y-4 max-w-3xl mx-auto">
+          <span class="text-xs uppercase font-bold tracking-widest text-primary bg-primary/10 px-4 py-1.5 rounded-full">Core Services & Initiatives</span>
+          <h1 class="font-serif text-4xl md:text-5xl font-bold text-on-surface">What We Do</h1>
+          
+          <!-- REQUIRED WHAT WE DO TEXT -->
+          <p class="text-base md:text-lg text-on-surface-variant leading-relaxed bg-surface-container p-6 rounded-2xl border border-outline-variant/30 text-left md:text-center">
+            <strong>MITR provides peer counselling to students in distress in collaboration with other external agencies available at IITM. MITR organizes Barefoot training for new team members with the Help of Wellness Centre. MITR conducts events to help ease the emotions pent up in students and also conduct surveys to enhance the quality of mental health resources available to students.</strong>
+          </p>
+        </div>
+
+        <!-- 4 PILLARS GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Pillar 1 -->
+          <div class="glass-card p-8 rounded-3xl space-y-4">
+            <div class="w-14 h-14 rounded-2xl bg-amber-100 dark:bg-amber-900/30 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-3xl">psychology</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-on-surface">1. Peer Counselling & Support</h3>
+            <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">
+              We offer empathetic, active-listening peer counselling to students facing emotional distress, academic stress, or isolation. For specialized psychological needs, we seamlessly connect students with external agencies and professional counsellors at the IITM Wellness Centre.
+            </p>
+            <ul class="text-xs md:text-sm text-outline space-y-2 pt-2">
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> 100% Confidential & Judgement-Free</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> Department & Hostel Peer Availability</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="glass-card p-8 rounded-3xl space-y-4">
+            <div class="w-14 h-14 rounded-2xl bg-rose-100 dark:bg-rose-900/30 text-secondary flex items-center justify-center">
+              <span class="material-symbols-outlined text-3xl">school</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-on-surface">2. Barefoot Training Program</h3>
+            <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">
+              In close collaboration with the IITM Wellness Centre and clinical psychologists, MITR organizes intensive <strong>Barefoot Training</strong> for all newly recruited student coordinators. This equips members with active listening techniques, crisis triage, and empathetic communication.
+            </p>
+            <ul class="text-xs md:text-sm text-outline space-y-2 pt-2">
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> Expert Clinical Guidance</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> Mandatory Training for Every Hostel Lead</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="glass-card p-8 rounded-3xl space-y-4">
+            <div class="w-14 h-14 rounded-2xl bg-amber-100 dark:bg-amber-900/30 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-3xl">celebration</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-on-surface">3. Events & De-stressing Workshops</h3>
+            <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">
+              MITR conducts periodic campus events, open mic nights, art workshops, and wellness jams designed specifically to help students release pent-up emotions, build resilience, and foster meaningful social connections across campus.
+            </p>
+            <ul class="text-xs md:text-sm text-outline space-y-2 pt-2">
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> Annual Mindfulness & Resilience Summit</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> Hostel De-stressing Sessions</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="glass-card p-8 rounded-3xl space-y-4">
+            <div class="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 flex items-center justify-center">
+              <span class="material-symbols-outlined text-3xl">poll</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-on-surface">4. Mental Health Surveys & Research</h3>
+            <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">
+              We conduct systematic campus-wide surveys to evaluate student mental health needs, assess resource availability, and provide actionable feedback to the IIT Madras administration to continuously elevate campus wellness infrastructure.
+            </p>
+            <ul class="text-xs md:text-sm text-outline space-y-2 pt-2">
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> Data-Driven Policy Support</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> Quality Enhancement Reports</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- UPCOMING & PAST EVENTS SHOWCASE -->
+        <div class="bg-surface-container p-8 md:p-12 rounded-3xl space-y-8">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-outline-variant/30 pb-6">
+            <div>
+              <h2 class="font-serif text-3xl font-bold text-on-surface">Events & De-stressing Activities</h2>
+              <p class="text-sm text-on-surface-variant">Join upcoming sessions or explore past event highlights</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="event-filter-tab bg-primary text-on-primary px-4 py-2 rounded-full text-xs font-bold" data-filter="all">All Events</button>
+              <button class="event-filter-tab bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-xs font-semibold hover:bg-primary/20" data-filter="workshop">Workshops</button>
+              <button class="event-filter-tab bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-xs font-semibold hover:bg-primary/20" data-filter="survey">Surveys</button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="event-item-card glass-card p-6 rounded-2xl space-y-3" data-event-type="workshop">
+              <span class="bg-emerald-100 text-emerald-800 text-[10px] px-2.5 py-1 rounded-full font-bold uppercase">Upcoming</span>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Barefoot Peer Training Session 2026</h4>
+              <p class="text-xs text-on-surface-variant">Comprehensive active listening and crisis intervention workshop with Wellness Centre psychologists.</p>
+              <div class="text-xs font-semibold text-primary flex items-center gap-1"><span class="material-symbols-outlined text-base">calendar_today</span> Aug 20, 2026 • OAT IITM</div>
+            </div>
+
+            <div class="event-item-card glass-card p-6 rounded-2xl space-y-3" data-event-type="survey">
+              <span class="bg-blue-100 text-blue-800 text-[10px] px-2.5 py-1 rounded-full font-bold uppercase">Active Survey</span>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Campus Wellness Quality Survey 2026</h4>
+              <p class="text-xs text-on-surface-variant">Share your feedback on counseling availability, hostel support, and stress management resources.</p>
+              <div class="text-xs font-semibold text-primary flex items-center gap-1"><span class="material-symbols-outlined text-base">edit_note</span> Open to all students</div>
+            </div>
+
+            <div class="event-item-card glass-card p-6 rounded-2xl space-y-3" data-event-type="workshop">
+              <span class="bg-amber-100 text-amber-800 text-[10px] px-2.5 py-1 rounded-full font-bold uppercase">De-stress Event</span>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Open Mic & Emotional Jam</h4>
+              <p class="text-xs text-on-surface-variant">An evening of music, poetry, and open sharing to unwind and release pent-up emotions before exams.</p>
+              <div class="text-xs font-semibold text-primary flex items-center gap-1"><span class="material-symbols-outlined text-base">music_note</span> SAC Quadrangle</div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- ==================== TAB 3: ALL ABOUT MITR ==================== -->
+    <div id="tab-about" class="tab-content">
+      <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+        
+        <!-- SECTION HEADER -->
+        <div class="text-center space-y-4 max-w-3xl mx-auto">
+          <span class="text-xs uppercase font-bold tracking-widest text-primary bg-primary/10 px-4 py-1.5 rounded-full">Governance, Recruitment & Leadership</span>
+          <h1 class="font-serif text-4xl md:text-5xl font-bold text-on-surface">All About MITR</h1>
+          
+          <!-- REQUIRED ALL ABOUT MITR TEXT PART 1 -->
+          <p class="text-base md:text-lg text-on-surface-variant leading-relaxed bg-surface-container p-6 rounded-2xl border border-outline-variant/30 text-left">
+            <strong>MITR is guided by our Dean of Student Prof. Sathyanarayana N Gummadi, Wellness Advisor Prof. Sarith P Sathian, Our Associate Dean (Wellness) Prof. Suresh Kumar Rayala and Wellness Officer Col. Balaji.</strong>
+          </p>
+        </div>
+
+        <!-- LEADERSHIP & ADVISORY COMMITTEE GRID -->
+        <div class="space-y-6">
+          <h2 class="font-serif text-3xl font-bold text-on-surface text-center">Institutional Leadership & Advisory Board</h2>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div class="glass-card p-6 rounded-3xl text-center space-y-3">
+              <div class="w-20 h-20 mx-auto rounded-full bg-primary/20 text-primary flex items-center justify-center font-serif text-2xl font-bold border-2 border-primary">
+                SG
+              </div>
+              <h4 class="font-serif text-lg font-bold text-on-surface">Prof. Sathyanarayana N Gummadi</h4>
+              <p class="text-xs font-semibold text-primary uppercase">Dean of Students</p>
+              <p class="text-xs text-on-surface-variant">Guiding institutional student welfare policy and vision.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl text-center space-y-3">
+              <div class="w-20 h-20 mx-auto rounded-full bg-primary/20 text-primary flex items-center justify-center font-serif text-2xl font-bold border-2 border-primary">
+                SS
+              </div>
+              <h4 class="font-serif text-lg font-bold text-on-surface">Prof. Sarith P Sathian</h4>
+              <p class="text-xs font-semibold text-primary uppercase">Wellness Advisor</p>
+              <p class="text-xs text-on-surface-variant">Advising peer mentorship strategies and mental health initiatives.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl text-center space-y-3">
+              <div class="w-20 h-20 mx-auto rounded-full bg-primary/20 text-primary flex items-center justify-center font-serif text-2xl font-bold border-2 border-primary">
+                SR
+              </div>
+              <h4 class="font-serif text-lg font-bold text-on-surface">Prof. Suresh Kumar Rayala</h4>
+              <p class="text-xs font-semibold text-primary uppercase">Associate Dean (Wellness)</p>
+              <p class="text-xs text-on-surface-variant">Overseeing wellness operations and student coordinator training.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl text-center space-y-3">
+              <div class="w-20 h-20 mx-auto rounded-full bg-primary/20 text-primary flex items-center justify-center font-serif text-2xl font-bold border-2 border-primary">
+                CB
+              </div>
+              <h4 class="font-serif text-lg font-bold text-on-surface">Col. Balaji</h4>
+              <p class="text-xs font-semibold text-primary uppercase">Wellness Officer</p>
+              <p class="text-xs text-on-surface-variant">Directing emergency response and campus helpline operations.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RECRUITMENT & BAREFOOT TRAINING PROCESS -->
+        <div class="bg-surface-container p-8 md:p-12 rounded-3xl space-y-6">
+          <h2 class="font-serif text-3xl font-bold text-on-surface text-center">Recruitment & Selection Process</h2>
+          
+          <!-- REQUIRED ALL ABOUT MITR TEXT PART 2 -->
+          <p class="text-base md:text-lg text-on-surface-variant leading-relaxed text-center max-w-4xl mx-auto border-y border-outline-variant/30 py-4 font-medium">
+            MITR team members are recruited every year in a very tedious manner. Applicants are screened and sorted via interviews. To ensure availability in each department, A student from each department and Hostel is recruited and are given barefoot training. The following is the Team’s vertical leads:
+          </p>
+
+          <!-- Timeline Steps -->
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6 pt-4">
+            <div class="bg-surface p-6 rounded-2xl border border-outline-variant/30 space-y-2">
+              <div class="text-xs font-bold text-primary uppercase tracking-widest">Step 1</div>
+              <h4 class="font-serif font-bold text-lg text-on-surface">Campus Screening</h4>
+              <p class="text-xs text-on-surface-variant">Tedious application screening evaluating empathy, active listening, and commitment.</p>
+            </div>
+            <div class="bg-surface p-6 rounded-2xl border border-outline-variant/30 space-y-2">
+              <div class="text-xs font-bold text-primary uppercase tracking-widest">Step 2</div>
+              <h4 class="font-serif font-bold text-lg text-on-surface">Multi-tier Interviews</h4>
+              <p class="text-xs text-on-surface-variant">In-depth personal interviews conducted by senior coordinators and advisors.</p>
+            </div>
+            <div class="bg-surface p-6 rounded-2xl border border-outline-variant/30 space-y-2">
+              <div class="text-xs font-bold text-primary uppercase tracking-widest">Step 3</div>
+              <h4 class="font-serif font-bold text-lg text-on-surface">Hostel & Dept Selection</h4>
+              <p class="text-xs text-on-surface-variant">Selection of dedicated coordinators representing every hostel and academic department.</p>
+            </div>
+            <div class="bg-surface p-6 rounded-2xl border border-outline-variant/30 space-y-2">
+              <div class="text-xs font-bold text-primary uppercase tracking-widest">Step 4</div>
+              <h4 class="font-serif font-bold text-lg text-on-surface">Barefoot Training</h4>
+              <p class="text-xs text-on-surface-variant">Intensive counselling skills training with professional psychologists before deployment.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEAM VERTICAL LEADS STRUCTURE -->
+        <div class="space-y-8">
+          <div class="text-center space-y-2">
+            <h2 class="font-serif text-3xl font-bold text-on-surface">Team Vertical Leads</h2>
+            <p class="text-sm text-on-surface-variant">Student Head: <strong>Rahul Mahamalla</strong> (Student Head, Team MITR Wellness)</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="glass-card p-6 rounded-3xl space-y-3">
+              <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/40 text-primary flex items-center justify-center font-bold text-xl">1</div>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Peer Counselling & Distress Response Lead</h4>
+              <p class="text-xs text-on-surface-variant">Manages 1-on-1 peer counselling triage and emergency response liaison with external agencies.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl space-y-3">
+              <div class="w-12 h-12 rounded-xl bg-rose-100 dark:bg-rose-900/40 text-secondary flex items-center justify-center font-bold text-xl">2</div>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Barefoot Training & Wellness Centre Liaison Lead</h4>
+              <p class="text-xs text-on-surface-variant">Coordinates barefoot training modules, workshops, and skill assessment with clinical psychologists.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl space-y-3">
+              <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400 flex items-center justify-center font-bold text-xl">3</div>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Events & De-stressing Workshops Lead</h4>
+              <p class="text-xs text-on-surface-variant">Organizes open mics, resilience summits, and hostel-level emotional release events.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl space-y-3">
+              <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 flex items-center justify-center font-bold text-xl">4</div>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Hostel & Dept Coordinator Network Lead</h4>
+              <p class="text-xs text-on-surface-variant">Oversees active representation across all 18+ campus hostels and 16+ academic departments.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl space-y-3">
+              <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-400 flex items-center justify-center font-bold text-xl">5</div>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Mental Health Surveys & Quality Lead</h4>
+              <p class="text-xs text-on-surface-variant">Executes annual campus mental health surveys and compiles resource enhancement reports.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl space-y-3">
+              <div class="w-12 h-12 rounded-xl bg-slate-200 dark:bg-slate-800 text-on-surface flex items-center justify-center font-bold text-xl">6</div>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Media, Outreach & Alumni Engagement Lead</h4>
+              <p class="text-xs text-on-surface-variant">Drives awareness campaigns, maintains the alumni mentorship network, and manages Year Book publishing.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- ==================== TAB 4: YEAR BOOK ==================== -->
+    <div id="tab-yearbook" class="tab-content">
+      <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+        
+        <!-- SECTION HEADER -->
+        <div class="text-center space-y-4 max-w-3xl mx-auto">
+          <span class="text-xs uppercase font-bold tracking-widest text-primary bg-primary/10 px-4 py-1.5 rounded-full">Archive & Memories</span>
+          <h1 class="font-serif text-4xl md:text-5xl font-bold text-on-surface">MITR Year Book</h1>
+          <p class="text-base text-on-surface-variant">Celebrating our student peer mentors, barefoot training batches, campus events, and emotional wellness milestones through the years.</p>
+        </div>
+
+        <!-- YEAR BOOK EDITIONS CAROUSEL / GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Edition 1: 2024-2025 -->
+          <div class="glass-card yearbook-card p-8 rounded-3xl border border-primary/30 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="w-full h-48 rounded-2xl bg-gradient-to-tr from-primary/30 to-amber-200/50 dark:to-amber-900/30 flex flex-col items-center justify-center p-6 text-center border border-primary/20 shadow-inner">
+                <span class="material-symbols-outlined text-primary text-5xl mb-2">auto_stories</span>
+                <span class="font-serif font-extrabold text-2xl text-primary">MITR Year Book</span>
+                <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mt-1">2024 - 2025 Edition</span>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-on-surface">2024-2025 Flagship Edition</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Featuring the latest barefoot training batch, expansion into all 18 hostels, NIRF #1 wellness highlights, and student testimonials.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-outline-variant/30 flex items-center justify-between">
+              <button class="view-yearbook-btn bg-primary text-on-primary px-5 py-2.5 rounded-full text-xs font-bold flex items-center gap-2 hover:bg-primary/90 transition-all" data-year="2024-2025">
+                <span class="material-symbols-outlined text-base">menu_book</span> Preview Flipbook
+              </button>
+              <span class="text-[10px] text-outline uppercase font-bold">PDF Available</span>
+            </div>
+          </div>
+
+          <!-- Edition 2: 2023-2024 -->
+          <div class="glass-card yearbook-card p-8 rounded-3xl border border-outline-variant/30 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="w-full h-48 rounded-2xl bg-gradient-to-tr from-secondary/20 to-rose-200/50 dark:to-rose-900/30 flex flex-col items-center justify-center p-6 text-center border border-secondary/20 shadow-inner">
+                <span class="material-symbols-outlined text-secondary text-5xl mb-2">menu_book</span>
+                <span class="font-serif font-extrabold text-2xl text-secondary">MITR Year Book</span>
+                <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mt-1">2023 - 2024 Edition</span>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-on-surface">2023-2024 Retrospective</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Highlights from the Mindfulness Summit, peer counseling outreach numbers, and departmental mentor profiles.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-outline-variant/30 flex items-center justify-between">
+              <button class="view-yearbook-btn glass-card px-5 py-2.5 rounded-full text-xs font-bold flex items-center gap-2 text-on-surface hover:text-primary transition-all" data-year="2023-2024">
+                <span class="material-symbols-outlined text-base">visibility</span> Preview Flipbook
+              </button>
+              <span class="text-[10px] text-outline uppercase font-bold">PDF Available</span>
+            </div>
+          </div>
+
+          <!-- Edition 3: 2022-2023 -->
+          <div class="glass-card yearbook-card p-8 rounded-3xl border border-outline-variant/30 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="w-full h-48 rounded-2xl bg-gradient-to-tr from-blue-200/40 to-slate-200/50 dark:from-blue-900/30 text-blue-900 dark:text-blue-200 flex flex-col items-center justify-center p-6 text-center border border-blue-200/40 shadow-inner">
+                <span class="material-symbols-outlined text-5xl mb-2">collections_bookmark</span>
+                <span class="font-serif font-extrabold text-2xl">MITR Year Book</span>
+                <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mt-1">2022 - 2023 Edition</span>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-on-surface">2022-2023 Legacy Edition</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Post-pandemic campus reconnection stories, open mic archives, and founding vertical lead messages.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-outline-variant/30 flex items-center justify-between">
+              <button class="view-yearbook-btn glass-card px-5 py-2.5 rounded-full text-xs font-bold flex items-center gap-2 text-on-surface hover:text-primary transition-all" data-year="2022-2023">
+                <span class="material-symbols-outlined text-base">visibility</span> Preview Flipbook
+              </button>
+              <span class="text-[10px] text-outline uppercase font-bold">PDF Available</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SPOTLIGHT TESTIMONIALS FROM YEAR BOOK -->
+        <div class="bg-surface-container p-8 md:p-12 rounded-3xl space-y-8">
+          <h2 class="font-serif text-3xl font-bold text-on-surface text-center">Student Mentors & Alumni Voices</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="glass-card p-6 rounded-2xl space-y-4">
+              <span class="material-symbols-outlined text-primary text-4xl">format_quote</span>
+              <p class="text-sm text-on-surface-variant italic leading-relaxed">
+                “Being part of MITR and undergoing barefoot training transformed the way I interact with peers. It showed me that true strength lies in listening with empathy.”
+              </p>
+              <div class="pt-2 border-t border-outline-variant/30">
+                <div class="font-bold text-sm text-primary">Ananya Sharma</div>
+                <div class="text-xs text-on-surface-variant">Core Lead 2023-24 • Dept of Computer Science</div>
+              </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl space-y-4">
+              <span class="material-symbols-outlined text-primary text-4xl">format_quote</span>
+              <p class="text-sm text-on-surface-variant italic leading-relaxed">
+                “As a hostel coordinator, knowing that no student in my hostel has to suffer emotional distress alone gives me immense purpose. MITR is a family.”
+              </p>
+              <div class="pt-2 border-t border-outline-variant/30">
+                <div class="font-bold text-sm text-primary">Rohan K.</div>
+                <div class="text-xs text-on-surface-variant">Hostel Coordinator • Mandakini Hostel</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- ==================== TAB 5: DIRECTORY ==================== -->
+    <div id="tab-directory" class="tab-content">
+      <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+        
+        <!-- SECTION HEADER -->
+        <div class="text-center space-y-4 max-w-3xl mx-auto">
+          <span class="text-xs uppercase font-bold tracking-widest text-primary bg-primary/10 px-4 py-1.5 rounded-full">Campus Network</span>
+          <h1 class="font-serif text-4xl md:text-5xl font-bold text-on-surface">Coordinator Directory</h1>
+          <p class="text-base text-on-surface-variant">Find your designated Faculty, Hostel, or Department MITR Coordinator for approachable peer support.</p>
+        </div>
+
+        <!-- SEARCH & FILTER BAR -->
+        <div class="glass p-6 rounded-3xl border border-outline-variant/40 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-4">
+          <div class="md:col-span-8 relative">
+            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-2xl">search</span>
+            <input id="directory-search-input" type="text" placeholder="Search by name, hostel (e.g., Alaknanda, Ganga), or dept (e.g., CSE, Mech)..." class="w-full pl-12 pr-4 py-3 rounded-2xl bg-surface border border-outline-variant/40 text-on-surface focus:outline-none focus:border-primary text-sm"/>
+          </div>
+          <div class="md:col-span-4">
+            <select id="directory-category-filter" class="w-full py-3 px-4 rounded-2xl bg-surface border border-outline-variant/40 text-on-surface focus:outline-none focus:border-primary text-sm font-semibold">
+              <option value="all">All Coordinators</option>
+              <option value="faculty">Faculty Advisors</option>
+              <option value="hostel">Hostel Coordinators</option>
+              <option value="department">Department Coordinators</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- DIRECTORY CARDS GRID -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Faculty Advisors -->
+          <div class="coordinator-card glass-card p-6 rounded-3xl space-y-4 border-l-4 border-primary" data-category="faculty">
+            <div class="flex items-center justify-between">
+              <span class="bg-primary/10 text-primary text-[10px] font-bold uppercase px-3 py-1 rounded-full">Faculty Advisor</span>
+              <span class="material-symbols-outlined text-primary text-xl">school</span>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Prof. Sathyanarayana N Gummadi</h4>
+              <p class="text-xs text-on-surface-variant">Dean of Students • IIT Madras</p>
+            </div>
+            <div class="text-xs text-outline space-y-1.5 pt-2 border-t border-outline-variant/30">
+              <div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">mail</span> dost@iitm.ac.in</div>
+              <div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">call</span> +91 44 2257 8020</div>
+            </div>
+          </div>
+
+          <div class="coordinator-card glass-card p-6 rounded-3xl space-y-4 border-l-4 border-primary" data-category="faculty">
+            <div class="flex items-center justify-between">
+              <span class="bg-primary/10 text-primary text-[10px] font-bold uppercase px-3 py-1 rounded-full">Wellness Advisor</span>
+              <span class="material-symbols-outlined text-primary text-xl">school</span>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Prof. Sarith P Sathian</h4>
+              <p class="text-xs text-on-surface-variant">Wellness Advisor • Dept of Mech Engg</p>
+            </div>
+            <div class="text-xs text-outline space-y-1.5 pt-2 border-t border-outline-variant/30">
+              <div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">mail</span> wellness.advisor@iitm.ac.in</div>
+              <div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">call</span> +91 44 2257 4688</div>
+            </div>
+          </div>
+
+          <!-- Hostel Coordinators -->
+          <div class="coordinator-card glass-card p-6 rounded-3xl space-y-4 border-l-4 border-amber-600" data-category="hostel">
+            <div class="flex items-center justify-between">
+              <span class="bg-amber-100 text-amber-900 text-[10px] font-bold uppercase px-3 py-1 rounded-full">Hostel Coordinator</span>
+              <span class="material-symbols-outlined text-amber-600 text-xl">home</span>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Alaknanda Hostel Lead</h4>
+              <p class="text-xs text-on-surface-variant">Student Coordinator • Alaknanda Hostel</p>
+            </div>
+            <div class="text-xs text-outline space-y-1.5 pt-2 border-t border-outline-variant/30">
+              <div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">mail</span> mitr.alaknanda@smail.iitm.ac.in</div>
+              <div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">call</span> +91 44 2257 8501</div>
+            </div>
+          </div>
+
+          <div class="coordinator-card glass-card p-6 rounded-3xl space-y-4 border-l-4 border-amber-600" data-category="hostel">
+            <div class="flex items-center justify-between">
+              <span class="bg-amber-100 text-amber-900 text-[10px] font-bold uppercase px-3 py-1 rounded-full">Hostel Coordinator</span>
+              <span class="material-symbols-outlined text-amber-600 text-xl">home</span>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Mandakini Hostel Lead</h4>
+              <p class="text-xs text-on-surface-variant">Student Coordinator • Mandakini Hostel</p>
+            </div>
+            <div class="text-xs text-outline space-y-1.5 pt-2 border-t border-outline-variant/30">
+              <div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">mail</span> mitr.mandakini@smail.iitm.ac.in</div>
+              <div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">call</span> +91 44 2257 8502</div>
+            </div>
+          </div>
+
+          <!-- Department Coordinators -->
+          <div class="coordinator-card glass-card p-6 rounded-3xl space-y-4 border-l-4 border-blue-600" data-category="department">
+            <div class="flex items-center justify-between">
+              <span class="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase px-3 py-1 rounded-full">Dept Coordinator</span>
+              <span class="material-symbols-outlined text-blue-600 text-xl">domain</span>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Computer Science (CSE) Lead</h4>
+              <p class="text-xs text-on-surface-variant">Dept Coordinator • CSE Dept</p>
+            </div>
+            <div class="text-xs text-outline space-y-1.5 pt-2 border-t border-outline-variant/30">
+              <div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">mail</span> mitr.cse@smail.iitm.ac.in</div>
+              <div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">call</span> +91 44 2257 4300</div>
+            </div>
+          </div>
+
+          <div class="coordinator-card glass-card p-6 rounded-3xl space-y-4 border-l-4 border-blue-600" data-category="department">
+            <div class="flex items-center justify-between">
+              <span class="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase px-3 py-1 rounded-full">Dept Coordinator</span>
+              <span class="material-symbols-outlined text-blue-600 text-xl">domain</span>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-bold text-on-surface">Mechanical Engg (ME) Lead</h4>
+              <p class="text-xs text-on-surface-variant">Dept Coordinator • Mech Engg Dept</p>
+            </div>
+            <div class="text-xs text-outline space-y-1.5 pt-2 border-t border-outline-variant/30">
+              <div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">mail</span> mitr.mech@smail.iitm.ac.in</div>
+              <div class="flex items-center gap-2"><span class="material-symbols-outlined text-base">call</span> +91 44 2257 4650</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="directory-no-results" class="hidden text-center py-12 space-y-3">
+          <span class="material-symbols-outlined text-5xl text-outline-variant">search_off</span>
+          <h4 class="font-serif text-xl font-bold text-on-surface">No coordinators found</h4>
+          <p class="text-xs text-on-surface-variant">Try adjusting your search term or category filter.</p>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- ==================== TAB 6: EMERGENCY ==================== -->
+    <div id="tab-emergency" class="tab-content">
+      <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+        
+        <!-- EMERGENCY CALL BANNER -->
+        <div class="bg-gradient-to-br from-secondary via-rose-800 to-rose-950 text-on-secondary p-8 md:p-14 rounded-3xl space-y-6 shadow-2xl relative overflow-hidden">
+          <div class="relative z-10 max-w-3xl space-y-4">
+            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span> Available 24 Hours / 7 Days
+            </div>
+            <h1 class="font-serif text-4xl md:text-6xl font-extrabold leading-tight">Immediate Emergency Assistance</h1>
+            <p class="text-base md:text-lg opacity-90 leading-relaxed">
+              If you or someone around you is in emotional distress, facing a mental health crisis, or needs urgent medical/security intervention on campus, reach out immediately.
+            </p>
+
+            <div class="pt-4 flex flex-wrap gap-4 items-center">
+              <a href="tel:+914422578000" class="bg-white text-secondary px-8 py-4 rounded-full font-extrabold text-xl md:text-2xl flex items-center gap-3 hover:bg-rose-50 transition-all shadow-xl active:scale-95">
+                <span class="material-symbols-outlined text-3xl">call</span>
+                <span>+91 44 2257 8000</span>
+              </a>
+              <span class="text-sm opacity-80">24/7 Campus SOS Helpline</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- EMERGENCY CHANNELS GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="glass-card p-8 rounded-3xl space-y-4 border-t-4 border-secondary">
+            <div class="w-14 h-14 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center">
+              <span class="material-symbols-outlined text-3xl">support_agent</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-on-surface">MITR Help Desk</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Peer-led 24/7 active listening and initial crisis triage for students in emotional distress.
+            </p>
+            <div class="pt-2 text-xs font-bold text-primary space-y-1">
+              <div>Phone: +91 44 2257 8000</div>
+              <div>Email: mitr@iitm.ac.in</div>
+            </div>
+          </div>
+
+          <div class="glass-card p-8 rounded-3xl space-y-4 border-t-4 border-primary">
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-3xl">local_hospital</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-on-surface">Institute Hospital</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              24/7 medical emergency services, ambulance support, and professional clinical psychiatrists.
+            </p>
+            <div class="pt-2 text-xs font-bold text-primary space-y-1">
+              <div>Hospital Desk: +91 44 2257 8333</div>
+              <div>Ambulance SOS: +91 44 2257 8330</div>
+            </div>
+          </div>
+
+          <div class="glass-card p-8 rounded-3xl space-y-4 border-t-4 border-blue-600">
+            <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center">
+              <span class="material-symbols-outlined text-3xl">shield</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-on-surface">Campus Security & Women Cell</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Immediate physical safety response, gate assistance, and Women's Safety Cell Support.
+            </p>
+            <div class="pt-2 text-xs font-bold text-primary space-y-1">
+              <div>Main Control: +91 44 2257 9999</div>
+              <div>Women Cell: +91 44 2257 8025</div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-surface-container border-t border-outline-variant/40 py-12 px-4 sm:px-6 lg:px-8 mt-16">
+    <div class="max-w-7xl mx-auto space-y-8">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-primary text-on-primary flex items-center justify-center font-serif text-2xl font-bold">
+            M
+          </div>
+          <div>
+            <div class="font-serif font-bold text-xl text-primary">IITM MITR Wellness Portal</div>
+            <div class="text-xs text-on-surface-variant">Indian Institute of Technology Madras</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 text-xs font-semibold text-on-surface-variant">
+          <a href="#home" class="nav-tab-link hover:text-primary transition-colors">Home</a>
+          <a href="#what-we-do" class="nav-tab-link hover:text-primary transition-colors">What We Do</a>
+          <a href="#about" class="nav-tab-link hover:text-primary transition-colors">All About MITR</a>
+          <a href="#yearbook" class="nav-tab-link hover:text-primary transition-colors">Year Book</a>
+          <a href="#directory" class="nav-tab-link hover:text-primary transition-colors">Directory</a>
+          <a href="#emergency" class="nav-tab-link hover:text-secondary transition-colors">Emergency Support</a>
+        </div>
+      </div>
+
+      <div class="border-t border-outline-variant/30 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-on-surface-variant gap-4">
+        <p>© 2026 Team MITR • Indian Institute of Technology Madras. All rights reserved.</p>
+        <p class="font-serif italic">“No one in the campus should be unattended in their emotional distress”</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- YEARBOOK PREVIEW MODAL -->
+  <div id="yearbook-modal" class="hidden fixed inset-0 z-50 modal-backdrop items-center justify-center p-4">
+    <div class="bg-surface glass-dark border border-outline-variant/40 rounded-3xl max-w-3xl w-full p-6 md:p-8 space-y-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-outline-variant/30 pb-4">
+        <h3 id="yearbook-modal-title" class="font-serif text-2xl font-bold text-on-surface">MITR Year Book Edition</h3>
+        <button id="close-yearbook-modal" class="p-2 rounded-full hover:bg-surface-container text-on-surface-variant">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="space-y-4">
+        <div class="p-6 rounded-2xl bg-surface-container border border-outline-variant/30 space-y-3">
+          <div class="text-xs font-bold text-primary uppercase tracking-wider">Interactive Flipbook Highlights</div>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            Explore barefoot training batch memory photos, student coordinator profiles, wellness center workshops, and annual impact statistics.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 text-center">
+          <div class="p-4 rounded-xl bg-surface border border-outline-variant/30">
+            <div class="font-serif font-bold text-xl text-primary">500+</div>
+            <div class="text-[10px] text-on-surface-variant uppercase">Mentors Featured</div>
+          </div>
+          <div class="p-4 rounded-xl bg-surface border border-outline-variant/30">
+            <div class="font-serif font-bold text-xl text-primary">18 Hostels</div>
+            <div class="text-[10px] text-on-surface-variant uppercase">Batch Stories</div>
+          </div>
+        </div>
+
+        <div class="flex justify-end gap-3 pt-4">
+          <button onclick="alert('Downloading high-resolution MITR Year Book PDF...')" class="bg-primary text-on-primary px-6 py-2.5 rounded-full text-xs font-bold flex items-center gap-2 hover:bg-primary/90">
+            <span class="material-symbols-outlined text-base">download</span> Download PDF Version
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMERGENCY SOS MODAL -->
+  <div id="sos-modal" class="hidden fixed inset-0 z-50 modal-backdrop items-center justify-center p-4">
+    <div class="bg-surface glass-dark border-2 border-secondary rounded-3xl max-w-lg w-full p-6 md:p-8 space-y-6 shadow-2xl relative text-center">
+      <div class="w-16 h-16 mx-auto rounded-full bg-rose-100 text-secondary flex items-center justify-center">
+        <span class="material-symbols-outlined text-4xl">emergency</span>
+      </div>
+
+      <h3 class="font-serif text-3xl font-bold text-on-surface">Emergency SOS Hotline</h3>
+      <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">
+        You are connecting directly with the 24/7 MITR Crisis Support Desk at IIT Madras.
+      </p>
+
+      <div class="bg-surface-container p-4 rounded-2xl border border-outline-variant/40 space-y-2">
+        <div class="text-xs font-bold text-secondary uppercase tracking-wider">Helpline Number</div>
+        <div class="font-mono text-2xl font-extrabold text-primary">+91 44 2257 8000</div>
+      </div>
+
+      <div class="flex gap-3">
+        <a href="tel:+914422578000" class="flex-1 bg-secondary text-on-secondary py-3 rounded-full font-bold text-sm flex items-center justify-center gap-2 hover:bg-secondary/90">
+          <span class="material-symbols-outlined text-base">call</span> Call Now
+        </a>
+        <button id="close-sos-modal" class="px-6 py-3 rounded-full font-bold text-xs bg-surface-container-high text-on-surface hover:bg-surface-container-highest">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+</body>
+</html>
