@@ -1,288 +1,1304 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html class="scroll-smooth" lang="en" style=""><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>IITM MITR | Wellness Portal</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="scroll-smooth" lang="en" style="">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>IITM MITR | Wellness Portal</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Work+Sans:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
-            "colors": {
-                    "inverse-surface": "#313030",
-                    "inverse-on-surface": "#f3f0ef",
-                    "on-surface": "#1c1b1b",
-                    "on-surface-variant": "#504539",
-                    "primary-fixed": "#ffddb8",
-                    "tertiary-fixed-dim": "#c9c6c2",
-                    "on-secondary-container": "#741818",
-                    "on-primary-container": "#482b00",
-                    "error-container": "#ffdad6",
-                    "surface": "#fcf9f8",
-                    "on-secondary": "#ffffff",
-                    "on-primary-fixed": "#2b1700",
-                    "surface-container": "#f0eded",
-                    "outline-variant": "#d4c4b4",
-                    "tertiary-container": "#9b9995",
-                    "surface-container-high": "#eae7e7",
-                    "on-secondary-fixed-variant": "#842322",
-                    "error": "#ba1a1a",
-                    "on-primary": "#ffffff",
-                    "surface-container-highest": "#e5e2e1",
-                    "primary": "#815518",
-                    "on-error-container": "#93000a",
-                    "primary-container": "#c48f4d",
-                    "surface-variant": "#e5e2e1",
-                    "surface-tint": "#815518",
-                    "secondary-container": "#ff8078",
-                    "background": "#fcf9f8",
-                    "surface-dim": "#dcd9d9",
-                    "surface-container-low": "#f6f3f2",
-                    "surface-bright": "#fcf9f8",
-                    "outline": "#827567",
-                    "on-tertiary-fixed": "#1c1c19",
-                    "secondary": "#a43b37",
-                    "on-tertiary-container": "#32312f",
-                    "on-secondary-fixed": "#410004",
-                    "on-tertiary-fixed-variant": "#484744",
-                    "on-primary-fixed-variant": "#653e00",
-                    "on-error": "#ffffff",
-                    "surface-container-lowest": "#ffffff",
-                    "tertiary": "#605e5b",
-                    "secondary-fixed-dim": "#ffb3ad",
-                    "on-tertiary": "#ffffff",
-                    "secondary-fixed": "#ffdad7",
-                    "inverse-primary": "#f6bc75",
-                    "on-background": "#1c1b1b",
-                    "tertiary-fixed": "#e6e2de",
-                    "primary-fixed-dim": "#f6bc75"
+            colors: {
+              "inverse-surface": "#313030",
+              "inverse-on-surface": "#f3f0ef",
+              "on-surface": "#1c1b1b",
+              "on-surface-variant": "#504539",
+              "primary-fixed": "#ffddb8",
+              "tertiary-fixed-dim": "#c9c6c2",
+              "on-secondary-container": "#741818",
+              "on-primary-container": "#482b00",
+              "error-container": "#ffdad6",
+              surface: "#fcf9f8",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed": "#2b1700",
+              "surface-container": "#f0eded",
+              "outline-variant": "#d4c4b4",
+              "tertiary-container": "#9b9995",
+              "surface-container-high": "#eae7e7",
+              "on-secondary-fixed-variant": "#842322",
+              error: "#ba1a1a",
+              "on-primary": "#ffffff",
+              "surface-container-highest": "#e5e2e1",
+              primary: "#815518",
+              "on-error-container": "#93000a",
+              "primary-container": "#c48f4d",
+              "surface-variant": "#e5e2e1",
+              "surface-tint": "#815518",
+              "secondary-container": "#ff8078",
+              background: "#fcf9f8",
+              "surface-dim": "#dcd9d9",
+              "surface-container-low": "#f6f3f2",
+              "surface-bright": "#fcf9f8",
+              outline: "#827567",
+              "on-tertiary-fixed": "#1c1c19",
+              secondary: "#a43b37",
+              "on-tertiary-container": "#32312f",
+              "on-secondary-fixed": "#410004",
+              "on-tertiary-fixed-variant": "#484744",
+              "on-primary-fixed-variant": "#653e00",
+              "on-error": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              tertiary: "#605e5b",
+              "secondary-fixed-dim": "#ffb3ad",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#ffdad7",
+              "inverse-primary": "#f6bc75",
+              "on-background": "#1c1b1b",
+              "tertiary-fixed": "#e6e2de",
+              "primary-fixed-dim": "#f6bc75",
             },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
             },
-            "spacing": {
-                    "margin-mobile": "1.5rem",
-                    "section-gap": "8rem",
-                    "margin-page": "4rem",
-                    "gutter": "2rem"
+            spacing: {
+              "margin-mobile": "1.5rem",
+              "section-gap": "8rem",
+              "margin-page": "4rem",
+              gutter: "2rem",
             },
-            "fontFamily": {
-                    "headline-lg-mobile": ["Newsreader"],
-                    "body-lg": ["Work Sans"],
-                    "headline-xl": ["Newsreader"],
-                    "label-sm": ["Work Sans"],
-                    "headline-lg": ["Newsreader"],
-                    "body-md": ["Work Sans"]
+            fontFamily: {
+              "headline-lg-mobile": ["Newsreader"],
+              "body-lg": ["Work Sans"],
+              "headline-xl": ["Newsreader"],
+              "label-sm": ["Work Sans"],
+              "headline-lg": ["Newsreader"],
+              "body-md": ["Work Sans"],
             },
-            "fontSize": {
-                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "headline-xl": ["48px", {"lineHeight": "1.1", "fontWeight": "600"}],
-                    "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
-            }
+            fontSize: {
+              "headline-lg-mobile": [
+                "28px",
+                { lineHeight: "1.2", fontWeight: "500" },
+              ],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-xl": ["48px", { lineHeight: "1.1", fontWeight: "600" }],
+              "label-sm": [
+                "14px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "500" }],
+              "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+            },
           },
         },
+      };
+    </script>
+    <style>
+      .glass {
+        background: rgba(252, 249, 248, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(129, 85, 24, 0.1);
       }
-    </script>
-<style>
-        .glass {
-            background: rgba(252, 249, 248, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(129, 85, 24, 0.1);
+      .glass-dark {
+        background: rgba(49, 48, 48, 0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .campus-divider {
+        mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 15%,
+          black 85%,
+          transparent
+        );
+        opacity: 0.15;
+      }
+      .glow-hover:hover {
+        box-shadow: 0 0 20px rgba(196, 143, 77, 0.15);
+      }
+      .glass-panel {
+        background: rgba(252, 249, 248, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(129, 85, 24, 0.15);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .gold-glow {
+        box-shadow: 0 10px 30px -10px rgba(196, 143, 77, 0.15);
+      }
+      .team-card-hover:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 35px -10px rgba(129, 85, 24, 0.25);
+      }
+      .team-card-hover img {
+        transition: transform 0.5s ease;
+      }
+      .team-card-hover:hover img {
+        transform: scale(1.1);
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
         }
-        .glass-dark {
-            background: rgba(49, 48, 48, 0.1);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-        .campus-divider {
-            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-            opacity: 0.15;
+      }
+      .reveal-on-scroll {
+        opacity: 0;
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal-on-scroll,
+        .animate-fade-in-up {
+          animation: none !important;
+          transition: none !important;
+          transform: none !important;
+          opacity: 1 !important;
         }
-        .glow-hover:hover {
-            box-shadow: 0 0 20px rgba(196, 143, 77, 0.15);
-        }
+      }
     </style>
-</head>
-<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
-<!-- Top Navigation Bar -->
-<header class="fixed top-0 z-50 w-full bg-surface/60 backdrop-blur-md border-b border-transparent transition-all duration-500 h-20" id="main-header"><div class="flex justify-between items-center w-full px-margin-page max-w-screen-2xl mx-auto h-full"><div class="flex items-center gap-4"><img alt="IIT Madras Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4"/><div class="h-10 w-px bg-outline-variant/40"></div><img alt="Team MITR Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBatdEDATg7nysstGcJ53RjnlY1CzzXLGNGJVvyTOH_XXlb5bv--Bcfjii0-_UgBwypk4Cpt1h23dbzpNPxTLcWLoGZzuDNG2Uu-9_rU0zTgDaO9NStzQHMLbWRqpuHuDkklzhvUSkt-1HuK3I3ClIWP0TpBjIf7qHgss_dU___A_U9MJl6jFW9FkWa0Pb6NjCXZ64HBHu3CIKd6HNIO4EcNgPI1sI0gt5tEI-0oXNUL17hsE8TsM9U0aealroAQ9zX"/><span class="font-headline-lg text-headline-lg font-bold text-primary ml-2 hidden lg:block">Team Mitr</span></div><nav class="hidden md:flex items-center space-x-8">
-  <a href="index.html" class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md text-body-md">Home</a>
-  <a href="emergency.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Emergency</a>
-  <a href="directory.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Directory</a>
-  <a href="what_we_do.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">What We Do</a>
-  <a href="about.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">All About MITR</a>
-  <a href="yearbook.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Year Book</a>
-</nav><div class="flex items-center gap-6"><button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200">Support</button><span class="material-symbols-outlined text-primary text-3xl cursor-pointer hover:opacity-70 transition-opacity">account_circle</span></div></div></header>
-<!-- Hero Section -->
-<section class="relative h-screen flex items-center pt-20 overflow-hidden">
-<div class="absolute inset-0 z-0 overflow-hidden"><img alt="IIT Madras Campus" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Olk0CFVaGYPf4srVW9FPkgaXG3KZghjaJZqF4JhSWxCTWXx1HJ4U-9W4VpCr73YHuCtIoWruqH4ib_HBr1WzrK_3st6doFEDNGkh-cfZ0SUG9f-EPcvvT3F-VE_cvSK6p90ckr3lzTucad0xjaXVnNUK2PcpCJdbP2tAhcYSCzL7KcxTi6GykU1N6q__ioS6XSnavShOyHoEUofPI069ZPyL6lyTHEmmgV0A4PFuqweyNhCNMPg" style="object-fit: cover; object-position: center center;"/><div class="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div></div>
-<div class="relative z-10 px-margin-page w-full max-w-4xl">
-<h1 class="font-headline-xl text-headline-xl text-on-surface mb-6 leading-tight">
-                Your Wellbeing is Our <br/><span class="text-primary italic">Priority.</span>
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl leading-relaxed">
-                MITR, A Wellness body of IITM comprising of Faculty and Students trained appropriately with counselling skills and empathy to offer counselling to peers. We MITR are available in all departments, Hostels to enhance approachability. We go by the Motto “No one in the campus should be unattended in their emotional distress”
-            </p>
-<div class="flex flex-wrap gap-4">
-<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg transition-all flex items-center gap-2 group">
-                    Schedule a Session
-                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
-</button>
-<button class="border-2 border-secondary text-secondary px-8 py-4 rounded-full font-bold text-lg hover:bg-secondary/5 transition-all">
-                    Explore Resources
-                </button>
-</div>
-</div>
-</section>
-<!-- Quick Access Tiles -->
-<section class="relative -mt-24 z-20 px-margin-page mb-section-gap">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Emergency Support -->
-<div class="glass p-8 shadow-sm glow-hover transition-all flex flex-col items-start h-full border-b-4 border-secondary backdrop-blur-md bg-surface/40 rounded-3xl border border-white/20 duration-700 opacity-100 translate-y-0">
-<span class="material-symbols-outlined text-secondary text-5xl mb-6" data-icon="emergency_home">emergency_home</span>
-<h3 class="font-headline-lg text-headline-lg text-on-surface mb-3">Emergency Support</h3>
-<p class="font-body-md text-on-surface-variant mb-6 flex-grow">Immediate 24/7 assistance for critical situations and mental health crises on campus.</p>
-<a class="text-secondary font-bold flex items-center gap-2 group" href="#">
-                    Call SOS <span class="material-symbols-outlined" data-icon="call">call</span>
-</a>
-</div>
-<!-- Help Desk -->
-<div class="glass p-8 shadow-sm glow-hover transition-all flex flex-col items-start h-full border-b-4 border-primary backdrop-blur-md bg-surface/40 rounded-3xl border border-white/20 duration-700 opacity-100 translate-y-0">
-<span class="material-symbols-outlined text-primary text-5xl mb-6" data-icon="support_agent">support_agent</span>
-<h3 class="font-headline-lg text-headline-lg text-on-surface mb-3">Help Desk</h3>
-<p class="font-body-md text-on-surface-variant mb-6 flex-grow">Connect with peer mentors for guidance, active listening, and navigation of campus life.</p>
-<a class="text-primary font-bold flex items-center gap-2" href="#">
-                    Connect Now <span class="material-symbols-outlined" data-icon="chat">chat</span>
-</a>
-</div>
-<!-- Hospital -->
-<div class="glass p-8 shadow-sm glow-hover transition-all flex flex-col items-start h-full border-b-4 border-primary-container backdrop-blur-md bg-surface/40 rounded-3xl border border-white/20 duration-700 opacity-100 translate-y-0">
-<span class="material-symbols-outlined text-primary-container text-5xl mb-6" data-icon="local_hospital">local_hospital</span>
-<h3 class="font-headline-lg text-headline-lg text-on-surface mb-3">Campus Hospital</h3>
-<p class="font-body-md text-on-surface-variant mb-6 flex-grow">Information on medical services, psychiatry department, and outpatient support services.</p>
-<a class="text-primary-container font-bold flex items-center gap-2" href="#">
-                    View Details <span class="material-symbols-outlined" data-icon="info">info</span>
-</a>
-</div>
-</div>
-</section>
-<!-- Message from Dean -->
-<section class="px-margin-page mb-section-gap">
-<div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-<div class="w-full lg:w-1/3 relative group">
-<div class="absolute -inset-4 bg-primary/10 rounded-xl transform -rotate-3 group-hover:rotate-0 transition-transform"></div>
-<div class="relative overflow-hidden rounded-xl border border-outline-variant/30">
-<img alt="Dean of Students" class="w-full aspect-square object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOsLAvVFli3_qIvl_z_15W07Sr6xFil_CNIcLwD2GqCZhNDhxEnyD6uFht_qX9Q-guSYcghKLbdDBoK6_SQbG5jteSsD_2fRR4X0pFLLwnmK9XxOndy9tJ-EaWeOOhB3bOk36GNGJdvPkw2MrgSBlxgZpT3r0We2NoXAFh5fmKZdcnOu_1O3l1CgL9utPBpfFB2UOxVE0NfcSZgZHp_EUY8p3YPYLHlse6VxLwNEBcQBNSx0rObP30SXyCquOsFf2V"/>
-</div>
-<div class="absolute bottom-4 right-4 bg-primary text-on-primary px-4 py-2 rounded shadow-lg">
-<p class="font-label-sm uppercase tracking-widest text-xs">Dean of Students</p>
-</div>
-</div>
-<div class="w-full lg:w-2/3">
-<span class="material-symbols-outlined text-primary/30 text-8xl leading-none -mb-8 block" data-icon="format_quote" style='font-variation-settings: "FILL" 1;'>format_quote</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 italic">A Message to Our Community</h2>
-<div class="space-y-4 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-<p class="">At IIT Madras, we believe that academic excellence is deeply intertwined with emotional well-being. Our commitment extends beyond the classrooms and laboratories into the very hearts of our students.</p>
-<p class="">Team MITR stands as a testament to our collective responsibility—to listen without judgment, to support without hesitation, and to ensure that no member of our community ever feels alone in their journey. Together, we are building a more empathetic and resilient campus.</p>
-</div>
-<div class="mt-8 border-t border-outline-variant/30 pt-4">
-<p class="font-bold text-primary font-headline-lg">Prof. Sathyanarayana N Gummadi (Dean of Students)</p>
-<p class="font-label-sm text-on-surface-variant uppercase">IIT Madras Administration</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Our Impact Section (Bento Style) -->
-<section class="bg-surface-container py-24 px-margin-page mb-section-gap">
-<div class="max-w-7xl mx-auto">
-<div class="text-center mb-16">
-<h2 class="font-headline-xl text-headline-xl text-on-surface mb-4">Our Growing Impact</h2>
-<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Providing a safe haven and dedicated support for the brightest minds in the country.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-<!-- Stat 1 -->
-<div class="glass-dark p-10 rounded-xl flex flex-col justify-center items-center text-center group transition-all hover:bg-surface-container-highest duration-700 opacity-100 translate-y-0">
-<span class="font-headline-xl text-headline-xl text-primary mb-2 block group-hover:scale-110 transition-transform">10+</span>
-<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Times NIRF #1</span>
-<p class="text-sm text-outline mt-4 leading-relaxed">Consistent excellence in overall institutional quality and student life.</p>
-</div>
-<!-- Stat 2 -->
-<div class="bg-primary p-10 rounded-xl flex flex-col justify-center items-center text-center text-on-primary">
-<span class="font-headline-xl text-headline-xl mb-2 block">500+</span>
-<span class="font-label-sm opacity-80 uppercase tracking-widest">Peer Mentors</span>
-<p class="text-sm opacity-70 mt-4 leading-relaxed">A massive network of students helping students across every department.</p>
-</div>
-<!-- Stat 3 -->
-<div class="glass-dark p-10 rounded-xl flex flex-col justify-center items-center text-center group transition-all hover:bg-surface-container-highest duration-700 opacity-100 translate-y-0">
-<span class="font-headline-xl text-headline-xl text-primary mb-2 block group-hover:scale-110 transition-transform">2500+</span>
-<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Wellness Sessions</span>
-<p class="text-sm text-outline mt-4 leading-relaxed">Conducted annually to support mental health and stress management.</p>
-</div>
-<!-- Stat 4 -->
-<div class="bg-surface-container-highest p-10 rounded-xl flex flex-col justify-center items-center text-center border border-primary/20">
-<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="schedule">schedule</span>
-<span class="font-headline-lg text-headline-lg text-on-surface mb-1">24/7</span>
-<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Support Access</span>
-<p class="text-sm text-outline mt-2 leading-relaxed">Round-the-clock availability for whenever you need a helping hand.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Call to Action Section -->
-<section class="px-margin-page mb-section-gap relative overflow-hidden">
-<div class="max-w-7xl mx-auto glass p-12 lg:p-20 rounded-3xl flex flex-col lg:flex-row items-center gap-12 border-2 border-primary/10 transition-all duration-700 opacity-100 translate-y-0">
-<div class="flex-1 space-y-8">
-<h2 class="font-headline-xl text-headline-xl text-on-surface">Ready to start your <br/><span class="text-primary italic">wellness journey?</span></h2>
-<p class="font-body-lg text-on-surface-variant max-w-lg leading-relaxed">
-                    Our professional counselors and peer mentors are here to help you navigate academic pressure, personal challenges, and emotional well-being.
-                </p>
-<div class="flex flex-col sm:flex-row gap-4">
-<button class="bg-primary text-on-primary px-10 py-5 rounded-full font-bold text-xl flex items-center justify-center gap-3 hover:shadow-xl transition-all active:scale-95 group">
-                        Book a Session
-                        <span class="material-symbols-outlined" data-icon="event_available">event_available</span>
-</button>
-<button class="bg-white/50 backdrop-blur border border-outline-variant px-10 py-5 rounded-full font-bold text-xl hover:bg-white transition-all flex items-center justify-center gap-3">
-                        Talk to a Mentor
-                        <span class="material-symbols-outlined" data-icon="person">person</span>
-</button>
-</div>
-</div>
-<div class="hidden lg:block w-1/3 relative">
-<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-50 animate-pulse"></div>
-<img alt="MITR Logo" class="relative z-10 w-full h-auto drop-shadow-2xl opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXgQoCC7lxP45JeuwibTEZtord-YngRk_GuzJfzEfeOmP7PX2j1B5X2pGE4-oscX1z9ryJEqFR8Y4IHm4JSFnOY_aJcI6PJY1WMD2U_vwvZf3b9EVzOT6vAnGs-_mEt0_oM67ydFlEy7krQ4mYH9rwZouQwNhbMWOJOo7r9svmhnXfURzCvK1OddrMFfqylkbwFno4bAkF57UX_jb_vETCT5_dLLpJqBcH7yI7LUMoTGRU4KUhY-3ryEzbjTATlPs7"/>
-</div>
-</div>
-</section>
-<!-- Campus Line Art Background (Visual Element) -->
-<!-- Footer -->
-<footer class="w-full px-margin-page py-section-gap flex flex-col items-center space-y-8 bg-surface-container border-t border-outline-variant/50"><div class="flex flex-col items-center space-y-6"><div class="flex items-center space-x-3"><img alt="Footer Logo" class="h-16 w-16 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpmZIoxlCn2Lsg7_x9N7QoLqWIk6yddBaZonLCFUDRotGSG5vYMYzD-DqPvBRMHXSrUNlkcEjHZAZ-PVzP1ORqNi0r3M-T6FbpbG8JuCH8G2X516JCYez_BobmVQfmWRmNu8EadmTbTVVxt2WKqS-nhlsvGQnc__srd_TFDkJlgIHwUyi8FUstbymupm8Xh6htGfEe_Mq19GeTUx5gp10K56AQqYddgwP7rIi8XWde3wWdbxxP1dMj_KIFCcZW36K"/><div class="text-center md:text-left"><h2 class="font-headline-lg text-headline-lg font-bold text-primary">IITM MITR</h2><p class="font-label-sm text-on-surface-variant">Empowering Wellbeing Since 2010</p></div></div><div class="flex flex-wrap justify-center gap-8"><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="about.html">Privacy Policy</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Terms of Service</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Campus Map</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="directory.html">Directory</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Feedback</a></div></div><div class="w-full max-w-screen-xl border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-70"><p class="font-body-md text-sm text-on-surface-variant text-center">© 2024 Indian Institute of Technology Madras. All rights reserved.</p><div class="flex space-x-6"><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">qr_code_2</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">alternate_email</span></div></div></footer>
-<script>
-        // Smooth intersection observer for bento cards
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0', 'translate-y-10');
-                }
-            });
-        }, { threshold: 0.1 });
+  </head>
+  <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+    <!-- Top Navigation Bar -->
+    <header
+      class="fixed top-0 z-50 w-full bg-surface/60 backdrop-blur-md border-b border-transparent transition-all duration-500 h-20"
+      id="main-header"
+    >
+      <div
+        class="flex justify-between items-center w-full px-margin-page max-w-screen-2xl mx-auto h-full"
+      >
+        <div class="flex items-center gap-4">
+          <img
+            alt="IIT Madras Logo"
+            class="h-12 w-auto"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4"
+          />
+          <div class="h-10 w-px bg-outline-variant/40"></div>
+          <img
+            alt="Team MITR Logo"
+            class="h-12 w-auto"
+            src="mitr-logo.png"
+          />
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a
+            href="index.html"
+            class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md text-body-md"
+            >Home</a
+          >
+          <a
+            href="emergency.html"
+            class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+            >Emergency</a
+          >
+          <a
+            href="directory.html"
+            class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+            >Directory</a
+          >
+          <a
+            href="about.html"
+            class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+            >All About MITR</a
+          >
+          <a
+            href="yearbook.html"
+            class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+            >Year Book</a
+          >
+        </nav>
+        <div class="flex items-center gap-6">
+          <button
+            class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200"
+          >
+            Support</button
+          ><span
+            class="material-symbols-outlined text-primary text-3xl cursor-pointer hover:opacity-70 transition-opacity"
+            >account_circle</span
+          >
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center pt-20 overflow-hidden">
+      <div class="absolute inset-0 z-0 overflow-hidden">
+        <img
+          alt="IIT Madras Campus"
+          class="w-full h-full object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Olk0CFVaGYPf4srVW9FPkgaXG3KZghjaJZqF4JhSWxCTWXx1HJ4U-9W4VpCr73YHuCtIoWruqH4ib_HBr1WzrK_3st6doFEDNGkh-cfZ0SUG9f-EPcvvT3F-VE_cvSK6p90ckr3lzTucad0xjaXVnNUK2PcpCJdbP2tAhcYSCzL7KcxTi6GykU1N6q__ioS6XSnavShOyHoEUofPI069ZPyL6lyTHEmmgV0A4PFuqweyNhCNMPg"
+          style="object-fit: cover; object-position: center center"
+        />
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
+      </div>
+      <div class="relative z-10 px-margin-page w-full max-w-4xl">
+        <h1
+          class="font-headline-xl text-headline-xl text-white mb-6 leading-tight"
+        >
+          Your Wellbeing is Our <br /><span class="text-inverse-primary italic"
+            >Priority.</span
+          >
+        </h1>
+        <p
+          class="font-body-lg text-body-lg text-inverse-on-surface mb-10 max-w-2xl leading-relaxed"
+        >
+          MITR, A Wellness body of IITM comprising of Faculty and Students
+          trained appropriately with counselling skills and empathy to offer
+          counselling to peers. We MITR are available in all departments,
+          Hostels to enhance approachability. We go by the Motto “No one in the
+          campus should be unattended in their emotional distress”
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button
+            class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg transition-all flex items-center gap-2 group"
+          >
+            Schedule a Session
+            <span
+              class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+              data-icon="arrow_forward"
+              >arrow_forward</span
+            >
+          </button>
+          <button
+            class="border-2 border-secondary text-secondary px-8 py-4 rounded-full font-bold text-lg hover:bg-secondary/5 transition-all"
+          >
+            Explore Resources
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Quick Access Tiles -->
+    <section class="relative -mt-24 z-20 px-margin-page mb-section-gap">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <!-- Emergency Support -->
+        <div
+          class="glass p-8 shadow-sm glow-hover transition-all flex flex-col items-start h-full border-b-4 border-secondary backdrop-blur-md bg-surface/40 rounded-3xl border border-white/20 duration-700 opacity-100 translate-y-0"
+        >
+          <span
+            class="material-symbols-outlined text-secondary text-5xl mb-6"
+            data-icon="emergency_home"
+            >emergency_home</span
+          >
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mb-3">
+            Emergency Support
+          </h3>
+          <p class="font-body-md text-on-surface-variant mb-6 flex-grow">
+            Immediate 24/7 assistance for critical situations and mental health
+            crises on campus.
+          </p>
+          <button
+            class="text-secondary font-bold flex items-center gap-2 group"
+            id="sos-btn"
+            type="button"
+          >
+            Call SOS
+            <span class="material-symbols-outlined" data-icon="call">call</span>
+          </button>
+        </div>
+        <!-- Self Check-In -->
+        <div
+          class="glass p-8 shadow-sm glow-hover transition-all flex flex-col items-start h-full border-b-4 border-primary backdrop-blur-md bg-surface/40 rounded-3xl border border-white/20 duration-700 opacity-100 translate-y-0"
+        >
+          <span
+            class="material-symbols-outlined text-primary text-5xl mb-6"
+            data-icon="psychology"
+            >psychology</span
+          >
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mb-3">
+            Check In With Yourself
+          </h3>
+          <p class="font-body-md text-on-surface-variant mb-6 flex-grow">
+            A private, 2-minute check-in based on clinically validated mental
+            health questionnaires to help you understand yourself a little
+            better.
+          </p>
+          <a
+            class="text-primary font-bold flex items-center gap-2"
+            href="https://app.youform.com/forms/7nivpjkd"
+            target="_blank"
+            rel="noopener"
+          >
+            Start Check-In
+            <span class="material-symbols-outlined" data-icon="open_in_new"
+              >open_in_new</span
+            >
+          </a>
+        </div>
+        <!-- Hospital -->
+        <div
+          class="glass p-8 shadow-sm glow-hover transition-all flex flex-col items-start h-full border-b-4 border-primary-container backdrop-blur-md bg-surface/40 rounded-3xl border border-white/20 duration-700 opacity-100 translate-y-0"
+        >
+          <span
+            class="material-symbols-outlined text-primary-container text-5xl mb-6"
+            data-icon="local_hospital"
+            >local_hospital</span
+          >
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mb-3">
+            Campus Hospital
+          </h3>
+          <p class="font-body-md text-on-surface-variant mb-6 flex-grow">
+            Information on medical services, psychiatry department, and
+            outpatient support services.
+          </p>
+          <a
+            class="text-primary-container font-bold flex items-center gap-2"
+            href="#"
+          >
+            View Details
+            <span class="material-symbols-outlined" data-icon="info">info</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        document.querySelectorAll('.glass, .glass-dark').forEach(card => {
-            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
-            observer.observe(card);
+    <!-- Institutional Support -->
+    <section
+      class="px-margin-page max-w-screen-2xl mx-auto mb-section-gap reveal-on-scroll animate-fade-in-up"
+    >
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <span class="text-primary font-label-sm tracking-widest uppercase"
+            >Institutional Support</span
+          >
+          <h1 class="font-headline-xl text-headline-xl text-primary max-w-xl">
+            Empowering Wellness at the Heart of IIT Madras
+          </h1>
+          <p
+            class="text-body-lg text-on-surface-variant max-w-lg leading-relaxed"
+          >
+            Team MITR is the flagship emotional and mental wellness initiative
+            of IIT Madras, dedicated to fostering a supportive, inclusive, and
+            resilient campus community for every student.
+          </p>
+        </div>
+        <div class="relative">
+          <div
+            class="glass-panel p-4 rounded-xl gold-glow overflow-hidden relative"
+            data-video-embed
+          >
+            <video
+              autoplay=""
+              class="aspect-video w-full rounded-lg object-cover transition-transform duration-700 hover:scale-105"
+              data-intro-video
+              loop=""
+              muted=""
+              playsinline=""
+            >
+              <source
+                src="https://dost.iitm.ac.in/images/mitrv.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+            <button
+              aria-label="Unmute video"
+              aria-pressed="false"
+              class="absolute bottom-8 right-8 w-11 h-11 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg hover:scale-95 transition-transform duration-200"
+              data-mute-toggle
+              type="button"
+            >
+              <span class="material-symbols-outlined" data-icon="volume_off"
+                >volume_off</span
+              >
+            </button>
+          </div>
+          <div
+            class="absolute -bottom-6 -left-6 glass-panel p-6 rounded-xl hidden lg:block gold-glow max-w-xs hover:translate-x-2 transition-transform"
+          >
+            <span class="font-headline-lg text-primary block">20+ Years</span>
+            <p class="text-label-sm text-on-surface-variant mt-1">
+              Of dedicated student-centric wellness legacy
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team MITR Motto -->
+    <section class="px-margin-page mb-24">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="flex items-center justify-center gap-6 mb-10">
+          <span class="h-px w-16 bg-outline-variant"></span>
+          <p
+            class="font-label-sm text-label-sm uppercase tracking-widest text-primary"
+          >
+            The Team MITR Motto
+          </p>
+          <span class="h-px w-16 bg-outline-variant"></span>
+        </div>
+        <blockquote>
+          <p class="font-headline-xl text-headline-xl text-on-surface italic">
+            &ldquo;No one in the campus should be
+            <span class="text-primary">unattended</span> in their emotional
+            distress&rdquo;
+          </p>
+        </blockquote>
+        <div class="mt-10 flex justify-center">
+          <span class="h-1 w-24 bg-primary-container rounded-full"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Message from Director -->
+    <section class="px-margin-page mb-24">
+      <div
+        class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16"
+      >
+        <div class="w-full lg:w-1/3 relative group">
+          <div
+            class="absolute -inset-4 bg-primary/10 rounded-xl transform -rotate-3 group-hover:rotate-0 transition-transform"
+          ></div>
+          <div
+            class="relative overflow-hidden rounded-xl border border-outline-variant/30"
+          >
+            <img
+              alt="Director"
+              class="w-full aspect-square object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOsLAvVFli3_qIvl_z_15W07Sr6xFil_CNIcLwD2GqCZhNDhxEnyD6uFht_qX9Q-guSYcghKLbdDBoK6_SQbG5jteSsD_2fRR4X0pFLLwnmK9XxOndy9tJ-EaWeOOhB3bOk36GNGJdvPkw2MrgSBlxgZpT3r0We2NoXAFh5fmKZdcnOu_1O3l1CgL9utPBpfFB2UOxVE0NfcSZgZHp_EUY8p3YPYLHlse6VxLwNEBcQBNSx0rObP30SXyCquOsFf2V"
+            />
+          </div>
+          <div
+            class="absolute bottom-4 right-4 bg-primary text-on-primary px-4 py-2 rounded shadow-lg"
+          >
+            <p class="font-label-sm uppercase tracking-widest text-xs">
+              Director
+            </p>
+          </div>
+        </div>
+        <div class="w-full lg:w-2/3">
+          <span
+            class="material-symbols-outlined text-primary/30 text-8xl leading-none -mb-8 block"
+            data-icon="format_quote"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >format_quote</span
+          >
+          <h2
+            class="font-headline-lg text-headline-lg text-on-surface mb-6 italic"
+          >
+            A Message from our Director
+          </h2>
+          <div
+            class="space-y-4 font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+          >
+            <p class="">
+              At IIT Madras, we believe that academic excellence is deeply
+              intertwined with emotional well-being. Our commitment extends
+              beyond the classrooms and laboratories into the very hearts of our
+              students.
+            </p>
+            <p class="">
+              Team MITR stands as a testament to our collective
+              responsibility—to listen without judgment, to support without
+              hesitation, and to ensure that no member of our community ever
+              feels alone in their journey. Together, we are building a more
+              empathetic and resilient campus.
+            </p>
+          </div>
+          <div class="mt-8 border-t border-outline-variant/30 pt-4">
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+              <p class="font-bold text-primary font-headline-lg">
+                Prof. V. Kamakoti
+              </p>
+              <a
+                class="inline-flex items-center gap-2 font-label-sm text-label-sm font-bold bg-primary text-on-primary border border-primary rounded-full px-4 py-1.5 hover:shadow-lg hover:scale-95 transition-all duration-200"
+                href="https://behappy.iitm.ac.in"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  class="material-symbols-outlined text-base"
+                  data-icon="sentiment_satisfied"
+                  >sentiment_satisfied</span
+                >
+                Be Happy &mdash; A Director&rsquo;s Initiative
+                <span
+                  class="material-symbols-outlined text-base"
+                  data-icon="open_in_new"
+                  >open_in_new</span
+                >
+              </a>
+            </div>
+            <p class="font-label-sm text-on-surface-variant tracking-widest mt-2">
+              Director
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Message from Dean of Students (DoST) -->
+    <section class="px-margin-page mb-section-gap">
+      <div
+        class="max-w-6xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-16"
+      >
+        <div class="w-full lg:w-1/3 relative group">
+          <div
+            class="absolute -inset-4 bg-primary/10 rounded-xl transform rotate-3 group-hover:rotate-0 transition-transform"
+          ></div>
+          <div
+            class="relative overflow-hidden rounded-xl border border-outline-variant/30"
+          >
+            <img
+              alt="Dean of Students"
+              class="w-full aspect-square object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOsLAvVFli3_qIvl_z_15W07Sr6xFil_CNIcLwD2GqCZhNDhxEnyD6uFht_qX9Q-guSYcghKLbdDBoK6_SQbG5jteSsD_2fRR4X0pFLLwnmK9XxOndy9tJ-EaWeOOhB3bOk36GNGJdvPkw2MrgSBlxgZpT3r0We2NoXAFh5fmKZdcnOu_1O3l1CgL9utPBpfFB2UOxVE0NfcSZgZHp_EUY8p3YPYLHlse6VxLwNEBcQBNSx0rObP30SXyCquOsFf2V"
+            />
+          </div>
+          <div
+            class="absolute bottom-4 left-4 bg-primary text-on-primary px-4 py-2 rounded shadow-lg"
+          >
+            <p class="font-label-sm uppercase tracking-widest text-xs">
+              Dean of Students
+            </p>
+          </div>
+        </div>
+        <div class="w-full lg:w-2/3">
+          <span
+            class="material-symbols-outlined text-primary/30 text-8xl leading-none -mb-8 block"
+            data-icon="format_quote"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >format_quote</span
+          >
+          <h2
+            class="font-headline-lg text-headline-lg text-on-surface mb-6 italic"
+          >
+            A Message from our Dean of Students (DoST)
+          </h2>
+          <div
+            class="space-y-4 font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+          >
+            <p class="">
+              At IIT Madras, we believe that academic excellence is deeply
+              intertwined with emotional well-being. Our commitment extends
+              beyond the classrooms and laboratories into the very hearts of our
+              students.
+            </p>
+            <p class="">
+              Team MITR stands as a testament to our collective
+              responsibility—to listen without judgment, to support without
+              hesitation, and to ensure that no member of our community ever
+              feels alone in their journey. Together, we are building a more
+              empathetic and resilient campus.
+            </p>
+          </div>
+          <div class="mt-8 border-t border-outline-variant/30 pt-4">
+            <p class="font-bold text-primary font-headline-lg">
+              Prof. Sathyanarayana N Gummadi
+            </p>
+            <p class="font-label-sm text-on-surface-variant tracking-widest">
+              Dean of Students (DoST)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Our Impact Section (Bento Style) -->
+    <section class="bg-surface-container py-24 px-margin-page mb-section-gap">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="font-headline-xl text-headline-xl text-on-surface mb-4">
+            Our Growing Impact
+          </h2>
+          <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+            Providing a safe haven and dedicated support for the brightest minds
+            in the country.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <!-- Stat 1 -->
+          <div
+            class="glass-dark p-10 rounded-xl flex flex-col justify-center items-center text-center group transition-all hover:bg-surface-container-highest duration-700 opacity-100 translate-y-0"
+          >
+            <span
+              class="font-headline-xl text-headline-xl text-primary mb-2 block group-hover:scale-110 transition-transform"
+              >10+</span
+            >
+            <span
+              class="font-label-sm text-on-surface-variant uppercase tracking-widest"
+              >Times NIRF #1</span
+            >
+            <p class="text-sm text-outline mt-4 leading-relaxed">
+              Consistent excellence in overall institutional quality and student
+              life.
+            </p>
+          </div>
+          <!-- Stat 2 -->
+          <div
+            class="bg-primary p-10 rounded-xl flex flex-col justify-center items-center text-center text-on-primary"
+          >
+            <span class="font-headline-lg text-2xl mb-2 block"
+              >ISO 45001:2018</span
+            >
+            <span class="font-label-sm opacity-80 uppercase tracking-widest"
+              >Certified Wellness Centre</span
+            >
+            <p class="text-sm opacity-70 mt-4 leading-relaxed">
+              The first CFTI in India to earn this certification, awarded by
+              T&Uuml;V NORD.
+            </p>
+          </div>
+          <!-- Stat 3 -->
+          <div
+            class="glass-dark p-10 rounded-xl flex flex-col justify-center items-center text-center group transition-all hover:bg-surface-container-highest duration-700 opacity-100 translate-y-0"
+          >
+            <span
+              class="font-headline-xl text-headline-xl text-primary mb-2 block group-hover:scale-110 transition-transform"
+              >75+</span
+            >
+            <span
+              class="font-label-sm text-on-surface-variant uppercase tracking-widest"
+              >Events Conducted</span
+            >
+            <p class="text-sm text-outline mt-4 leading-relaxed">
+              Held across the campus over the previous year.
+            </p>
+          </div>
+          <!-- Stat 4 -->
+          <div
+            class="bg-surface-container-highest p-10 rounded-xl flex flex-col justify-center items-center text-center border border-primary/20"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-5xl mb-4"
+              data-icon="schedule"
+              >schedule</span
+            >
+            <span class="font-headline-lg text-headline-lg text-on-surface mb-1"
+              >24/7</span
+            >
+            <span
+              class="font-label-sm text-on-surface-variant uppercase tracking-widest"
+              >Support Access</span
+            >
+            <p class="text-sm text-outline mt-2 leading-relaxed">
+              Round-the-clock availability for whenever you need a helping hand.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Structure & Operations -->
+    <section
+      class="bg-surface py-section-gap relative reveal-on-scroll animate-fade-in-up"
+    >
+      <div class="px-margin-page max-w-screen-2xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1">
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="glass-panel p-6 rounded-lg text-center hover:bg-primary/5"
+              >
+                <span class="font-headline-xl text-primary block">100+</span>
+                <span class="text-label-sm uppercase tracking-tighter"
+                  >Student Coordinators</span
+                >
+              </div>
+              <div
+                class="glass-panel p-6 rounded-lg text-center mt-8 hover:bg-primary/5"
+              >
+                <span class="font-headline-xl text-primary block">24/7</span>
+                <span class="text-label-sm uppercase tracking-tighter"
+                  >Availability</span
+                >
+              </div>
+              <div
+                class="glass-panel p-6 rounded-lg text-center -mt-4 hover:bg-primary/5"
+              >
+                <span class="font-headline-xl text-primary block">15+</span>
+                <span class="text-label-sm uppercase tracking-tighter"
+                  >Faculty Advisors</span
+                >
+              </div>
+              <div
+                class="glass-panel p-6 rounded-lg text-center mt-4 hover:bg-primary/5"
+              >
+                <span class="font-headline-xl text-primary block">12k+</span>
+                <span class="text-label-sm uppercase tracking-tighter"
+                  >Students Impacted</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2 space-y-6">
+            <h2 class="font-headline-lg text-headline-lg text-primary">
+              Structure &amp; Operations
+            </h2>
+            <p class="text-body-lg text-on-surface-variant">
+              Team MITR operates as a multi-tiered support system sanctioned by
+              the Institute. Our structure ensures that every hostel,
+              department, and social group has a direct link to wellness
+              resources.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-4 group">
+                <span
+                  class="material-symbols-outlined text-primary mt-1 transition-transform group-hover:rotate-12"
+                  >check_circle</span
+                >
+                <div>
+                  <span class="font-bold text-on-surface"
+                    >Integrated Peer System:</span
+                  >
+                  <p class="text-body-md text-on-surface-variant">
+                    Student coordinators are embedded in every hostel for
+                    immediate, relatable support.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4 group">
+                <span
+                  class="material-symbols-outlined text-primary mt-1 transition-transform group-hover:rotate-12"
+                  >check_circle</span
+                >
+                <div>
+                  <span class="font-bold text-on-surface"
+                    >Professional Oversight:</span
+                  >
+                  <p class="text-body-md text-on-surface-variant">
+                    All initiatives are guided by faculty advisors and
+                    professional psychologists from the Wellness Center.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- All About MITR -->
+    <section
+      class="px-margin-page max-w-screen-2xl mx-auto py-section-gap reveal-on-scroll animate-fade-in-up"
+    >
+      <div class="text-center mb-16">
+        <h2 class="font-headline-lg text-headline-lg text-primary mb-4">
+          All About MITR
+        </h2>
+        <p class="text-body-md text-on-surface-variant max-w-2xl mx-auto">
+          MITR is guided by our Dean of Student Prof. Sathyanarayana N Gummadi,
+          Wellness Advisor Prof. Sarith P Sathian, Our Associate Dean (Wellness)
+          Prof. Suresh Kumar Rayala and Wellness Officer Col. Balaji.<br /><br />MITR
+          team members are recruited every year in a very tedious manner.
+          Applicants are screened and sorted via interviews. To ensure
+          availability in each department, A student from each department and
+          Hostel is recruited and are given barefoot training. The following is
+          the Team&rsquo;s vertical leads:
+        </p>
+      </div>
+      <!-- Faculty Advisors -->
+      <div class="mb-16">
+        <h3
+          class="font-headline-lg text-2xl text-primary mb-8 border-l-4 border-primary pl-4"
+        >
+          Faculty Advisors
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <!-- Prof 1 -->
+          <div class="space-y-4 text-center group">
+            <div
+              class="aspect-square rounded-full glass-panel overflow-hidden gold-glow mx-auto max-w-[260px] team-card-hover cursor-pointer"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="A professional headshot of a mature academic male faculty advisor"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvKHJBcc2UQnZ8ip3zRhdfZ-T8ZI-i8D1cTpFXJFpTDY4XlI8pSwW7BSE4IVBV8g7lM9M-rDcCRvFNwyV09qrPFsDJKTwJGsh2Thls5pNAmrzMoQ21SAuan6RKaPHvqnKtIsqDGd627mzp1X4I4Bjp2qxBfG6pW9gWAluy65dptCbbO6WZvJUnKbgpB2kQWYBJoZsQjdMrJ0-5OYnYzYIPPonbdF_qxRvLd1zig9l8-ojiORy26jI"
+              />
+            </div>
+            <div class="transition-colors duration-300 group-hover:text-primary">
+              <h4 class="font-bold text-on-surface">
+                Prof. Sathyanarayana N Gummadi
+              </h4>
+              <p class="text-label-sm text-primary">Dean of Students</p>
+            </div>
+          </div>
+          <!-- Prof 2 -->
+          <div class="space-y-4 text-center group">
+            <div
+              class="aspect-square rounded-full glass-panel overflow-hidden gold-glow mx-auto max-w-[260px] team-card-hover cursor-pointer"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="A professional headshot of a male faculty member"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9ZV_G8AEp7PBfCfDXWkQEeCkIIn3GjvMSzHzAV3LllUeop-EOCnuftj8RF9siV4OGYSzKY3z8emyA1FBb_fkA73MsgaSVgKR99lz0eINK36ZeeCI4rycjhlvQpfbrdv1kISx8gOz7U2MCcpN66iBsqDUj4_9gOxlmvn03yPhAXUnbeAoeXbVYgeVhKY3L9jlwvgFAmcZmLVLxYzZF5oJcZIFzY9iYZ0VhzsXZ_p688Yvlw45UVj8"
+              />
+            </div>
+            <div class="transition-colors duration-300 group-hover:text-primary">
+              <h4 class="font-bold text-on-surface">
+                Prof. Suresh Kumar Rayala
+              </h4>
+              <p class="text-label-sm text-primary">Associate Dean (Wellness)</p>
+            </div>
+          </div>
+          <!-- Prof 3 -->
+          <div class="space-y-4 text-center group">
+            <div
+              class="aspect-square rounded-full glass-panel overflow-hidden gold-glow mx-auto max-w-[260px] team-card-hover cursor-pointer"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="A professional headshot of a female faculty advisor"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1YbpYaI7UiMRyD6VtUpAUDKU86GdsN66oOuod9pBmXrge73zy-q9ZuwjW5HdudoaLFFjbdibSefLTht1L_NsmDeJiJKFj2p1pwbLTwB99khRuvvp4iB8VhY3qbaI4w0PFMYgSQL5gqXxU7ewFCr8Xafl7m8SBQcBSJmEyo0W2Z5P59Rx1osx-2lRu644-djzQVtiW6KuHORmAzFv2_pqNHTzIn0nFdTOYdpbn4rcSCvHcz4IoXfs"
+              />
+            </div>
+            <div class="transition-colors duration-300 group-hover:text-primary">
+              <h4 class="font-bold text-on-surface">Prof. Sarith P Sathian</h4>
+              <p class="text-label-sm text-primary">Wellness Advisor</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Student Leadership -->
+      <div class="mb-16">
+        <h3
+          class="font-headline-lg text-2xl text-primary mb-8 border-l-4 border-primary pl-4"
+        >
+          Student Core Team
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Student 1 -->
+          <div
+            class="glass-panel p-6 rounded-xl flex items-center gap-6 group hover:translate-y-[-8px] team-card-hover cursor-pointer transition-all"
+          >
+            <div
+              class="w-20 h-20 rounded-lg overflow-hidden bg-surface-container shrink-0"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="Portrait of Rahul Mahamalla"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuApcxCZP7P_uKj5LqADjEaFdh1Ne8jUqcf3F1qZo0kzDUAEANNIUIJPkt-jyZHc6FOGg-xYcPXo2jKIYk0bZjZU0nMUVgaDI1fPmb52A-uX3eGbgOKg7nucUjzRBpNk8C3p_eAvNsQVVDZvzTZPsuPAp5EzE05X_7OLZ3Z1UA-S5cmKzN-Od9wLS_Won1zdUIehIYAI3Q4b_mQTr2Oyb4fenogk4B6RsaqDcQCGYCY-wjIwaAXDJbA"
+              />
+            </div>
+            <div>
+              <h4 class="font-bold text-on-surface">Rahul Mahamalla</h4>
+              <p class="text-label-sm text-primary">Student Head, Team MITR</p>
+            </div>
+          </div>
+          <!-- Student 2 -->
+          <div
+            class="glass-panel p-6 rounded-xl flex items-center gap-6 group hover:translate-y-[-8px] team-card-hover cursor-pointer transition-all"
+          >
+            <div
+              class="w-20 h-20 rounded-lg overflow-hidden bg-surface-container shrink-0"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="Portrait of Ananya Gupta"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ6uKfBcPuQNdJOp7nSBoWAeYDwAzpF1MfRAg9hMczT2Eq212HlvGENEEXY-ArIdgwIe_YCy4FcaPf8lqN4wtvPCGnDDgzYIL_-0c9Id1HuO1aKwvyXajtzsrPGSgmoIGGYkBi0zBLkjgaVfUSVtCRaPza5BGDrBD8kHi6js7Ou1bhmYCoyVcSmcjtsHQi6ZM9uA5sxmogxDBexjfXt-CO5PFq40Vmpf6cPY9PfzSrjk-xG97Sj8w"
+              />
+            </div>
+            <div>
+              <h4 class="font-bold text-on-surface">Ananya Gupta</h4>
+              <p class="text-label-sm text-primary">Operations Lead</p>
+            </div>
+          </div>
+          <!-- Student 3 -->
+          <div
+            class="glass-panel p-6 rounded-xl flex items-center gap-6 group hover:translate-y-[-8px] team-card-hover cursor-pointer transition-all"
+          >
+            <div
+              class="w-20 h-20 rounded-lg overflow-hidden bg-surface-container shrink-0"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="Portrait of Rohit K."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcu82M__PUutoEtNQb9HNCMU9I1WYASNxzlfRTaFB7hHhTUZcFg_zZCbzDch9Sc0T3Q0PMis_RHLTd4ceSORTy8Bozjo4Jsc3xTAGgN7g8hncXb364VakwA4GNF7Fd93Y1as0am1XhK3zXyCboTivd9NRLqSPSY5AWa6YVezVGSOXYLSftLkIRF_UvtLkGhzS0wN8HCF1DSs-c1P4xFaEOLM_m3rlCIvJvpd8qABB7CsRZS_omqJc"
+              />
+            </div>
+            <div>
+              <h4 class="font-bold text-on-surface">Rohit K.</h4>
+              <p class="text-label-sm text-primary">Events Coordinator</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="px-margin-page mb-section-gap relative overflow-hidden">
+      <div
+        class="max-w-7xl mx-auto glass p-12 lg:p-20 rounded-3xl flex flex-col lg:flex-row items-center gap-12 border-2 border-primary/10 transition-all duration-700 opacity-100 translate-y-0"
+      >
+        <div class="flex-1 space-y-8">
+          <h2 class="font-headline-xl text-headline-xl text-on-surface">
+            Ready to start your <br /><span class="text-primary italic"
+              >wellness journey?</span
+            >
+          </h2>
+          <p
+            class="font-body-lg text-on-surface-variant max-w-lg leading-relaxed"
+          >
+            Our professional counselors and peer mentors are here to help you
+            navigate academic pressure, personal challenges, and emotional
+            well-being.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button
+              class="bg-primary text-on-primary px-10 py-5 rounded-full font-bold text-xl flex items-center justify-center gap-3 hover:shadow-xl transition-all active:scale-95 group"
+            >
+              Book a Session
+              <span
+                class="material-symbols-outlined"
+                data-icon="event_available"
+                >event_available</span
+              >
+            </button>
+            <button
+              class="bg-white/50 backdrop-blur border border-outline-variant px-10 py-5 rounded-full font-bold text-xl hover:bg-white transition-all flex items-center justify-center gap-3"
+            >
+              Talk to a Mentor
+              <span class="material-symbols-outlined" data-icon="person"
+                >person</span
+              >
+            </button>
+          </div>
+        </div>
+        <div class="hidden lg:block w-1/3 relative">
+          <div
+            class="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-50 animate-pulse"
+          ></div>
+          <img
+            alt="MITR Logo"
+            class="relative z-10 w-full h-auto drop-shadow-2xl opacity-90"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXgQoCC7lxP45JeuwibTEZtord-YngRk_GuzJfzEfeOmP7PX2j1B5X2pGE4-oscX1z9ryJEqFR8Y4IHm4JSFnOY_aJcI6PJY1WMD2U_vwvZf3b9EVzOT6vAnGs-_mEt0_oM67ydFlEy7krQ4mYH9rwZouQwNhbMWOJOo7r9svmhnXfURzCvK1OddrMFfqylkbwFno4bAkF57UX_jb_vETCT5_dLLpJqBcH7yI7LUMoTGRU4KUhY-3ryEzbjTATlPs7"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- Campus Line Art Background (Visual Element) -->
+    <!-- Footer -->
+    <footer
+      class="w-full px-margin-page py-section-gap flex flex-col items-center space-y-8 bg-surface-container border-t border-outline-variant/50"
+    >
+      <div class="flex flex-col items-center space-y-6">
+        <div class="flex items-center space-x-3">
+          <img
+            alt="Footer Logo"
+            class="h-16 w-16 opacity-80"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpmZIoxlCn2Lsg7_x9N7QoLqWIk6yddBaZonLCFUDRotGSG5vYMYzD-DqPvBRMHXSrUNlkcEjHZAZ-PVzP1ORqNi0r3M-T6FbpbG8JuCH8G2X516JCYez_BobmVQfmWRmNu8EadmTbTVVxt2WKqS-nhlsvGQnc__srd_TFDkJlgIHwUyi8FUstbymupm8Xh6htGfEe_Mq19GeTUx5gp10K56AQqYddgwP7rIi8XWde3wWdbxxP1dMj_KIFCcZW36K"
+          />
+          <div class="text-center md:text-left">
+            <h2
+              class="font-headline-lg text-headline-lg font-bold text-primary"
+            >
+              IITM MITR
+            </h2>
+            <p class="font-label-sm text-on-surface-variant">
+              Empowering Wellbeing Since 2010
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8">
+          <a
+            class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline"
+            href="about.html"
+            >Privacy Policy</a
+          ><a
+            class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline"
+            href="#"
+            >Terms of Service</a
+          ><a
+            class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline"
+            href="#"
+            >Campus Map</a
+          ><a
+            class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline"
+            href="directory.html"
+            >Directory</a
+          ><a
+            class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline"
+            href="#"
+            >Feedback</a
+          >
+        </div>
+      </div>
+      <div
+        class="w-full max-w-screen-xl border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-70"
+      >
+        <p class="font-body-md text-sm text-on-surface-variant text-center">
+          © 2024 Indian Institute of Technology Madras. All rights reserved.
+        </p>
+        <div class="flex space-x-6">
+          <span
+            class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors"
+            >qr_code_2</span
+          ><span
+            class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors"
+            >public</span
+          ><span
+            class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors"
+            >alternate_email</span
+          >
+        </div>
+      </div>
+    </footer>
+    <!-- SOS: pick a desk, then dial it directly -->
+    <div
+      aria-labelledby="sos-modal-title"
+      aria-modal="true"
+      class="hidden fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm items-center justify-center p-6"
+      id="sos-modal"
+      role="dialog"
+    >
+      <div
+        class="bg-surface rounded-3xl shadow-2xl w-full max-w-md p-8 max-h-[85vh] overflow-y-auto"
+      >
+        <div class="flex items-start justify-between gap-4 mb-2">
+          <h3
+            class="font-headline-lg text-headline-lg text-on-surface"
+            id="sos-modal-title"
+          >
+            Call for help
+          </h3>
+          <button
+            aria-label="Close"
+            class="material-symbols-outlined text-on-surface-variant hover:text-primary leading-none"
+            id="sos-modal-close"
+            type="button"
+          >
+            close
+          </button>
+        </div>
+        <p class="font-body-md text-on-surface-variant mb-6">
+          Choose the desk you need — tapping a number dials it straight away.
+        </p>
+        <div class="space-y-3">
+          <a
+            class="flex items-center justify-between gap-4 bg-surface-container hover:bg-surface-container-high rounded-2xl px-4 py-3 transition-colors"
+            href="tel:+914422578000"
+          >
+            <span class="flex flex-col">
+              <span class="font-bold text-on-surface">Emergency Hotline</span>
+              <span class="font-body-md text-sm text-on-surface-variant"
+                >Available 24/7</span
+              >
+              <span class="font-body-md text-sm text-secondary font-bold"
+                >+91 44 2257 8000</span
+              >
+            </span>
+            <span class="material-symbols-outlined text-secondary">call</span>
+          </a>
+          <a
+            class="flex items-center justify-between gap-4 bg-surface-container hover:bg-surface-container-high rounded-2xl px-4 py-3 transition-colors"
+            href="tel:04422578330"
+          >
+            <span class="flex flex-col">
+              <span class="font-bold text-on-surface">Institute Hospital</span>
+              <span class="font-body-md text-sm text-on-surface-variant"
+                >Medical emergencies and clinical consultation</span
+              >
+              <span class="font-body-md text-sm text-secondary font-bold"
+                >044 2257 8330</span
+              >
+            </span>
+            <span class="material-symbols-outlined text-secondary">call</span>
+          </a>
+          <a
+            class="flex items-center justify-between gap-4 bg-surface-container hover:bg-surface-container-high rounded-2xl px-4 py-3 transition-colors"
+            href="tel:04422578280"
+          >
+            <span class="flex flex-col">
+              <span class="font-bold text-on-surface">Campus Security</span>
+              <span class="font-body-md text-sm text-on-surface-variant"
+                >Immediate safety threats anywhere on campus</span
+              >
+              <span class="font-body-md text-sm text-secondary font-bold"
+                >044 2257 8280</span
+              >
+            </span>
+            <span class="material-symbols-outlined text-secondary">call</span>
+          </a>
+          <a
+            class="flex items-center justify-between gap-4 bg-surface-container hover:bg-surface-container-high rounded-2xl px-4 py-3 transition-colors"
+            href="tel:04422578521"
+          >
+            <span class="flex flex-col">
+              <span class="font-bold text-on-surface">Wellness Centre</span>
+              <span class="font-body-md text-sm text-on-surface-variant"
+                >Counselling support, Mon to Sat, 10 am – 6 pm</span
+              >
+              <span class="font-body-md text-sm text-secondary font-bold"
+                >044 2257 8521</span
+              >
+            </span>
+            <span class="material-symbols-outlined text-secondary">call</span>
+          </a>
+        </div>
+        <p
+          class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-8 mb-3"
+        >
+          National helplines
+        </p>
+        <div class="space-y-3">
+          <a
+            class="flex items-center justify-between gap-4 bg-surface-container hover:bg-surface-container-high rounded-2xl px-4 py-3 transition-colors"
+            href="tel:14416"
+          >
+            <span class="flex flex-col">
+              <span class="font-bold text-on-surface">Tele-MANAS</span>
+              <span class="font-body-md text-sm text-on-surface-variant"
+                >Government of India mental health helpline — free, 24/7, in 20
+                languages</span
+              >
+              <span class="font-body-md text-sm text-secondary font-bold"
+                >14416</span
+              >
+            </span>
+            <span class="material-symbols-outlined text-secondary">call</span>
+          </a>
+          <a
+            class="flex items-center justify-between gap-4 bg-surface-container hover:bg-surface-container-high rounded-2xl px-4 py-3 transition-colors"
+            href="tel:112"
+          >
+            <span class="flex flex-col">
+              <span class="font-bold text-on-surface">Emergency Services</span>
+              <span class="font-body-md text-sm text-on-surface-variant"
+                >Police, fire and ambulance — the all-India emergency
+                number</span
+              >
+              <span class="font-body-md text-sm text-secondary font-bold"
+                >112</span
+              >
+            </span>
+            <span class="material-symbols-outlined text-secondary">call</span>
+          </a>
+        </div>
+        <a
+          class="mt-6 flex items-center justify-center gap-2 text-primary font-bold hover:underline"
+          href="emergency.html"
+        >
+          See all emergency contacts
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      // "Call SOS" lists the desks that are reachable, and each row is a
+      // tel: link, so choosing one dials it directly.
+      (function () {
+        const modal = document.getElementById("sos-modal");
+        const openBtn = document.getElementById("sos-btn");
+        const closeBtn = document.getElementById("sos-modal-close");
+        if (!modal || !openBtn) return;
+
+        // Toggling `flex` rather than leaving it on avoids relying on
+        // `hidden` winning the display cascade against it.
+        const open = () => {
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+        };
+        const close = () => {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+        };
+
+        openBtn.addEventListener("click", open);
+        closeBtn.addEventListener("click", close);
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) close();
         });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") close();
+        });
+      })();
+
+      // Smooth intersection observer for bento cards
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("opacity-100", "translate-y-0");
+              entry.target.classList.remove("opacity-0", "translate-y-10");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".glass, .glass-dark").forEach((card) => {
+        card.classList.add(
+          "transition-all",
+          "duration-700",
+          "opacity-0",
+          "translate-y-10",
+        );
+        observer.observe(card);
+      });
+
+      // Sound toggle for each institutional support video embed
+      document.querySelectorAll("[data-video-embed]").forEach((embed) => {
+        const video = embed.querySelector("[data-intro-video]");
+        const muteBtn = embed.querySelector("[data-mute-toggle]");
+
+        if (!video || !muteBtn) return;
+
+        const muteIcon = muteBtn.querySelector(".material-symbols-outlined");
+
+        muteBtn.addEventListener("click", () => {
+          video.muted = !video.muted;
+
+          const icon = video.muted ? "volume_off" : "volume_up";
+          muteIcon.textContent = icon;
+          muteIcon.dataset.icon = icon;
+          muteBtn.setAttribute(
+            "aria-label",
+            video.muted ? "Unmute video" : "Mute video",
+          );
+          muteBtn.setAttribute("aria-pressed", String(!video.muted));
+
+          // Autoplay only survives while muted, so resume if the browser paused it.
+          if (!video.muted && video.paused) {
+            video.play();
+          }
+
+          // Only one embed should be audible at a time.
+          if (!video.muted) {
+            document
+              .querySelectorAll("[data-video-embed]")
+              .forEach((other) => {
+                if (other === embed) return;
+                const otherVideo = other.querySelector("[data-intro-video]");
+                const otherBtn = other.querySelector("[data-mute-toggle]");
+                if (!otherVideo || otherVideo.muted) return;
+                otherVideo.muted = true;
+                const otherIcon = otherBtn.querySelector(
+                  ".material-symbols-outlined",
+                );
+                otherIcon.textContent = "volume_off";
+                otherIcon.dataset.icon = "volume_off";
+                otherBtn.setAttribute("aria-label", "Unmute video");
+                otherBtn.setAttribute("aria-pressed", "false");
+              });
+          }
+        });
+      });
     </script>
-</body></html>
+  </body>
+</html>

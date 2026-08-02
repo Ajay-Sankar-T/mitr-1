@@ -122,11 +122,10 @@
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-primary/20">
 <!-- TopNavBar -->
-<header class="fixed top-0 z-50 w-full bg-surface/60 backdrop-blur-md border-b border-transparent transition-all duration-500 h-20" id="main-header"><div class="flex justify-between items-center w-full px-margin-page max-w-screen-2xl mx-auto h-full"><div class="flex items-center gap-4"><img alt="IIT Madras Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4"/><div class="h-10 w-px bg-outline-variant/40"></div><img alt="Team MITR Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBatdEDATg7nysstGcJ53RjnlY1CzzXLGNGJVvyTOH_XXlb5bv--Bcfjii0-_UgBwypk4Cpt1h23dbzpNPxTLcWLoGZzuDNG2Uu-9_rU0zTgDaO9NStzQHMLbWRqpuHuDkklzhvUSkt-1HuK3I3ClIWP0TpBjIf7qHgss_dU___A_U9MJl6jFW9FkWa0Pb6NjCXZ64HBHu3CIKd6HNIO4EcNgPI1sI0gt5tEI-0oXNUL17hsE8TsM9U0aealroAQ9zX"/><span class="font-headline-lg text-headline-lg font-bold text-primary ml-2 hidden lg:block">Team Mitr</span></div><nav class="hidden md:flex items-center space-x-8">
+<header class="fixed top-0 z-50 w-full bg-surface/60 backdrop-blur-md border-b border-transparent transition-all duration-500 h-20" id="main-header"><div class="flex justify-between items-center w-full px-margin-page max-w-screen-2xl mx-auto h-full"><div class="flex items-center gap-4"><img alt="IIT Madras Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4"/><div class="h-10 w-px bg-outline-variant/40"></div><img alt="Team MITR Logo" class="h-12 w-auto" src="mitr-logo.png"/></div><nav class="hidden md:flex items-center space-x-8">
   <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Home</a>
   <a href="emergency.html" class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md text-body-md">Emergency</a>
   <a href="directory.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Directory</a>
-  <a href="what_we_do.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">What We Do</a>
   <a href="about.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">All About MITR</a>
   <a href="yearbook.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Year Book</a>
 </nav><div class="flex items-center gap-6"><button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200">Support</button><span class="material-symbols-outlined text-primary text-3xl cursor-pointer hover:opacity-70 transition-opacity">account_circle</span></div></div></header>
@@ -160,9 +159,9 @@
 </div>
 </section>
 <section class="px-margin-page pb-section-gap">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="space-y-8">
 <!-- Emergency Resource Cards Grid -->
-<div class="lg:col-span-8 space-y-8">
+<div class="space-y-8">
 <h2 class="font-headline-lg text-headline-lg text-primary border-l-4 border-primary pl-4">Crisis Support Network</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <!-- Card: MITR Help Desk -->
@@ -175,11 +174,11 @@
 <p class="font-body-md text-on-surface-variant mb-6">Peer-led support for emotional well-being and campus navigation during difficult times.</p>
 </div>
 <div class="flex flex-wrap gap-3">
-<button class="flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all">
+<button type="button" class="flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all" title="Calling not enabled yet">
 <span class="material-symbols-outlined text-sm">call</span>
 <span>Call</span>
 </button>
-<button class="flex-1 flex items-center justify-center space-x-2 border border-secondary text-secondary px-4 py-2 rounded font-bold hover:bg-secondary/5 transition-all">
+<button type="button" class="contact-trigger flex-1 flex items-center justify-center space-x-2 border border-secondary text-secondary px-4 py-2 rounded font-bold hover:bg-secondary/5 transition-all" data-type="email" data-label="MITR Help Desk" data-values="mitr@iitm.ac.in">
 <span class="material-symbols-outlined text-sm">mail</span>
 <span>Email</span>
 </button>
@@ -192,14 +191,14 @@
 <span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">medical_services</span>
 </div>
 <h3 class="font-headline-lg text-2xl mb-2">Institute Hospital</h3>
-<p class="font-body-md text-on-surface-variant mb-6">Medical emergencies and clinical psychological consultation for all campus residents.</p>
+<p class="font-body-md text-on-surface-variant mb-6">Medical emergencies and clinical psychological consultation for all campus residents. Counselling available 10:00 am &ndash; 6:00 pm and 8:00 pm &ndash; 6:00 am, 365 days.</p>
 </div>
 <div class="flex flex-wrap gap-3">
-<button class="flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all">
+<button type="button" class="contact-trigger flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all" data-type="phone" data-label="Institute Hospital" data-values="044-2257 8330,044-2257 8888,044 2257 8324,7094315278">
 <span class="material-symbols-outlined text-sm">call</span>
 <span>Call</span>
 </button>
-<button class="flex-1 flex items-center justify-center space-x-2 border border-secondary text-secondary px-4 py-2 rounded font-bold hover:bg-secondary/5 transition-all">
+<button type="button" class="contact-trigger flex-1 flex items-center justify-center space-x-2 border border-secondary text-secondary px-4 py-2 rounded font-bold hover:bg-secondary/5 transition-all" data-type="email" data-label="Institute Hospital" data-values="cmo@iitm.ac.in,iitm@myndwell.in">
 <span class="material-symbols-outlined text-sm">mail</span>
 <span>Email</span>
 </button>
@@ -215,31 +214,31 @@
 <p class="font-body-md text-on-surface-variant mb-6">For immediate safety threats, suspicious activities, or physical security assistance across campus.</p>
 </div>
 <div class="flex flex-wrap gap-3">
-<button class="flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all">
+<button type="button" class="contact-trigger flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all" data-type="phone" data-label="Campus Security" data-values="044-2257 8280,044-2257 9999">
 <span class="material-symbols-outlined text-sm">call</span>
 <span>Call</span>
 </button>
-<button class="flex-1 flex items-center justify-center space-x-2 border border-secondary text-secondary px-4 py-2 rounded font-bold hover:bg-secondary/5 transition-all">
+<button type="button" class="contact-trigger flex-1 flex items-center justify-center space-x-2 border border-secondary text-secondary px-4 py-2 rounded font-bold hover:bg-secondary/5 transition-all" data-type="email" data-label="Campus Security" data-values="cso@iitm.ac.in">
 <span class="material-symbols-outlined text-sm">mail</span>
 <span>Email</span>
 </button>
 </div>
 </div>
-<!-- Card: Women's Safety Cell -->
+<!-- Card: Wellness Centre -->
 <div class="glass-card p-6 rounded-xl hover:shadow-xl transition-all duration-300 group flex flex-col justify-between h-full">
 <div>
 <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">diversity_1</span>
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">self_improvement</span>
 </div>
-<h3 class="font-headline-lg text-2xl mb-2">Women's Safety Cell</h3>
-<p class="font-body-md text-on-surface-variant mb-6">Confidential reporting and support specifically tailored for the safety of women on campus.</p>
+<h3 class="font-headline-lg text-2xl mb-2">Wellness Centre</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Licensed mental health professionals providing confidential counselling. Book an appointment or walk in at the DoSt Office, 1st Floor &mdash; Mon to Sat, 10 am &ndash; 6 pm.</p>
 </div>
 <div class="flex flex-wrap gap-3">
-<button class="flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all">
+<button type="button" class="contact-trigger flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all" data-type="phone" data-label="Wellness Centre" data-values="044 2257 8521,044 2257 8522,044 2257 8523,044 2257 8524,044 2257 8527,9498665101">
 <span class="material-symbols-outlined text-sm">call</span>
 <span>Call</span>
 </button>
-<button class="flex-1 flex items-center justify-center space-x-2 border border-secondary text-secondary px-4 py-2 rounded font-bold hover:bg-secondary/5 transition-all">
+<button type="button" class="contact-trigger flex-1 flex items-center justify-center space-x-2 border border-secondary text-secondary px-4 py-2 rounded font-bold hover:bg-secondary/5 transition-all" data-type="email" data-label="Wellness Centre" data-values="wellnesswc1@smail.iitm.ac.in,wellnesswc2@smail.iitm.ac.in,wellnesswc3@smail.iitm.ac.in,wellnesswc4@smail.iitm.ac.in,wo@smail.iitm.ac.in">
 <span class="material-symbols-outlined text-sm">mail</span>
 <span>Email</span>
 </button>
@@ -257,7 +256,7 @@
 <div class="flex flex-wrap gap-4">
 <div class="flex items-center text-primary font-bold">
 <span class="material-symbols-outlined mr-2">event_available</span>
-<span>Mon - Fri, 9 AM - 6 PM</span>
+<span>Mon &ndash; Sat, 10 AM &ndash; 6 PM</span>
 </div>
 <div class="flex items-center text-secondary font-bold">
 <span class="material-symbols-outlined mr-2">encrypted</span>
@@ -266,7 +265,7 @@
 </div>
 </div>
 <div class="flex md:flex-col gap-3 min-w-[150px]">
-<button class="flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all">
+<button type="button" id="book-slot-btn" class="flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all">
 <span class="material-symbols-outlined text-sm">calendar_month</span>
 <span>Book Slot</span>
 </button>
@@ -279,56 +278,127 @@
 </div>
 </div>
 </div>
-<!-- Sidebar: Where to Find Us -->
-<aside class="lg:col-span-4 space-y-8">
-<div class="glass-card rounded-xl p-6 shadow-sm sticky top-28">
-<h2 class="font-headline-lg text-2xl text-primary mb-6 flex items-center">
+</div>
+</section>
+
+<!-- Where to Find Us: full-width, 3 locations side by side -->
+<section class="px-margin-page pb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-primary border-l-4 border-primary pl-4 mb-8 flex items-center">
 <span class="material-symbols-outlined mr-2">location_on</span>
-                            Where to Find Us
-                        </h2>
-<div class="rounded-lg overflow-hidden border border-outline-variant/30 mb-6 group">
-<div class="h-64 w-full bg-surface-container relative overflow-hidden">
-<img alt="IIT Madras Campus Map" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-location="IIT Madras Campus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjx9XKw18968iFvdT0cv3tck35PvE4E2nuCg0aU_LK6mjd0Bpjq71r25wIlRlnySK5-UNGPJeUdM1eKgSd7MtuhrvBItWVVdcQi7OXDU3mozgRvONKk7BQ68yZeIVU03BtP2ENad-fpWn0rKH4fZPxjz3q1maLTF3otadmhaUesi3Pqr8XDwYQTjZx-H5qQTU0ybtcU6IqPM6IvtUXLNPnTh3_5PJ35-hDG2WHtvPEWbXUBUtgP64JDaXS1RhsEbl3"/>
-<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-2xl border-2 border-primary animate-bounce">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
-</div>
-</div>
-</div>
-<div class="space-y-6">
+Where to Find Us
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Location: Institute Hospital -->
+<div class="glass-card rounded-xl p-5 flex flex-col hover:shadow-lg transition-all duration-300">
+<h3 class="font-headline-lg text-xl text-on-surface mb-4">Institute Hospital</h3>
+<a class="relative block w-full h-40 rounded-lg overflow-hidden border border-outline-variant/30 group/map mb-5" href="https://www.google.com/maps/search/?api=1&amp;query=IIT%20Madras%20Institute%20Hospital" target="_blank" rel="noopener" aria-label="Open Institute Hospital location in Google Maps">
+<iframe class="w-full h-full pointer-events-none" src="https://maps.google.com/maps?q=IIT%20Madras%20Institute%20Hospital&amp;z=16&amp;output=embed" loading="lazy" title="Map - Institute Hospital"></iframe>
+<span class="absolute inset-0 bg-primary/0 group-hover/map:bg-primary/20 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-base opacity-0 group-hover/map:opacity-100 transition-opacity">open_in_new</span>
+</span>
+</a>
 <div>
-<p class="font-label-sm text-primary uppercase mb-2">Office Address</p>
-<p class="font-body-md text-on-surface">
-                                    IIT Madras MITR Centre,<br/>
-                                    Ground Floor, Students Amenity Centre,<br/>
-                                    Chennai, Tamil Nadu 600036
-                                </p>
+<p class="font-label-sm text-primary uppercase mb-2">Address</p>
+<p class="font-body-md text-on-surface text-sm leading-relaxed">
+IIT Madras Institute Hospital,<br/>
+IIT Madras Campus,<br/>
+Chennai, Tamil Nadu 600036
+</p>
 </div>
-<div class="border-t border-outline-variant/30 pt-6">
-<p class="font-label-sm text-primary uppercase mb-2">Standard Office Hours</p>
+<div class="border-t border-outline-variant/30 pt-5 mt-5">
+<p class="font-label-sm text-primary uppercase mb-2">Timings</p>
 <div class="space-y-2">
-<div class="flex justify-between items-center text-body-md">
+<div class="flex justify-between items-center gap-3 text-body-md text-sm">
+<span class="text-on-surface-variant">Day</span>
+<span class="font-bold text-right">10:00 AM - 6:00 PM</span>
+</div>
+<div class="flex justify-between items-center gap-3 text-body-md text-sm">
+<span class="text-on-surface-variant">Night</span>
+<span class="font-bold text-right">8:00 PM - 6:00 AM</span>
+</div>
+<div class="flex justify-between items-center gap-3 text-body-md text-sm">
+<span class="text-on-surface-variant">Open</span>
+<span class="font-bold text-secondary text-right">365 Days</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Location: Your DOST -->
+<div class="glass-card rounded-xl p-5 flex flex-col hover:shadow-lg transition-all duration-300">
+<h3 class="font-headline-lg text-xl text-on-surface mb-4">Your DOST</h3>
+<a class="relative block w-full h-40 rounded-lg overflow-hidden border border-outline-variant/30 group/map mb-5" href="https://www.google.com/maps/search/?api=1&amp;query=Central%20Library%20IIT%20Madras" target="_blank" rel="noopener" aria-label="Open Your DOST location in Google Maps">
+<iframe class="w-full h-full pointer-events-none" src="https://maps.google.com/maps?q=Central%20Library%20IIT%20Madras&amp;z=16&amp;output=embed" loading="lazy" title="Map - Your DOST"></iframe>
+<span class="absolute inset-0 bg-primary/0 group-hover/map:bg-primary/20 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-base opacity-0 group-hover/map:opacity-100 transition-opacity">open_in_new</span>
+</span>
+</a>
+<div>
+<p class="font-label-sm text-primary uppercase mb-2">Address</p>
+<p class="font-body-md text-on-surface text-sm leading-relaxed">
+Central Library, 2nd Floor,<br/>
+IIT Madras Campus,<br/>
+Chennai, Tamil Nadu 600036
+</p>
+</div>
+<div class="border-t border-outline-variant/30 pt-5 mt-5">
+<p class="font-label-sm text-primary uppercase mb-2">Timings</p>
+<div class="space-y-2">
+<div class="flex justify-between items-center gap-3 text-body-md text-sm">
+<span class="text-on-surface-variant">Tele-counselling</span>
+<span class="font-bold text-secondary text-right">24/7 Unlimited</span>
+</div>
+<div class="flex justify-between items-center gap-3 text-body-md text-sm">
+<span class="text-on-surface-variant">Helpline</span>
+<a class="font-bold text-right text-primary hover:underline" href="tel:04448136222">044 4813 6222</a>
+</div>
+<div class="flex justify-between items-center gap-3 text-body-md text-sm">
+<span class="text-on-surface-variant">Face-to-face</span>
+<span class="font-bold text-right">On campus</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Location: Wellness Centre -->
+<div class="glass-card rounded-xl p-5 flex flex-col hover:shadow-lg transition-all duration-300">
+<h3 class="font-headline-lg text-xl text-on-surface mb-4">Wellness Centre</h3>
+<a class="relative block w-full h-40 rounded-lg overflow-hidden border border-outline-variant/30 group/map mb-5" href="https://www.google.com/maps/search/?api=1&amp;query=DoSt%20Office%20Dean%20of%20Students%20IIT%20Madras" target="_blank" rel="noopener" aria-label="Open Wellness Centre location in Google Maps">
+<iframe class="w-full h-full pointer-events-none" src="https://maps.google.com/maps?q=DoSt%20Office%20Dean%20of%20Students%20IIT%20Madras&amp;z=16&amp;output=embed" loading="lazy" title="Map - Wellness Centre"></iframe>
+<span class="absolute inset-0 bg-primary/0 group-hover/map:bg-primary/20 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-base opacity-0 group-hover/map:opacity-100 transition-opacity">open_in_new</span>
+</span>
+</a>
+<div>
+<p class="font-label-sm text-primary uppercase mb-2">Address</p>
+<p class="font-body-md text-on-surface text-sm leading-relaxed">
+1st Floor, DoSt Office,<br/>
+Dean of Students, IIT Madras,<br/>
+Chennai, Tamil Nadu 600036
+</p>
+</div>
+<div class="border-t border-outline-variant/30 pt-5 mt-5">
+<p class="font-label-sm text-primary uppercase mb-2">Timings</p>
+<div class="space-y-2">
+<div class="flex justify-between items-center gap-3 text-body-md text-sm">
 <span class="text-on-surface-variant">Monday - Friday</span>
-<span class="font-bold">9:00 AM - 8:00 PM</span>
+<span class="font-bold text-right">10:00 AM - 6:00 PM</span>
 </div>
-<div class="flex justify-between items-center text-body-md">
+<div class="flex justify-between items-center gap-3 text-body-md text-sm">
 <span class="text-on-surface-variant">Saturday</span>
-<span class="font-bold">10:00 AM - 4:00 PM</span>
+<span class="font-bold text-right">10:00 AM - 6:00 PM</span>
 </div>
-<div class="flex justify-between items-center text-body-md">
-<span class="text-on-surface-variant">Sunday</span>
-<span class="font-bold text-secondary">Emergency Only</span>
+<div class="flex justify-between items-center gap-3 text-body-md text-sm">
+<span class="text-on-surface-variant">Saturday staffing</span>
+<span class="font-bold text-secondary text-right">One counsellor</span>
 </div>
 </div>
 </div>
-<div class="bg-primary/5 rounded-lg p-4 border-l-4 border-primary">
+</div>
+</div>
+<div class="bg-primary/5 rounded-lg p-4 border-l-4 border-primary mt-8 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl leading-none shrink-0">info</span>
 <p class="text-sm font-body-md text-primary-container leading-relaxed">
-                                    "Physical presence is not required for emergency assistance. Please use the call buttons if you cannot reach the office."
-                                </p>
-</div>
-</div>
-</div>
-</aside>
+"Physical presence is not required for emergency assistance. Please use the call buttons if you cannot reach the office."
+</p>
 </div>
 </section>
 <!-- Signature Campus Line Art Divider -->
@@ -336,6 +406,54 @@
 </main>
 <!-- Footer -->
 <footer class="w-full px-margin-page py-section-gap flex flex-col items-center space-y-8 bg-surface-container border-t border-outline-variant/50"><div class="flex flex-col items-center space-y-6"><div class="flex items-center space-x-3"><img alt="Footer Logo" class="h-16 w-16 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpmZIoxlCn2Lsg7_x9N7QoLqWIk6yddBaZonLCFUDRotGSG5vYMYzD-DqPvBRMHXSrUNlkcEjHZAZ-PVzP1ORqNi0r3M-T6FbpbG8JuCH8G2X516JCYez_BobmVQfmWRmNu8EadmTbTVVxt2WKqS-nhlsvGQnc__srd_TFDkJlgIHwUyi8FUstbymupm8Xh6htGfEe_Mq19GeTUx5gp10K56AQqYddgwP7rIi8XWde3wWdbxxP1dMj_KIFCcZW36K"/><div class="text-center md:text-left"><h2 class="font-headline-lg text-headline-lg font-bold text-primary">IITM MITR</h2><p class="font-label-sm text-on-surface-variant">Empowering Wellbeing Since 2010</p></div></div><div class="flex flex-wrap justify-center gap-8"><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Privacy Policy</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Terms of Service</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Campus Map</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="directory.html">Directory</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Feedback</a></div></div><div class="w-full max-w-screen-xl border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-70"><p class="font-body-md text-sm text-on-surface-variant text-center">© 2024 Indian Institute of Technology Madras. All rights reserved.</p><div class="flex space-x-6"><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">qr_code_2</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">alternate_email</span></div></div></footer>
+<!-- Contact Popover (shared by all Call/Email quick-action buttons) -->
+<div class="hidden fixed z-[100] bg-white rounded-lg shadow-2xl border border-outline-variant/30 p-4 w-72" id="contact-popover" role="dialog" aria-live="polite">
+<div class="flex items-center justify-between mb-3">
+<p class="font-bold text-sm text-on-surface" id="contact-popover-label"></p>
+<button aria-label="Close" class="material-symbols-outlined text-on-surface-variant hover:text-primary text-lg leading-none" id="contact-popover-close" type="button">close</button>
+</div>
+<div class="space-y-2" id="contact-popover-body"></div>
+</div>
+
+<!-- Booking Modal (Professional Counsellors -> Book Slot) -->
+<div class="hidden fixed inset-0 z-[110] bg-black/50 flex items-center justify-center p-4" id="booking-modal">
+<div class="bg-surface rounded-xl shadow-2xl w-full max-w-md p-6 relative">
+<button aria-label="Close" class="absolute top-4 right-4 material-symbols-outlined text-on-surface-variant hover:text-primary" id="booking-modal-close" type="button">close</button>
+<h3 class="font-headline-lg text-xl mb-1 text-primary">Book a Session</h3>
+<p class="text-sm text-on-surface-variant mb-6">Choose a date, time, and venue that works for you.</p>
+<form class="space-y-4" id="booking-form">
+<div>
+<label class="font-label-sm text-on-surface-variant block mb-1" for="booking-date">Date</label>
+<input class="w-full rounded border border-outline-variant/50 px-3 py-2 focus:border-primary focus:ring-primary" id="booking-date" name="date" required="" type="date"/>
+</div>
+<div>
+<label class="font-label-sm text-on-surface-variant block mb-1" for="booking-time">Time <span class="text-on-surface-variant/70">(optional)</span></label>
+<input class="w-full rounded border border-outline-variant/50 px-3 py-2 focus:border-primary focus:ring-primary" id="booking-time" name="time" type="time"/>
+</div>
+<div>
+<label class="font-label-sm text-on-surface-variant block mb-1" for="booking-venue">Venue</label>
+<select class="w-full rounded border border-outline-variant/50 px-3 py-2 focus:border-primary focus:ring-primary" id="booking-venue" name="venue" required="">
+<option disabled="" selected="" value="">Select a venue</option>
+<option>Institute Hospital</option>
+<option>Wellness Centre</option>
+<option>DoSt Office</option>
+<option>Second Floor Central Library</option>
+</select>
+</div>
+<div>
+<label class="font-label-sm text-on-surface-variant block mb-1" for="booking-message">Message <span class="text-on-surface-variant/70">(optional)</span></label>
+<textarea class="w-full rounded border border-outline-variant/50 px-3 py-2 focus:border-primary focus:ring-primary resize-y" id="booking-message" name="message" rows="3" placeholder="Anything you would like the counsellor to know beforehand."></textarea>
+</div>
+<p class="hidden text-sm text-error font-bold" id="booking-error"></p>
+<div class="flex gap-3 pt-2">
+<button class="flex-1 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all" type="submit">Confirm Request</button>
+<button class="flex-1 border border-secondary text-secondary px-4 py-2 rounded font-bold hover:bg-secondary/5 transition-all" id="booking-cancel" type="button">Cancel</button>
+</div>
+</form>
+<p class="hidden text-sm text-primary font-bold mt-4" id="booking-success">Request noted — our team will confirm your slot by email shortly.</p>
+</div>
+</div>
+
 <script>
         // Simple micro-interaction for glass cards
         document.querySelectorAll('.glass-card').forEach(card => {
@@ -358,5 +476,270 @@
                 nav.classList.add('h-20');
             }
         });
+    </script>
+    <script>
+        // ---- Shared Call/Email popover ----
+        (function () {
+            var popover = document.getElementById('contact-popover');
+            var labelEl = document.getElementById('contact-popover-label');
+            var bodyEl = document.getElementById('contact-popover-body');
+            var closeBtn = document.getElementById('contact-popover-close');
+
+            function isMobileDevice() {
+                var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+                var uaMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+                return !!(coarse && uaMobile);
+            }
+
+            function flashCopied(btn) {
+                var original = btn.dataset.originalLabel || btn.textContent;
+                btn.dataset.originalLabel = original;
+                btn.textContent = 'Copied!';
+                setTimeout(function () { btn.textContent = original; }, 1500);
+            }
+
+            function copyToClipboard(text, btn) {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(function () { flashCopied(btn); });
+                } else {
+                    var ta = document.createElement('textarea');
+                    ta.value = text;
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.select();
+                    try { document.execCommand('copy'); } catch (e) { /* no-op fallback */ }
+                    document.body.removeChild(ta);
+                    flashCopied(btn);
+                }
+            }
+
+            function buildRow(value, type) {
+                var row = document.createElement('div');
+                row.className = 'flex items-center justify-between gap-3 bg-surface-container rounded px-3 py-2';
+
+                // The value itself is the primary action on every device:
+                // tel: dials, mailto: opens the visitor's mail client.
+                var link = document.createElement('a');
+                link.href = type === 'phone'
+                    ? 'tel:' + value.replace(/[^+\d]/g, '')
+                    : 'mailto:' + value;
+                link.className = 'text-sm text-primary font-bold truncate hover:underline';
+                link.textContent = value;
+                link.setAttribute('aria-label', (type === 'phone' ? 'Call ' : 'Email ') + value);
+                row.appendChild(link);
+
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'font-body-md text-xs font-bold text-primary border border-primary/40 rounded px-2 py-1 hover:bg-primary/10 shrink-0';
+                btn.textContent = 'Copy';
+                btn.addEventListener('click', function () { copyToClipboard(value, btn); });
+                row.appendChild(btn);
+
+                return row;
+            }
+
+            function positionPopover(trigger) {
+                var rect = trigger.getBoundingClientRect();
+                var popRect = popover.getBoundingClientRect();
+
+                var left = rect.left;
+                var maxLeft = document.documentElement.clientWidth - popRect.width - 16;
+                left = Math.min(left, maxLeft);
+                left = Math.max(left, 16);
+
+                var top = rect.bottom + 8;
+                if (top + popRect.height > window.innerHeight) {
+                    top = rect.top - popRect.height - 8;
+                }
+                top = Math.max(top, 16);
+
+                popover.style.left = left + 'px';
+                popover.style.top = top + 'px';
+            }
+
+            function openPopover(trigger) {
+                var type = trigger.dataset.type;
+                var label = trigger.dataset.label;
+                var values = trigger.dataset.values.split(',').map(function (v) { return v.trim(); });
+
+                labelEl.textContent = label + (type === 'phone' ? ' — Phone' : ' — Email');
+                bodyEl.innerHTML = '';
+                values.forEach(function (v) { bodyEl.appendChild(buildRow(v, type)); });
+
+                popover.classList.remove('hidden');
+                positionPopover(trigger);
+            }
+
+            document.addEventListener('click', function (e) {
+                var trigger = e.target.closest ? e.target.closest('.contact-trigger') : null;
+                if (trigger) {
+                    e.preventDefault();
+                    var values = trigger.dataset.values.split(',').map(function (v) { return v.trim(); });
+                    if (trigger.dataset.type === 'phone' && isMobileDevice() && values.length === 1) {
+                        window.location.href = 'tel:' + values[0].replace(/[^+\d]/g, '');
+                        return;
+                    }
+                    openPopover(trigger);
+                    return;
+                }
+                if (!popover.classList.contains('hidden') && !popover.contains(e.target)) {
+                    popover.classList.add('hidden');
+                }
+            });
+
+            closeBtn.addEventListener('click', function () { popover.classList.add('hidden'); });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') popover.classList.add('hidden');
+            });
+            window.addEventListener('scroll', function () { popover.classList.add('hidden'); }, true);
+        })();
+
+        // ---- Booking modal (Professional Counsellors -> Book Slot) ----
+        (function () {
+            var modal = document.getElementById('booking-modal');
+            var openBtn = document.getElementById('book-slot-btn');
+            var closeBtn = document.getElementById('booking-modal-close');
+            var cancelBtn = document.getElementById('booking-cancel');
+            var form = document.getElementById('booking-form');
+            var dateInput = document.getElementById('booking-date');
+            var timeInput = document.getElementById('booking-time');
+            var venueInput = document.getElementById('booking-venue');
+            var messageInput = document.getElementById('booking-message');
+            var errorEl = document.getElementById('booking-error');
+            var successEl = document.getElementById('booking-success');
+
+            // Venue -> recipient email. No backend/storage involved: submitting
+            // just opens a pre-filled Gmail compose window addressed to the
+            // venue, and the visitor sends it themselves from their own inbox.
+            var venueEmails = {
+                'Institute Hospital': 'cmo@iitm.ac.in',
+                'Wellness Centre': 'wellness1@smail.iitm.ac.in',
+                'DoSt Office': 'dostoffice@smail.iitm.ac.in',
+                // Placeholder — no real desk email was given for the library;
+                // swap this for the actual address before deploy.
+                'Second Floor Central Library': 'library.counsellor@iitm.ac.in'
+            };
+
+            function todayStr() {
+                var d = new Date();
+                var yyyy = d.getFullYear();
+                var mm = String(d.getMonth() + 1).padStart(2, '0');
+                var dd = String(d.getDate()).padStart(2, '0');
+                return yyyy + '-' + mm + '-' + dd;
+            }
+
+            function formatDateForEmail(dateVal) {
+                var parts = dateVal.split('-');
+                var d = new Date(parts[0], parts[1] - 1, parts[2]);
+                return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+            }
+
+            function formatTimeForEmail(timeVal) {
+                var parts = timeVal.split(':');
+                var d = new Date();
+                d.setHours(parseInt(parts[0], 10), parseInt(parts[1], 10));
+                return d.toLocaleTimeString('en-IN', { hour: 'numeric', minute: '2-digit', hour12: true });
+            }
+
+            function openModal() {
+                form.reset();
+                form.classList.remove('hidden');
+                errorEl.classList.add('hidden');
+                successEl.classList.add('hidden');
+                dateInput.min = todayStr();
+                modal.classList.remove('hidden');
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+            }
+
+            if (openBtn) openBtn.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+            cancelBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                errorEl.classList.add('hidden');
+
+                var dateVal = dateInput.value;
+                var timeVal = timeInput.value;
+                var venueVal = venueInput.value;
+
+                if (!dateVal || !venueVal) {
+                    errorEl.textContent = 'Please fill in date and venue.';
+                    errorEl.classList.remove('hidden');
+                    return;
+                }
+
+                // Time is optional. With a time, the whole moment must be in the
+                // future; without one, the date alone just can't be in the past.
+                var chosen = timeVal
+                    ? new Date(dateVal + 'T' + timeVal)
+                    : new Date(dateVal + 'T23:59');
+                if (isNaN(chosen.getTime()) || chosen.getTime() <= Date.now()) {
+                    errorEl.textContent = timeVal
+                        ? 'Please choose a date and time in the future.'
+                        : 'Please choose a date in the future.';
+                    errorEl.classList.remove('hidden');
+                    return;
+                }
+
+                var recipient = venueEmails[venueVal];
+                if (!recipient) {
+                    errorEl.textContent = 'This venue is not set up for booking yet.';
+                    errorEl.classList.remove('hidden');
+                    return;
+                }
+
+                var messageVal = messageInput ? messageInput.value.trim() : '';
+
+                var subject = 'Counselling Session Request via MITR Website — '
+                    + formatDateForEmail(dateVal) + ', ' + venueVal;
+
+                var body = 'Hello,\n\n' +
+                    'I am a member of the IIT Madras campus community and I am reaching out '
+                    + 'because I would like support for my emotional wellbeing. I am requesting '
+                    + 'a counselling session at the slot below.\n\n' +
+                    'Requested date:  ' + formatDateForEmail(dateVal) + '\n' +
+                    'Requested time:  ' + (timeVal
+                        ? formatTimeForEmail(timeVal)
+                        : 'No specific time — any slot that works for you') + '\n' +
+                    'Preferred venue: ' + venueVal + '\n\n';
+
+                if (messageVal) {
+                    body += 'What I would like you to know beforehand:\n'
+                        + messageVal + '\n\n';
+                }
+
+                body += 'Please confirm whether this slot works, or suggest the nearest '
+                    + 'available one. If this request needs to be redirected to a different '
+                    + 'desk, kindly let me know.\n\n' +
+                    'Thank you for your time and support.\n\n' +
+                    '—\n' +
+                    'Sent from the Team MITR wellness portal (Emergency & Support page).\n' +
+                    'This request was submitted through the website booking form and is '
+                    + 'awaiting confirmation.';
+
+                var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1'
+                    + '&to=' + encodeURIComponent(recipient)
+                    + '&su=' + encodeURIComponent(subject)
+                    + '&body=' + encodeURIComponent(body);
+
+                // Opened synchronously in response to the click, so it isn't
+                // blocked as an unrequested popup.
+                window.open(gmailUrl, '_blank');
+
+                form.classList.add('hidden');
+                successEl.textContent = 'Opening Gmail with your request filled in — just hit send from there.';
+                successEl.classList.remove('hidden');
+                setTimeout(closeModal, 1800);
+            });
+        })();
     </script>
 </body></html>
