@@ -248,7 +248,7 @@
 <header class="fixed top-0 z-50 w-full bg-surface/60 backdrop-blur-md border-b border-transparent transition-all duration-500 h-20" id="main-header"><div class="flex justify-between items-center w-full px-margin-page max-w-screen-2xl mx-auto h-full"><div class="flex items-center gap-4"><img alt="IIT Madras Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4"/><div class="h-10 w-px bg-outline-variant/40"></div><img alt="Team MITR Logo" class="h-12 w-auto" src="mitr-logo.png"/></div><nav class="hidden md:flex items-center space-x-8">
   <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Home</a>
   <a href="emergency.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Emergency</a>
-  <a href="directory.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Directory</a>
+  <a href="Faculty co  ord\directory.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Directory</a>
   <a href="yearbook.html" class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md text-body-md">Year Book</a>
 </nav><div class="flex items-center gap-6"><button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200">Support</button><span class="material-symbols-outlined text-primary text-3xl cursor-pointer hover:opacity-70 transition-opacity">account_circle</span></div></div></header>
 <main class="pt-20">
@@ -542,6 +542,7 @@
 
     // ---------- PDF Flipbook with error handling ----------
     const PDF_URL = 'yearbook.pdf';
+    const RENDER_SCALE = 1.5; // higher = crisper pages, slower to render
 
     const prevBtn = document.getElementById('prev-page');
     const nextBtn = document.getElementById('next-page');
@@ -556,6 +557,7 @@
 
     let pageFlipInstance = null;
     let currentPdf = null;
+    let totalPages = 0;
     let isBookReady = false;
     let isLoading = false;
     let loadToken = 0;
@@ -578,15 +580,18 @@
         emptyMessage.textContent = message;
         retryBtn.style.display = showRetry ? 'inline-flex' : 'none';
         emptyState.style.display = 'grid';
+        yearbook.style.display = 'none';
     }
 
     function hideEmptyState() {
         emptyState.style.display = 'none';
+        yearbook.style.display = 'block';
     }
 
     function resetViewerState() {
         isBookReady = false;
         currentPdf = null;
+        totalPages = 0;
         setButtonsDisabled(true);
     }
 
@@ -635,6 +640,13 @@
             };
         }
 
+        if (message.includes('Failed to fetch') || message.includes('NetworkError')) {
+            return {
+                title: 'Unable to fetch PDF',
+                message: 'The browser could not reach yearbook.pdf. If you opened this file directly (file:///...), serve the folder with a local web server instead — fetch() is blocked on file:// pages.'
+            };
+        }
+
         if (message) {
             return {
                 title: 'Failed to load PDF',
@@ -648,25 +660,111 @@
         };
     }
 
-    async function renderPdfToFlipbook(url = 'yearbook.pdf') {
+    // Renders a single PDF page onto a canvas sized to RENDER_SCALE.
+    async function renderPageToCanvas(pdf, pageNumber) {
+        const page = await pdf.getPage(pageNumber);
+        const viewport = page.getViewport({ scale: RENDER_SCALE });
+
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        const context = canvas.getContext('2d');
+        await page.render({ canvasContext: context, viewport }).promise;
+
+        return canvas;
+    }
+
+    async function renderPdfToFlipbook(url = PDF_URL) {
+        if (isLoading) return;
+
+        const myToken = ++loadToken;
+        isLoading = true;
+        setButtonsDisabled(true);
+        resetViewerState();
+        clearFlipbook();
+        updateStatus('Loading yearbook.pdf...');
+        showEmptyState('Loading yearbook.pdf', 'The year book viewer is preparing your PDF.');
+
         try {
             pdfjsLib.GlobalWorkerOptions.workerSrc =
-            'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+                'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
             const response = await fetch(url);
             if (!response.ok) {
-            throw new Error(`Failed to fetch PDF: ${response.status} ${response.statusText}`);
+                throw new Error(`Failed to fetch PDF: ${response.status} ${response.statusText}`);
             }
 
             const arrayBuffer = await response.arrayBuffer();
             const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
             const pdf = await loadingTask.promise;
 
-            console.log('PDF loaded:', pdf.numPages);
+            // Bail out if a newer load started while we were fetching/parsing.
+            if (myToken !== loadToken) return;
+
+            currentPdf = pdf;
+            totalPages = pdf.numPages;
+
+            if (totalPages === 0) {
+                throw new Error('yearbook.pdf has no pages.');
+            }
+
+            updateStatus(`Rendering ${totalPages} page${totalPages === 1 ? '' : 's'}...`);
+
+            // Render every page to its own canvas, wrapped in a .page div
+            // that PageFlip will treat as one leaf of the book.
+            const pageEls = [];
+            for (let i = 1; i <= totalPages; i++) {
+                if (myToken !== loadToken) return;
+                const canvas = await renderPageToCanvas(pdf, i);
+                const pageDiv = document.createElement('div');
+                pageDiv.className = 'page';
+                pageDiv.appendChild(canvas);
+                pageEls.push(pageDiv);
+                updateStatus(`Rendering page ${i} of ${totalPages}...`);
+            }
+
+            if (myToken !== loadToken) return;
+
+            pageEls.forEach(el => yearbook.appendChild(el));
+
+            pageFlipInstance = new St.PageFlip(yearbook, {
+                width: 500,
+                height: 700,
+                size: 'stretch',
+                minWidth: 280,
+                maxWidth: 1000,
+                minHeight: 360,
+                maxHeight: 1350,
+                maxShadowOpacity: 0.5,
+                showCover: false,
+                mobileScrollSupport: false,
+                useMouseEvents: true
+            });
+
+            pageFlipInstance.loadFromHTML(document.querySelectorAll('#yearbook .page'));
+
+            pageFlipInstance.on('flip', (e) => {
+                updateStatus(`Page ${e.data + 1} of ${totalPages}`);
+            });
+
+            hideEmptyState();
+            isBookReady = true;
+            setButtonsDisabled(false);
+            updateStatus(`Page 1 of ${totalPages}`);
         } catch (error) {
             console.error('PDF flipbook error:', error);
+            if (myToken !== loadToken) return;
+            const { title, message } = getReadablePdfError(error);
+            resetViewerState();
+            clearFlipbook();
+            showEmptyState(title, message, true);
+            updateStatus('Failed to load yearbook.pdf');
+        } finally {
+            if (myToken === loadToken) isLoading = false;
         }
-        }
+    }
+
     prevBtn.addEventListener('click', () => {
         if (!isBookReady || !pageFlipInstance) return;
         try {
@@ -695,10 +793,6 @@
     retryBtn.addEventListener('click', () => {
         if (isLoading) return;
         renderPdfToFlipbook();
-    });
-
-    window.addEventListener('resize', () => {
-        if (!pageFlipInstance || !isBookReady) return;
     });
 
     window.addEventListener('error', (event) => {

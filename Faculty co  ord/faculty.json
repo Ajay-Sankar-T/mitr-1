@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Thanggoulen Kipgen",
+    "email": "kipgen@zmail.iitm.ac.in",
+    "contact": "8131827284",
+    "department": "HSS",
+    "image": "Thanggoulen Kipgen.jpg"
+  },
+  {
+    "name": "Prof. R. Jayaganthan",
+    "email": "edjay@iitm.ac.in",
+    "contact": "7358048942",
+    "department": "ED",
+    "image": "Prof. R. Jayaganthan.jpg"
+  },
+  {
+    "name": "Dr. Manam Srinivasa Rao",
+    "email": "manam@iitm.ac.in",
+    "contact": "8248219204",
+    "department": "MA",
+    "image": "Dr. Manam Srinivasa Rao.png"
+  },
+  {
+    "name": "Amlan Sengupta",
+    "email": "amlan@iitm.ac.in",
+    "contact": "9884244823",
+    "department": "CE",
+    "image": "Amlan Sengupta.jpg"
+  },
+  {
+    "name": "Professor G Ranga Rao",
+    "email": "grrao@zmail.iitm.ac.in",
+    "contact": "9444941086",
+    "department": "CY",
+    "image": "Professor G Ranga Rao.jpg"
+  },
+  {
+    "name": "Parasuraman Swaminathan",
+    "email": "swamnthn@iitm.ac.in",
+    "contact": "9176769465",
+    "department": "MME",
+    "image": "Parasuraman Swaminathan.jpg"
+  },
+  {
+    "name": "Shyama Prasad Das",
+    "email": "spdas@zmail.iitm.ac.in",
+    "contact": "9498073791",
+    "department": "ME",
+    "image": "Shyama Prasad Das.jpg"
+  },
+  {
+    "name": "Guhan Jayaraman",
+    "email": "guhanj@iitm.ac.in",
+    "contact": "9444951263",
+    "department": "BT",
+    "image": "Guhan Jayaraman.png"
+  },
+  {
+    "name": "Dr. Suresh Rajendran",
+    "email": "sureshr@zmail.iitm.ac.in",
+    "contact": "7994308859",
+    "department": "OE",
+    "image": "Dr Suresh Rajendran.png"
+  },
+  {
+    "name": "Boby George",
+    "email": "boby@ee.iitm.ac.in",
+    "contact": "9445485273",
+    "department": "MST",
+    "image": "Boby George.jpg"
+  },
+  {
+    "name": "Prof. A. Arockiarajan",
+    "email": "aarajan@zmail.iitm.ac.in",
+    "contact": "9884953470",
+    "department": "AMBE",
+    "image": "Prof. A. Arockiarajan.jpg"
+  },
+  {
+    "name": "Lakshmi Narasimhan T.",
+    "email": "lnt@iitm.ac.in",
+    "contact": "9741015481",
+    "department": "DSAI",
+    "image": "Lakshmi Narasimhan T.jpg"
+  },
+  {
+    "name": "Krishna Sivalingam",
+    "email": "skrishnam@cse.iitm.ac.in",
+    "contact": "",
+    "department": "CS",
+    "image": "Krishna Sivalingam.jpg"
+  },
+  {
+    "name": "Dr. Muruganandam T M",
+    "email": "murgi@iitm.ac.in",
+    "contact": "9840519578",
+    "department": "AE",
+    "image": "Dr.Muruganandam T M.jpg"
+  },
+  {
+    "name": "Arshinder Kaur",
+    "email": "arshinder@iitm.ac.in",
+    "contact": "9962742211",
+    "department": "MS",
+    "image": "Arshinder Kaur.jpg"
+  },
+  {
+    "name": "Balaji Srinivasan",
+    "email": "balajis@ee.iitm.ac.in",
+    "contact": "9840732120",
+    "department": "EE",
+    "image": "Balaji Srinivasan (ee).jpg"
+  },
+  {
+    "name": "Raghuram Chetty",
+    "email": "raghuc@iitm.ac.in",
+    "contact": "9003590689",
+    "department": "CH",
+    "image": "Raghuram Chetty.png"
+  },
+  {
+    "name": "Dillip Satapathy",
+    "email": "dks@iitm.ac.in",
+    "contact": "9498035838",
+    "department": "PH",
+    "image": "Dillip Satapathy.jpg"
+  }
+]
