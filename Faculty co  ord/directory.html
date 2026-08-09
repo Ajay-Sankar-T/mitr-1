@@ -102,12 +102,12 @@
   <header class="fixed top-0 z-50 w-full h-20 bg-surface/70 backdrop-blur-md border-b border-outline-variant/30">
     <div class="flex items-center justify-between h-full max-w-screen-2xl mx-auto px-6 lg:px-page">
 
-      <div class="flex items-center gap-4">
-        <img class="h-12 w-auto" alt="IIT Madras Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4">
+      <div class="flex items-center gap-3 md:gap-4 min-w-0">
+        <img class="h-9 md:h-12 w-auto shrink-0" alt="IIT Madras Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4">
 
-        <div class="h-10 w-px bg-outline-variant/50"></div>
+        <div class="h-8 md:h-10 w-px bg-outline-variant/50 shrink-0"></div>
 
-        <img class="h-12 w-auto" alt="Team MITR Logo" src="../mitr-logo.png">
+        <img class="h-9 md:h-12 w-auto shrink-0" alt="Team MITR Logo" src="../mitr-logo.png">
       </div>
 
       <nav class="hidden md:flex items-center gap-8">
@@ -128,7 +128,7 @@
         </a>
       </nav>
 
-      <div class="flex items-center gap-5">
+      <div class="hidden md:flex items-center gap-5">
         <button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:opacity-90 transition-opacity">
           Support
         </button>
@@ -137,7 +137,33 @@
           account_circle
         </span>
       </div>
+
+      <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center text-primary shrink-0" aria-label="Open menu" aria-expanded="false" type="button">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
     </div>
+
+    <nav id="mobile-menu" class="md:hidden hidden flex-col bg-surface/95 backdrop-blur-md border-t border-outline-variant/30 px-6 py-4 space-y-1">
+      <a href="../index.html" class="block py-2.5 text-on-surface-variant hover:text-primary transition-colors">
+        Home
+      </a>
+
+      <a href="../emergency.html" class="block py-2.5 text-on-surface-variant hover:text-primary transition-colors">
+        Emergency
+      </a>
+
+      <a href="directory.html" class="block py-2.5 text-primary font-bold">
+        Team
+      </a>
+
+      <a href="../yearbook.html" class="block py-2.5 text-on-surface-variant hover:text-primary transition-colors">
+        Year Book
+      </a>
+
+      <button class="w-full mt-2 bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold" type="button">
+        Support
+      </button>
+    </nav>
   </header>
 
   <!-- Main -->
@@ -395,6 +421,30 @@
       © 2024 Indian Institute of Technology Madras. All rights reserved.
     </p>
   </footer>
+
+  <!-- Mobile Menu Toggle -->
+  <script>
+    (function () {
+      const btn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      if (!btn || !menu) return;
+
+      function setOpen(isOpen) {
+        menu.classList.toggle("flex", isOpen);
+        menu.classList.toggle("hidden", !isOpen);
+        btn.setAttribute("aria-expanded", String(isOpen));
+        btn.querySelector(".material-symbols-outlined").textContent = isOpen ? "close" : "menu";
+      }
+
+      btn.addEventListener("click", () => {
+        setOpen(!menu.classList.contains("flex"));
+      });
+
+      menu.querySelectorAll("a, button").forEach((el) => {
+        el.addEventListener("click", () => setOpen(false));
+      });
+    })();
+  </script>
 
   <!-- Faculty Data Script -->
   <script>

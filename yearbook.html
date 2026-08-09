@@ -7,6 +7,7 @@
 <link rel="icon" href="favicon.ico" sizes="any"/>
 <link rel="icon" href="favicon.png" type="image/png"/>
 <link rel="apple-touch-icon" href="favicon.png"/>
+<link rel="stylesheet" href="yearbook-responsive-patch.css">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&amp;family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -153,14 +154,30 @@
 
         .flipbook-stage {
             width: 100%;
-            min-height: 720px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 1.5rem;
         }
 
+        #yearbook-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: min(70vh, 780px);
+            /* Landscape ratio (2 pages side-by-side) so page-flip renders
+               spreads (1-2, then 3-4, ...) on tablet/desktop. Phones get a
+               portrait ratio + automatic single-page mode, see media query below. */
+            aspect-ratio: 1000 / 700;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #fff;
+        }
+
         #yearbook {
+            width: 100%;
+            height: 100%;
             margin: 0 auto;
         }
 
@@ -227,35 +244,83 @@
         }
 
         .flipbook-empty {
-            min-height: 500px;
+            position: absolute;
+            inset: 0;
+            z-index: 5;
             display: grid;
             place-items: center;
             text-align: center;
             color: #504539;
             padding: 2rem;
+            background: rgba(252, 249, 248, 0.92);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
         }
 
-        @media (max-width: 768px) {
+        /* Tablets: keep the two-page spread, just a bit more compact */
+        @media (max-width: 1024px) {
+            #yearbook-wrapper {
+                max-width: 820px;
+                height: min(66vh, 700px);
+            }
+        }
+
+        /* Phones: not enough width for a readable spread, so switch the
+           container to a single-page portrait ratio. page-flip detects this
+           automatically and shows one page at a time, still flipping
+           1 -> 2 -> 3 -> 4 in order. */
+        @media (max-width: 640px) {
             .flipbook-stage {
-                min-height: 540px;
-                padding: 1rem;
+                padding: 0.75rem;
+            }
+            #yearbook-wrapper {
+                max-width: 420px;
+                height: min(62vh, 620px);
+                aspect-ratio: 500 / 700;
+            }
+        }
+
+        .flipbook-toolbar .controls {
+            flex: 1 1 auto;
+        }
+
+        @media (max-width: 480px) {
+            .flipbook-toolbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .flipbook-btn {
+                flex: 1 1 auto;
+                justify-content: center;
+                padding: 0.75rem 0.9rem;
+            }
+            .flipbook-meta {
+                text-align: center;
             }
         }
     </style>
 </head>
 <body class="bg-surface font-body-md text-on-surface leading-relaxed overflow-x-hidden">
 <!-- TopNavBar -->
-<header class="fixed top-0 z-50 w-full bg-surface/60 backdrop-blur-md border-b border-transparent transition-all duration-500 h-20" id="main-header"><div class="flex justify-between items-center w-full px-margin-page max-w-screen-2xl mx-auto h-full"><div class="flex items-center gap-4"><img alt="IIT Madras Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4"/><div class="h-10 w-px bg-outline-variant/40"></div><img alt="Team MITR Logo" class="h-12 w-auto" src="mitr-logo.png"/></div><nav class="hidden md:flex items-center space-x-8">
+<header class="fixed top-0 z-50 w-full bg-surface/60 backdrop-blur-md border-b border-transparent transition-all duration-500 h-20" id="main-header"><div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-page max-w-screen-2xl mx-auto h-full"><div class="flex items-center gap-4"><img alt="IIT Madras Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4"/><div class="h-10 w-px bg-outline-variant/40"></div><img alt="Team MITR Logo" class="h-12 w-auto" src="mitr-logo.png"/></div><nav class="hidden md:flex items-center space-x-8">
   <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Home</a>
   <a href="emergency.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Emergency</a>
   <a href="Faculty co  ord\directory.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Directory</a>
   <a href="yearbook.html" class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md text-body-md">Year Book</a>
-</nav><div class="flex items-center gap-6"><button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200">Support</button><span class="material-symbols-outlined text-primary text-3xl cursor-pointer hover:opacity-70 transition-opacity">account_circle</span></div></div></header>
+</nav><div class="flex items-center gap-4 md:gap-6"><button class="hidden sm:inline-flex bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200">Support</button><span class="material-symbols-outlined text-primary text-3xl cursor-pointer hover:opacity-70 transition-opacity">account_circle</span><button id="mobile-menu-btn" class="md:hidden flex items-center justify-center text-primary" aria-label="Open menu" aria-expanded="false" type="button"><span class="material-symbols-outlined text-3xl">menu</span></button></div></div>
+<nav id="mobile-menu" class="md:hidden hidden flex-col bg-surface/95 backdrop-blur-md border-t border-outline-variant/40 px-margin-mobile py-4 space-y-1">
+  <a href="index.html" class="block py-2.5 text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Home</a>
+  <a href="emergency.html" class="block py-2.5 text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Emergency</a>
+  <a href="Faculty co  ord\directory.html" class="block py-2.5 text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Directory</a>
+  <a href="yearbook.html" class="block py-2.5 text-primary font-bold font-body-md text-body-md">Year Book</a>
+  <button class="w-full mt-2 bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold">Support</button>
+</nav>
+</header>
 <main class="pt-20">
 <!-- Hero Section -->
 <section class="relative min-h-[60vh] flex items-center overflow-hidden bg-surface-container-low">
 <div class="absolute inset-0 z-0 opacity-10 bg-cover bg-center" data-alt="A wide panoramic shot of the Indian Institute of Technology Madras campus at golden hour, highlighting the lush greenery, historic architecture, and the serene academic atmosphere. The lighting is soft and warm, casting long shadows across the pathways. The visual style is professional, capturing the heritage and prestige of the institution." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiolApNwN1XbI1wbzAzZxKxMFyWLaX-FBp-YYf_Ganjr_yylbka3X9kH0R8B5ap01ZYW_UVljCWUmsPTMVojG-fcz_EDD9FkYBiIVbuLVFRUzslwG0J4xitw6UwWxllTIZzTV4RKqECagP2WDdqUyhcHvV2mQFfZDckgiWG-aBPLusjvq15mAp8p8CNNXamFniCwiLPpk2A6trhZ4CtwGQ12LVN56WLcZmr8fH2hSjZTEA2NoszeU')"></div>
-<div class="relative z-10 w-full px-margin-page max-w-screen-2xl mx-auto">
+<div class="relative z-10 w-full px-margin-mobile md:px-margin-page max-w-screen-2xl mx-auto">
 <div class="max-w-3xl space-y-6">
 <h1 class="font-headline-xl text-headline-xl text-primary leading-tight">MITR Year Book</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant">Preserving the legacy, campus memories, barefoot training batches, and student achievements of Team MITR at IIT Madras.</p>
@@ -266,7 +331,7 @@
 </div>
 </div>
 </section>
-<section class="py-section-gap px-margin-page max-w-screen-2xl mx-auto">
+<section class="py-section-gap px-margin-mobile md:px-margin-page max-w-screen-2xl mx-auto">
   <div class="mb-12 max-w-3xl">
     <h2 class="font-headline-lg text-headline-xl text-primary mb-4">Year Book Viewer</h2>
     <p class="font-body-lg text-on-surface-variant">
@@ -319,7 +384,7 @@
 </section>
 
 <!-- Upcoming Events: Bento Grid Layout -->
-<section class="py-section-gap px-margin-page max-w-screen-2xl mx-auto">
+<section class="py-section-gap px-margin-mobile md:px-margin-page max-w-screen-2xl mx-auto">
 <div class="mb-12">
 <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Upcoming Events</h2>
 <div class="w-24 h-1 bg-primary-container"></div>
@@ -378,7 +443,7 @@
 </section>
 <!-- Achievements & Media -->
 <section class="bg-surface-container-low py-section-gap">
-<div class="px-margin-page max-w-screen-2xl mx-auto">
+<div class="px-margin-mobile md:px-margin-page max-w-screen-2xl mx-auto">
 <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
 <div class="max-w-2xl">
 <h2 class="font-headline-lg text-headline-xl text-on-surface mb-4">Achievements &amp; Media</h2>
@@ -428,7 +493,7 @@
 </section>
 <!-- Statistics Banner -->
 <section class="py-16 bg-primary text-white">
-<div class="px-margin-page max-w-screen-2xl mx-auto">
+<div class="px-margin-mobile md:px-margin-page max-w-screen-2xl mx-auto">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 <div>
 <div class="font-headline-xl text-5xl mb-2">500+</div>
@@ -451,7 +516,7 @@
 </section>
 <!-- Our Alumni Network -->
 <section class="py-section-gap relative">
-<div class="px-margin-page max-w-screen-2xl mx-auto relative z-10">
+<div class="px-margin-mobile md:px-margin-page max-w-screen-2xl mx-auto relative z-10">
 <div class="text-center max-w-3xl mx-auto mb-20">
 <h2 class="font-headline-lg text-headline-xl text-primary mb-6">Our Alumni Network</h2>
 <p class="font-body-lg text-on-surface-variant">The MITR legacy continues through our former leaders who have gone on to champion well-being in their professional journeys across the globe.</p>
@@ -516,7 +581,7 @@
 </div>
 </main>
 <!-- Footer -->
-<footer class="w-full px-margin-page py-section-gap flex flex-col items-center space-y-8 bg-surface-container border-t border-outline-variant/50"><div class="flex flex-col items-center space-y-6"><div class="flex items-center space-x-3"><img alt="Footer Logo" class="h-16 w-16 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpmZIoxlCn2Lsg7_x9N7QoLqWIk6yddBaZonLCFUDRotGSG5vYMYzD-DqPvBRMHXSrUNlkcEjHZAZ-PVzP1ORqNi0r3M-T6FbpbG8JuCH8G2X516JCYez_BobmVQfmWRmNu8EadmTbTVVxt2WKqS-nhlsvGQnc__srd_TFDkJlgIHwUyi8FUstbymupm8Xh6htGfEe_Mq19GeTUx5gp10K56AQqYddgwP7rIi8XWde3wWdbxxP1dMj_KIFCcZW36K"/><div class="text-center md:text-left"><h2 class="font-headline-lg text-headline-lg font-bold text-primary">IITM MITR</h2><p class="font-label-sm text-on-surface-variant">Empowering Wellbeing Since 2010</p></div></div><div class="flex flex-wrap justify-center gap-8"><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Privacy Policy</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Terms of Service</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Campus Map</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="directory.html">Directory</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Feedback</a></div></div><div class="w-full max-w-screen-xl border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-70"><p class="font-body-md text-sm text-on-surface-variant text-center">© 2024 Indian Institute of Technology Madras. All rights reserved.</p><div class="flex space-x-6"><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">qr_code_2</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">alternate_email</span></div></div></footer>
+<footer class="w-full px-margin-mobile md:px-margin-page py-section-gap flex flex-col items-center space-y-8 bg-surface-container border-t border-outline-variant/50"><div class="flex flex-col items-center space-y-6"><div class="flex items-center space-x-3"><img alt="Footer Logo" class="h-16 w-16 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpmZIoxlCn2Lsg7_x9N7QoLqWIk6yddBaZonLCFUDRotGSG5vYMYzD-DqPvBRMHXSrUNlkcEjHZAZ-PVzP1ORqNi0r3M-T6FbpbG8JuCH8G2X516JCYez_BobmVQfmWRmNu8EadmTbTVVxt2WKqS-nhlsvGQnc__srd_TFDkJlgIHwUyi8FUstbymupm8Xh6htGfEe_Mq19GeTUx5gp10K56AQqYddgwP7rIi8XWde3wWdbxxP1dMj_KIFCcZW36K"/><div class="text-center md:text-left"><h2 class="font-headline-lg text-headline-lg font-bold text-primary">IITM MITR</h2><p class="font-label-sm text-on-surface-variant">Empowering Wellbeing Since 2010</p></div></div><div class="flex flex-wrap justify-center gap-8"><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Privacy Policy</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Terms of Service</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Campus Map</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="directory.html">Directory</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Feedback</a></div></div><div class="w-full max-w-screen-xl border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-70"><p class="font-body-md text-sm text-on-surface-variant text-center">© 2024 Indian Institute of Technology Madras. All rights reserved.</p><div class="flex space-x-6"><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">qr_code_2</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">alternate_email</span></div></div></footer>
 <script>
     // Existing card hover effect
     document.querySelectorAll('.glass-card').forEach(card => {
@@ -527,6 +592,26 @@
             card.style.transform = 'translateY(0)';
         });
     });
+
+    // Mobile hamburger menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('flex');
+            mobileMenu.classList.toggle('hidden', !isOpen);
+            mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+            mobileMenuBtn.querySelector('.material-symbols-outlined').textContent = isOpen ? 'close' : 'menu';
+        });
+        mobileMenu.querySelectorAll('a, button').forEach((el) => {
+            el.addEventListener('click', () => {
+                mobileMenu.classList.remove('flex');
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.querySelector('.material-symbols-outlined').textContent = 'menu';
+            });
+        });
+    }
 
     // Existing header scroll effect
     window.addEventListener('scroll', () => {
@@ -541,7 +626,7 @@
     });
 
     // ---------- PDF Flipbook with error handling ----------
-    const PDF_URL = 'yearbook.pdf';
+    const PDF_URL = 'yearbook.pdf'; 
     const RENDER_SCALE = 1.5; // higher = crisper pages, slower to render
 
     const prevBtn = document.getElementById('prev-page');
@@ -561,6 +646,13 @@
     let isBookReady = false;
     let isLoading = false;
     let loadToken = 0;
+
+    // ---- Chunkwise loading state ----
+    const CHUNK_SIZE = 6;               // pages rendered per batch
+    const renderedPages = new Map();    // pageNumber (1-indexed) -> .page element, kept for the whole session
+    let loadedCount = 0;                // how many pages (1..loadedCount) are rendered & in the book so far
+    let currentIndex = 0;               // 0-indexed page the reader is currently on
+    let isChunkLoading = false;         // guards against overlapping chunk loads
 
     function updateStatus(text) {
         if (statusEl) statusEl.textContent = text;
@@ -592,6 +684,10 @@
         isBookReady = false;
         currentPdf = null;
         totalPages = 0;
+        renderedPages.clear();
+        loadedCount = 0;
+        currentIndex = 0;
+        isChunkLoading = false;
         setButtonsDisabled(true);
     }
 
@@ -675,6 +771,67 @@
         return canvas;
     }
 
+    // Renders (or reuses from the cache) the .page element for one PDF
+    // page. Elements are kept in `renderedPages` for the rest of the
+    // session so re-visiting earlier pages never re-renders them.
+    async function getPageElement(pdf, pageNumber) {
+        if (renderedPages.has(pageNumber)) return renderedPages.get(pageNumber);
+        const canvas = await renderPageToCanvas(pdf, pageNumber);
+        const pageDiv = document.createElement('div');
+        pageDiv.className = 'page';
+        pageDiv.appendChild(canvas);
+        renderedPages.set(pageNumber, pageDiv);
+        return pageDiv;
+    }
+
+    function allLoadedElementsInOrder() {
+        const elements = [];
+        for (let i = 1; i <= loadedCount; i++) elements.push(renderedPages.get(i));
+        return elements;
+    }
+
+    // Renders the next batch of up to CHUNK_SIZE pages and hands the full,
+    // updated page list to the SAME PageFlip instance via updateFromHtml —
+    // never destroying/recreating it, which is what keeps this seamless
+    // instead of causing a visible jump. The reader's current page is
+    // preserved with turnToPage (an instant jump, not an animated flip).
+    async function loadNextChunk(myToken) {
+        if (isChunkLoading || loadedCount >= totalPages || myToken !== loadToken) return;
+        isChunkLoading = true;
+        try {
+            const start = loadedCount + 1;
+            const end = Math.min(start + CHUNK_SIZE - 1, totalPages);
+
+            for (let number = start; number <= end; number++) {
+                if (myToken !== loadToken) return;
+                await getPageElement(currentPdf, number);
+                loadedCount = number;
+            }
+
+            if (myToken !== loadToken || !pageFlipInstance) return;
+            pageFlipInstance.updateFromHtml(allLoadedElementsInOrder());
+            requestAnimationFrame(() => {
+                if (typeof pageFlipInstance.turnToPage === 'function') {
+                    pageFlipInstance.turnToPage(currentIndex);
+                }
+            });
+        } finally {
+            isChunkLoading = false;
+        }
+    }
+
+    // Keeps rendering chunks in the browser's idle time until the whole
+    // book is loaded, so by the time the reader flips forward the pages
+    // are usually already there.
+    function scheduleBackgroundLoad(myToken) {
+        const idle = window.requestIdleCallback || (cb => setTimeout(cb, 200));
+        idle(async () => {
+            if (myToken !== loadToken || loadedCount >= totalPages) return;
+            await loadNextChunk(myToken);
+            scheduleBackgroundLoad(myToken);
+        });
+    }
+
     async function renderPdfToFlipbook(url = PDF_URL) {
         if (isLoading) return;
 
@@ -709,24 +866,19 @@
                 throw new Error('yearbook.pdf has no pages.');
             }
 
-            updateStatus(`Rendering ${totalPages} page${totalPages === 1 ? '' : 's'}...`);
+            const firstChunkEnd = Math.min(CHUNK_SIZE, totalPages);
+            updateStatus(`Loading first ${firstChunkEnd} page${firstChunkEnd === 1 ? '' : 's'}...`);
 
-            // Render every page to its own canvas, wrapped in a .page div
-            // that PageFlip will treat as one leaf of the book.
-            const pageEls = [];
-            for (let i = 1; i <= totalPages; i++) {
+            // Render only the first chunk before showing anything — this is
+            // what makes the book appear quickly regardless of how long the
+            // full PDF is. The rest streams in afterwards.
+            for (let number = 1; number <= firstChunkEnd; number++) {
                 if (myToken !== loadToken) return;
-                const canvas = await renderPageToCanvas(pdf, i);
-                const pageDiv = document.createElement('div');
-                pageDiv.className = 'page';
-                pageDiv.appendChild(canvas);
-                pageEls.push(pageDiv);
-                updateStatus(`Rendering page ${i} of ${totalPages}...`);
+                await getPageElement(pdf, number);
+                loadedCount = number;
             }
 
             if (myToken !== loadToken) return;
-
-            pageEls.forEach(el => yearbook.appendChild(el));
 
             pageFlipInstance = new St.PageFlip(yearbook, {
                 width: 500,
@@ -739,19 +891,36 @@
                 maxShadowOpacity: 0.5,
                 showCover: false,
                 mobileScrollSupport: false,
-                useMouseEvents: true
+                useMouseEvents: true,
+                // Lets the library pick single-page (phones) vs two-page
+                // spread (tablet/desktop) based on the container's own
+                // width-to-height ratio at any given moment.
+                usePortrait: true
             });
 
-            pageFlipInstance.loadFromHTML(document.querySelectorAll('#yearbook .page'));
+            pageFlipInstance.loadFromHTML(allLoadedElementsInOrder());
 
             pageFlipInstance.on('flip', (e) => {
-                updateStatus(`Page ${e.data + 1} of ${totalPages}`);
+                currentIndex = Number(e.data) || 0;
+                updateStatus(`Page ${currentIndex + 1} of ${totalPages}`);
+
+                // If the reader is nearing the edge of what's loaded, load
+                // the next chunk right away rather than waiting on the
+                // background idle queue to get to it.
+                if (loadedCount < totalPages && currentIndex >= loadedCount - 2) {
+                    loadNextChunk(myToken);
+                }
             });
 
             hideEmptyState();
             isBookReady = true;
             setButtonsDisabled(false);
             updateStatus(`Page 1 of ${totalPages}`);
+
+            // Stream in the remaining pages in the background.
+            if (loadedCount < totalPages) {
+                scheduleBackgroundLoad(myToken);
+            }
         } catch (error) {
             console.error('PDF flipbook error:', error);
             if (myToken !== loadToken) return;
@@ -788,6 +957,23 @@
     reloadBtn.addEventListener('click', () => {
         if (isLoading) return;
         renderPdfToFlipbook();
+    });
+
+    // Re-check spread vs single-page layout on resize/rotation (tablets and
+    // phones especially). page-flip's own 'stretch' sizing mostly handles
+    // this, but calling update() explicitly makes it reliable across browsers.
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (pageFlipInstance && typeof pageFlipInstance.update === 'function') {
+                try {
+                    pageFlipInstance.update();
+                } catch (error) {
+                    console.warn('Failed to update flipbook layout on resize:', error);
+                }
+            }
+        }, 200);
     });
 
     retryBtn.addEventListener('click', () => {
