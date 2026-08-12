@@ -287,13 +287,26 @@
 <!-- Hero Section -->
 <section class="relative min-h-[60vh] flex items-center overflow-hidden bg-surface-container-low">
 <div class="absolute inset-0 z-0 opacity-10 bg-cover bg-center" data-alt="A wide panoramic shot of the Indian Institute of Technology Madras campus at golden hour, highlighting the lush greenery, historic architecture, and the serene academic atmosphere. The lighting is soft and warm, casting long shadows across the pathways. The visual style is professional, capturing the heritage and prestige of the institution." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiolApNwN1XbI1wbzAzZxKxMFyWLaX-FBp-YYf_Ganjr_yylbka3X9kH0R8B5ap01ZYW_UVljCWUmsPTMVojG-fcz_EDD9FkYBiIVbuLVFRUzslwG0J4xitw6UwWxllTIZzTV4RKqECagP2WDdqUyhcHvV2mQFfZDckgiWG-aBPLusjvq15mAp8p8CNNXamFniCwiLPpk2A6trhZ4CtwGQ12LVN56WLcZmr8fH2hSjZTEA2NoszeU')"></div>
-<div class="relative z-10 w-full px-margin-page max-w-screen-2xl mx-auto">
+<div class="relative z-10 w-full px-margin-page max-w-screen-2xl mx-auto py-16 lg:py-0">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 <div class="max-w-3xl space-y-6">
 <h1 class="font-headline-xl text-headline-xl text-primary leading-tight">MITR Gallery & Student Experiences</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant">Preserving the legacy, campus memories, barefoot training batches, and student achievements of Team MITR at IIT Madras.</p>
 <div class="flex gap-4">
-<button class="px-8 py-3 bg-primary text-on-primary font-bold rounded-lg primary-glow hover:bg-primary-container transition-colors">Explore Events</button>
-<button class="px-8 py-3 border border-secondary text-secondary font-bold rounded-lg hover:bg-secondary/5 transition-colors">Media Kit</button>
+<button class="px-8 py-3 bg-primary text-on-primary font-bold rounded-lg primary-glow hover:bg-primary-container transition-colors" href="events-section">Explore Events</button>
+<button class="px-8 py-3 border border-secondary text-secondary font-bold rounded-lg hover:bg-secondary/5 transition-colors" src="https://dost.iitm.ac.in/photo_gallery.php" target="_blank" rel="noopener">Media Kit</button>
+</div>
+</div>
+<!-- Event Photo Carousel -->
+<div id="hero-carousel" class="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/40 bg-surface-container">
+<div id="hero-carousel-track" class="absolute inset-0"></div>
+<button id="hero-carousel-prev" type="button" aria-label="Previous photo" class="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition-colors">
+<span class="material-symbols-outlined text-xl">chevron_left</span>
+</button>
+<button id="hero-carousel-next" type="button" aria-label="Next photo" class="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition-colors">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</button>
+<div id="hero-carousel-dots" class="absolute bottom-3 sm:bottom-4 inset-x-0 z-10 flex justify-center gap-2"></div>
 </div>
 </div>
 </div>
@@ -350,62 +363,49 @@
   </div>
 </section>
 
-<!-- Upcoming Events: Bento Grid Layout -->
+<!-- Flagship Events -->
 <section class="py-section-gap px-margin-page max-w-screen-2xl mx-auto">
 <div class="mb-12">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Upcoming Events</h2>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Flagship Events</h2>
 <div class="w-24 h-1 bg-primary-container"></div>
 </div>
-<div class="grid grid-cols-12 gap-8">
-<!-- Primary Event Card -->
-<div class="col-span-12 lg:col-span-8 group">
-<div class="glass-card rounded-xl overflow-hidden flex flex-col md:flex-row h-full hover:shadow-xl transition-shadow duration-300">
-<div class="p-10 md:w-1/2 flex flex-col justify-between">
-<div class="space-y-4">
-<span class="px-3 py-1 bg-primary-container text-on-primary-container text-label-sm font-bold rounded-full uppercase tracking-wider">Major Workshop</span>
-<h3 class="font-headline-lg text-headline-lg text-on-surface">Mindfulness &amp; Resilience Summit 2024</h3>
-<p class="text-on-surface-variant font-body-md">A full-day immersive experience featuring guest speakers from world-class wellness institutions, focusing on mental health tools for engineering students.</p>
-<div class="flex items-center space-x-4 text-on-surface-variant">
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-primary text-xl">calendar_today</span>
-<span class="text-label-sm">Nov 15, 2024</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Flagship 1 -->
+<div class="glass-card rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
+<!-- Placeholder: swap for the event photo once available -->
+<div class="relative h-56 sm:h-64 bg-surface-container-highest flex flex-col items-center justify-center gap-2 text-on-surface-variant" style="background-image: url('Events-Flagship\\Copy of Orientation 2026-27.png'); background-size: cover; background-position: center;">
+<span class="material-symbols-outlined text-5xl opacity-40" >add_photo_alternate</span>
+<p class="text-sm">Photo coming soon</p>
 </div>
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-primary text-xl">location_on</span>
-<span class="text-label-sm">OAT, IITM</span>
+<div class="p-6 sm:p-8 space-y-3">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container text-label-sm font-bold rounded-full uppercase tracking-wider">Flagship Event</span>
+<h3 class="font-headline-lg text-2xl text-on-surface">World Suicide Prevention Day</h3>
+<p class="text-on-surface-variant font-body-md">MITR's flagship awareness drive marking World Suicide Prevention Day, bringing the campus together to talk openly about mental health and support.</p>
 </div>
 </div>
+<!-- Flagship 2 -->
+<div class="glass-card rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
+<div class="relative h-56 sm:h-64 bg-surface-container-highest flex flex-col items-center justify-center gap-2 text-on-surface-variant" style="background-image: url('Events-Flagship\\Copy of Orientation 2026-27 (2).jpg'); background-size: cover; background-position: center;">
+<span class="material-symbols-outlined text-5xl opacity-40">add_photo_alternate</span>
+<p class="text-sm">Photo coming soon</p>
 </div>
-</div>
-</div>
-</div>
-<!-- Secondary Event Cards Column -->
-<div class="col-span-12 lg:col-span-4 flex flex-col gap-8">
-<div class="glass-card p-8 rounded-xl hover:shadow-lg transition-shadow">
-<div class="flex justify-between items-start mb-4">
-<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-xs font-bold rounded">Seminar</span>
-<span class="material-symbols-outlined text-primary">groups</span>
-</div>
-<h4 class="font-headline-lg text-2xl text-on-surface mb-2 leading-snug">Peer Support Training Session</h4>
-<p class="text-on-surface-variant text-sm mb-6">Become a certified MITR peer supporter. Learn active listening and crisis intervention basics.</p>
-<div class="flex justify-between items-center">
-<span class="text-label-sm text-primary">Dec 2, 2024</span>
-<a class="text-primary font-bold text-sm hover:underline" href="#">View Details</a>
-</div>
-</div>
-<div class="glass-card p-8 rounded-xl hover:shadow-lg transition-shadow flex-grow">
-<div class="flex justify-between items-start mb-4">
-<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-xs font-bold rounded">Webinar</span>
-<span class="material-symbols-outlined text-primary">videocam</span>
-</div>
-<h4 class="font-headline-lg text-2xl text-on-surface mb-2 leading-snug">Navigating Career Anxiety</h4>
-<p class="text-on-surface-variant text-sm mb-6">Join alumni experts for a session on managing stress during the placement season.</p>
-<div class="flex justify-between items-center">
-<span class="text-label-sm text-primary">Dec 10, 2024</span>
-<a class="text-primary font-bold text-sm hover:underline" href="#">Register</a>
+<div class="p-6 sm:p-8 space-y-3">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container text-label-sm font-bold rounded-full uppercase tracking-wider">Flagship Event</span>
+<h3 class="font-headline-lg text-2xl text-on-surface">Annual Wellness Drive</h3>
+<p class="text-on-surface-variant font-body-md">A campus-wide wellness campaign held annually to promote holistic student wellbeing through workshops, activities, and outreach.</p>
 </div>
 </div>
 </div>
+</section>
+
+<!-- Events -->
+<section class="py-section-gap px-margin-page max-w-screen-2xl mx-auto">
+<div ref="events-section" class="mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Workshops & Events</h2>
+<div class="w-24 h-1 bg-primary-container"></div>
+</div>
+<div id="events-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<p class="col-span-full text-center py-8 text-on-surface-variant text-sm">Loading events...</p>
 </div>
 </section>
 <!-- Student Experiences & Sticky Notes Wall -->
@@ -493,33 +493,39 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Achievement 1 -->
-<div class="group">
+<!-- TODO: replace href="#" with the Press Information Bureau article URL -->
+<a href="#" target="_blank" rel="noopener" class="group block">
 <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
-<img alt="IITM MITR Media Feature" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHhpPHPTcuXSkqrqFl2GfJwCCcXc46kjUabdYxb33Y8K36sCctHCb9PNqWzgVAGEfDXsLGchq9lPCYPsWzUKotlVwbpNOtegCJx6y7D1_OfMuLooM6RywvdxnRo8Bbn50_ahBmgW80Qu6slR8mDNjTM4T5LbxjAjfPGPwKTSPV_NLdxhtIQWTKkQ425KKE61CxxbEuLNh2xHTFtRYv5RqwtyMJ-8o6GwCUzCfOFWvI-N2oRH7Fa3jqge8W-fbyTXdz"/>
+<img alt="IITM MITR Media Feature" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="Achievements\gallery_44_1785215350_939fa9f8.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 <div class="absolute bottom-4 left-4 right-4">
-<p class="text-white font-bold text-label-sm">THE HINDU • NOV 2023</p>
+<p class="text-white font-bold text-label-sm"> Press Information Bureau• 13th July 2026</p>
 </div>
 </div>
-<h3 class="font-headline-lg text-2xl text-primary mb-3">Redefining Campus Support Systems</h3>
-<p class="text-on-surface-variant font-body-md line-clamp-3">IIT Madras MITR initiative sets a new benchmark for peer-to-peer mental health support in technical institutions across India.</p>
-</div>
+<h3 class="font-headline-lg text-2xl text-primary mb-3">Becomes First CFTI to Achieve ISO Certification for Wellness Centre
+</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-3">Held under the aegis of the Ministry of Education, Government of India, as part of its Malaviya Mission Teacher Training Programme, the event is component of a nationwide capacity-building initiative to strengthen student wellbeing mechanisms across Higher Education Institutions (HEIs).
+
+</p>
+</a>
 <!-- Achievement 2 -->
-<div class="group">
+<!-- TODO: replace href="#" with the Times of India article URL -->
+<a href="#" target="_blank" rel="noopener" class="group block">
 <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
-<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="A crisp, professional photograph of an award ceremony in a prestigious university hall. A group of diverse student leaders from Team MITR are receiving a trophy from a distinguished faculty member. The lighting is focused and celebratory, capturing a moment of institutional pride. The setting is clean, with dark wood accents and elegant academic regalia visible in the background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBaFVFnrT4j8u1WlNsqLfCot_VKueH7YE8vTeOc6OIBhK-Th2f4cF1CSKrdYSchdM_1UVaQNS68GFD8Q1kdjYQ3CoaBeAHpqN3IsmjDKlCujKmpqkJsorKPHJBO7Qo9vle1TVla_xBMwLu8fqi95HEaSqGCZEJsjx4DL6xhMZnkyh_mQX79des_rIX0LuaIRCT3-OijadHSA4ZMqUo4u7kJtrERslay17vHfg8i_9rq_93GiYbPW6s')"></div>
+<img alt="IITM MITR Media Feature" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="Achievements\gallery_36_1777457196_bf759220.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 <div class="absolute bottom-4 left-4 right-4">
-<p class="text-white font-bold text-label-sm">INSTITUTIONAL AWARD • 2023</p>
+<p class="text-white font-bold text-label-sm">Times of India • 25th April 2026</p>
 </div>
 </div>
-<h3 class="font-headline-lg text-2xl text-primary mb-3">Excellence in Student Outreach</h3>
-<p class="text-on-surface-variant font-body-md line-clamp-3">Recognized for 'Outstanding Contribution to Campus Culture' during the annual Director's award ceremony.</p>
-</div>
+<h3 class="font-headline-lg text-2xl text-primary mb-3">Lets D-Stress Campus Conversations</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-3"> Raising awareness on how excessive screen time affects focus, sleep, and overall sharpness while encouraging students to build mindful tech habits.</p>
+</a>
 <!-- Achievement 3 -->
-<div class="group">
+<!-- TODO: replace href="#" with the MITR Impact Report URL -->
+<a href="#" target="_blank" rel="noopener" class="group block">
 <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
-<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="A clean, minimalist shot of a stack of professionally printed wellness brochures and pamphlets featuring the MITR logo, neatly arranged on a modern desk. The background is a soft-focus view of a library or academic building. The light is bright and even, emphasizing clarity and information design. The color palette consists of whites, soft greys, and IITM gold accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHVSKu_ijbQrMt23jiZ_uwBf7G2ey_BNdgOG_qSfiICPXEtfFZuQpnWdpoPYb-s2v3ZtPhatifI0vZsOf2TIXqsJJwtWGpdBusg8zwEn9CYW8GlpTZo6PrUsb6ZEnjiI9XjQUyDZPHRQvDTZZvdCf958DVQdBrGxZriLCd7GD4SUWarBXrO9IlHnPxDKfuVez1CC_3tvzxlD6qZNJIPb31FUEXNmbqgH0uEUJzSoewwBLeAEkFAOU')"></div>
+<img alt="IITM MITR Media Feature" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="Achievements\gallery_44_1785215350_939fa9f8.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 <div class="absolute bottom-4 left-4 right-4">
 <p class="text-white font-bold text-label-sm">MITR IMPACT REPORT • 2024</p>
@@ -527,32 +533,32 @@
 </div>
 <h3 class="font-headline-lg text-2xl text-primary mb-3">Pioneering Wellness Outreach</h3>
 <p class="text-on-surface-variant font-body-md line-clamp-3">How MITR reached 10,000+ students through 50+ targeted initiatives in the last academic cycle.</p>
-</div>
+</a>
 </div>
 </div>
 </section>
 <!-- Statistics Banner -->
 <section class="py-16 bg-primary text-white">
-<div class="px-margin-page max-w-screen-2xl mx-auto">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-<div>
-<div class="font-headline-xl text-5xl mb-2">500+</div>
-<div class="text-label-sm uppercase tracking-widest opacity-80">Events Hosted</div>
-</div>
-<div>
-<div class="font-headline-xl text-5xl mb-2">15k+</div>
-<div class="text-label-sm uppercase tracking-widest opacity-80">Students Guided</div>
-</div>
-<div>
-<div class="font-headline-xl text-5xl mb-2">80+</div>
-<div class="text-label-sm uppercase tracking-widest opacity-80">Media Features</div>
-</div>
-<div>
-<div class="font-headline-xl text-5xl mb-2">200+</div>
-<div class="text-label-sm uppercase tracking-widest opacity-80">Alumni Leads</div>
-</div>
-</div>
-</div>
+    <div class="px-margin-page max-w-screen-2xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div>
+    <div class="font-headline-xl text-5xl mb-2">500+</div>
+    <div class="text-label-sm uppercase tracking-widest opacity-80">Events Hosted</div>
+    </div>
+    <div>
+    <div class="font-headline-xl text-5xl mb-2">15k+</div>
+    <div class="text-label-sm uppercase tracking-widest opacity-80">Students Guided</div>
+    </div>
+    <div>
+    <div class="font-headline-xl text-5xl mb-2">80+</div>
+    <div class="text-label-sm uppercase tracking-widest opacity-80">Media Features</div>
+    </div>
+    <div>
+    <div class="font-headline-xl text-5xl mb-2">200+</div>
+    <div class="text-label-sm uppercase tracking-widest opacity-80">Alumni Leads</div>
+    </div>
+    </div>
+    </div>
 </section>
 <!-- Our Alumni Network -->
 <section class="py-section-gap relative">
@@ -561,52 +567,39 @@
 <h2 class="font-headline-lg text-headline-xl text-primary mb-6">Our Alumni Network</h2>
 <p class="font-body-lg text-on-surface-variant">The MITR legacy continues through our former leaders who have gone on to champion well-being in their professional journeys across the globe.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+
 <!-- Alumnus 1 -->
 <div class="glass-card p-10 rounded-2xl relative">
 <div class="absolute -top-6 left-10">
-<div class="w-16 h-16 rounded-full border-4 border-surface overflow-hidden shadow-lg">
-<img alt="Alumni Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXBlWP6n2YKvx59AJv2MA76hDEWeBfiNUrIPoRDoGX-k-_IVEjLi_FuUo7V_pIJe4EqTBFl5Ay3TYX1lk-fTT9701oZSwWJC_jnjUxjfdAAgAGh51SkEg9pxS9liEwFxtJNuMrHE33mlsR1qYE8q1FB4RwAJpc0pdjEq3v4AnHlj3563LHbLAcDkJqZyJ_N0xru3b0LGSUJbgeXc2SFPiG9sLVJ3kWXWQe42438QeV46ixUQiyqP4IGyatbaDkROar"/>
+<div class="w-20 h-20 rounded-full border-4 border-surface overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young male professional in his late 20s, with a warm and confident expression. He is dressed in a smart-casual blazer. The background is a soft, blurred corporate or academic setting with warm ambient lighting. The visual style is polished and high-end, reflecting a successful career path post-IIT Madras." src="Alumni\15a9fbd0-b956-4674-89ad-08a2c698682b.jpg"/>
 </div>
 </div>
 <span class="material-symbols-outlined text-primary/20 text-6xl absolute top-6 right-10">format_quote</span>
 <div class="mt-8 space-y-4">
-<p class="italic text-on-surface font-body-md leading-relaxed">"Being part of MITR was the most transformative part of my time at IIT Madras. It taught me that technical brilliance means nothing without emotional intelligence."</p>
+<p class="italic text-on-surface font-body-md leading-relaxed">"This is my fourth year with Team Mitr, and it has been an amazing ride full of growth, compassion, and meaningful connections. Mitr is not just a support group; it is like family, making sure nobody on campus feels alone. This year, we focused on mental wellness with some really solid programs, fun, creative activities, and training sessions. Thank you to all my amazing core members and the team for their energy and effort in making this a success. Thank you to every student who participated and made our events a success. Together, we are creating a campus that is more positive, safe, and welcoming for everyone."</p>
 <div>
-<p class="font-bold text-primary font-body-md">Ananya Sharma</p>
-<p class="text-xs text-on-surface-variant uppercase tracking-wide">Core Member 2019-21 • Software Engineer at Google</p>
+<p class="font-bold text-primary font-body-md">Hiba</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-wide">Student Advisor 2025-26</p>
 </div>
 </div>
 </div>
 <!-- Alumnus 2 -->
 <div class="glass-card p-10 rounded-2xl relative">
 <div class="absolute -top-6 left-10">
-<div class="w-16 h-16 rounded-full border-4 border-surface overflow-hidden shadow-lg">
-<img class="w-full h-full object-cover" data-alt="A professional headshot of a young male professional in his late 20s, with a warm and confident expression. He is dressed in a smart-casual blazer. The background is a soft, blurred corporate or academic setting with warm ambient lighting. The visual style is polished and high-end, reflecting a successful career path post-IIT Madras." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLO_aOH9ibQCiejf3nY5b5dqVC3bRxaoNLHzL-XGS-ucY6pPlA8XM2ufBDmQvzz7Uj1-0nY72c_TUlWNGVmcV3B_9bhix6f2EXBqJtg7-m3U0lCpT04-bc-kwDsp7Ajnkj24XSV4EcoNDCkbGoKW4oZ9sawaswo1SJklgrje84uDVbOp5IDtUV_MyruzeEMGeo_73T6NXMPeeaB3Ce5hCBn9Qv1CWLdF6tzn68154Kkg1iFC3gEzQ"/>
+<div class="w-20 h-20 rounded-full border-4 border-surface overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young female professional with an approachable and intelligent gaze. She is wearing elegant, modern business attire. The lighting is soft and professional, with a light neutral background that creates a clean and high-status aesthetic. Her expression conveys empathy and competence, aligning with the MITR alumni brand." src="Alumni\701421dd-4174-4104-bc5a-33be020da418.jpg"/>
 </div>
 </div>
 <span class="material-symbols-outlined text-primary/20 text-6xl absolute top-6 right-10">format_quote</span>
 <div class="mt-8 space-y-4">
-<p class="italic text-on-surface font-body-md leading-relaxed">"The empathy and resilience I developed at Team MITR continue to serve me every day in my leadership role. Once a Mitr, always a Mitr."</p>
+<p class="italic text-on-surface font-body-md leading-relaxed">"Being part of Team MITR has been an incredible journey of growth and compassion. MITR is more than just a support group — it’s a family that believes no one on campus should ever feel alone in their emotional struggles. This year, we promoted mental wellness through impactful programs, creative initiatives, and life-saving training sessions. My heartfelt thanks to every MITR member for their dedication and to every student who believed that mental health matters."</p>
 <div>
-<p class="font-bold text-primary font-body-md">Rahul Verma</p>
-<p class="text-xs text-on-surface-variant uppercase tracking-wide">Lead Coordinator 2020 • Founder, SustainAI</p>
-</div>
-</div>
-</div>
-<!-- Alumnus 3 -->
-<div class="glass-card p-10 rounded-2xl relative">
-<div class="absolute -top-6 left-10">
-<div class="w-16 h-16 rounded-full border-4 border-surface overflow-hidden shadow-lg">
-<img class="w-full h-full object-cover" data-alt="A professional headshot of a young female professional with an approachable and intelligent gaze. She is wearing elegant, modern business attire. The lighting is soft and professional, with a light neutral background that creates a clean and high-status aesthetic. Her expression conveys empathy and competence, aligning with the MITR alumni brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxeuDJhKOSBTK4DqyKY2OT-u-NGvKdJUt6MtV38XMzEo4X7hbRhGCErMa6_Mdi9cQzABJWkVjHJAcyOaZUOPJXlBGfWgATCIqPwa6drN_iZjEOhql0Ml07T1NfFbndm9qzRRd12d5I0W7WMYq5H92CGvv8KS5EJzLa8dnMbYbQMBF39X8j-j5cI3Q8lHMLnq-bLh25ktOzgeJv4OrOx2jUDKbQoQLHYgU3SfI1YcoELelF_tyfrIc"/>
-</div>
-</div>
-<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-6 right-10">format_quote</span>
-<div class="mt-8 space-y-4">
-<p class="italic text-on-surface font-body-md leading-relaxed">"MITR isn't just an organization; it's a family that look out for each other. I am proud to see it growing stronger every year."</p>
-<div>
-<p class="font-bold text-primary font-body-md">Sanya Iyer</p>
-<p class="text-xs text-on-surface-variant uppercase tracking-wide">Media Lead 2018 • Product Manager at Meta</p>
+<p class="font-bold text-primary font-body-md">Dinesh Bandi</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-wide">
+Student Advisor 2024-25
+</p>
 </div>
 </div>
 </div>
@@ -623,6 +616,106 @@
 <!-- Footer -->
 <footer class="w-full px-margin-page py-section-gap flex flex-col items-center space-y-8 bg-surface-container border-t border-outline-variant/50"><div class="flex flex-col items-center space-y-6"><div class="flex items-center space-x-3"><img alt="Footer Logo" class="h-16 w-16 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpmZIoxlCn2Lsg7_x9N7QoLqWIk6yddBaZonLCFUDRotGSG5vYMYzD-DqPvBRMHXSrUNlkcEjHZAZ-PVzP1ORqNi0r3M-T6FbpbG8JuCH8G2X516JCYez_BobmVQfmWRmNu8EadmTbTVVxt2WKqS-nhlsvGQnc__srd_TFDkJlgIHwUyi8FUstbymupm8Xh6htGfEe_Mq19GeTUx5gp10K56AQqYddgwP7rIi8XWde3wWdbxxP1dMj_KIFCcZW36K"/><div class="text-center md:text-left"><h2 class="font-headline-lg text-headline-lg font-bold text-primary">IITM MITR</h2><p class="font-label-sm text-on-surface-variant">Empowering Wellbeing Since 2010</p></div></div><div class="flex flex-wrap justify-center gap-8"><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Privacy Policy</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Terms of Service</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Campus Map</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="directory.html">Contact Us</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Feedback</a></div></div><div class="w-full max-w-screen-xl border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-70"><p class="font-body-md text-sm text-on-surface-variant text-center">© 2024 Indian Institute of Technology Madras. All rights reserved.</p><div class="flex space-x-6"><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">qr_code_2</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">alternate_email</span></div></div></footer>
 <script>
+    // Events section: populated from events.json
+    (function loadEvents() {
+        var grid = document.getElementById('events-grid');
+        if (!grid) return;
+
+        fetch('events.json')
+            .then(function (res) { return res.json(); })
+            .then(function (events) {
+                grid.innerHTML = events.map(function (e) {
+                    return '<div class="glass-card rounded-xl p-6 flex flex-col gap-3 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">'
+                        + '<div class="flex items-center justify-between">'
+                        + '<span class="material-symbols-outlined text-primary text-3xl">' + (e.icon || 'celebration') + '</span>'
+                        + (e.category ? '<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-xs font-bold rounded">' + e.category + '</span>' : '')
+                        + '</div>'
+                        + '<h4 class="font-headline text-lg font-bold text-on-surface leading-snug">' + e.name + '</h4>'
+                        + (e.description ? '<p class="text-on-surface-variant text-sm">' + e.description + '</p>' : '')
+                        + '</div>';
+                }).join('');
+            })
+            .catch(function (err) {
+                console.error('Failed to load events.json', err);
+                grid.innerHTML = '<p class="col-span-full text-center py-8 text-on-surface-variant text-sm">Unable to load events right now.</p>';
+            });
+    })();
+
+    // Hero photo carousel: cycles through the "Event Carosel" photos
+    (function heroCarousel() {
+        var root = document.getElementById('hero-carousel');
+        if (!root) return;
+
+        var PHOTOS = [
+            'WhatsApp Image 2026-08-13 at 00.41.24.jpeg',
+            'WhatsApp Image 2026-08-13 at 00.41.25.jpeg',
+            'WhatsApp Image 2026-08-13 at 00.41.25 (1).jpeg',
+            'WhatsApp Image 2026-08-13 at 00.41.25 (2).jpeg',
+            'WhatsApp Image 2026-08-13 at 00.41.26 (1).jpeg',
+            'WhatsApp Image 2026-08-13 at 00.41.27.jpeg',
+            'WhatsApp Image 2026-08-13 at 00.41.27 (1).jpeg',
+            'WhatsApp Image 2026-08-13 at 00.41.27 (3).jpeg',
+            'WhatsApp Image 2026-08-13 at 00.41.28.jpeg'
+        ].map(function (name) { return encodeURI('Event Carosel/' + name); });
+
+        var track = document.getElementById('hero-carousel-track');
+        var dotsWrap = document.getElementById('hero-carousel-dots');
+        var prevBtn = document.getElementById('hero-carousel-prev');
+        var nextBtn = document.getElementById('hero-carousel-next');
+
+        var slides = PHOTOS.map(function (src, i) {
+            var img = document.createElement('img');
+            img.src = src;
+            img.alt = 'MITR event photo ' + (i + 1);
+            img.loading = i === 0 ? 'eager' : 'lazy';
+            img.className = 'absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out';
+            img.style.opacity = i === 0 ? '1' : '0';
+            track.appendChild(img);
+            return img;
+        });
+
+        var dots = PHOTOS.map(function (_, i) {
+            var dot = document.createElement('button');
+            dot.type = 'button';
+            dot.setAttribute('aria-label', 'Go to photo ' + (i + 1));
+            dotsWrap.appendChild(dot);
+            dot.addEventListener('click', function () { goTo(i); });
+            return dot;
+        });
+
+        var current = 0;
+        var timer = null;
+
+        function render() {
+            slides.forEach(function (img, i) { img.style.opacity = i === current ? '1' : '0'; });
+            dots.forEach(function (dot, i) {
+                dot.className = 'h-2 rounded-full transition-all ' + (i === current ? 'bg-white w-5' : 'bg-white/50 w-2');
+            });
+        }
+
+        function goTo(index) {
+            current = (index + slides.length) % slides.length;
+            render();
+            restart();
+        }
+
+        function next() { goTo(current + 1); }
+        function prev() { goTo(current - 1); }
+
+        function restart() {
+            if (timer) clearInterval(timer);
+            timer = setInterval(next, 4500);
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', prev);
+        if (nextBtn) nextBtn.addEventListener('click', next);
+        root.addEventListener('mouseenter', function () { if (timer) clearInterval(timer); });
+        root.addEventListener('mouseleave', restart);
+
+        render();
+        restart();
+    })();
+
     // Existing card hover effect
     document.querySelectorAll('.glass-card').forEach(card => {
         card.addEventListener('mouseenter', () => {
