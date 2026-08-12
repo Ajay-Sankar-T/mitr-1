@@ -1,13 +1,14 @@
-// Shared "Book a Session" modal, used by the Schedule a Session button on the
-// home page and the Book Slot button on the emergency page.
+// Shared "Book a Session" modal. Any page that loads this file gets it: put
+// `data-open-booking` on a button and that button opens the dialog.
 //
 // No backend or storage is involved: submitting opens a pre-filled Gmail
 // compose window addressed to the chosen venue, and the visitor sends it
 // themselves from their own inbox.
 //
-// Each page supplies the modal markup (so Tailwind sees the classes up front);
-// this file owns the venue list and all of the behaviour, so the two pages
-// cannot drift apart.
+// The markup used to be copied into each page, which left three versions that
+// had already drifted apart in styling — and the copy on the directory page was
+// missing entirely at one point, so its button silently did nothing. This file
+// now owns the markup as well as the behaviour and injects it once per page.
 (function () {
     'use strict';
 
@@ -25,12 +26,73 @@
         }
     ];
 
-    function init() {
-        var modal = document.getElementById('booking-modal');
-        if (!modal) return;
+    var MODAL_HTML = [
+        '<div class="hidden fixed inset-0 z-[110] bg-black/50 backdrop-blur-sm items-center justify-center p-4"',
+        '     id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">',
+        '  <div class="bg-surface rounded-3xl shadow-2xl w-full max-w-lg p-6 relative border border-outline-variant/40">',
+        '    <div class="flex items-center justify-between pb-4 border-b border-outline-variant/30 mb-4">',
+        '      <div class="flex items-center gap-2.5 text-primary">',
+        '        <span class="material-symbols-outlined text-2xl">event_available</span>',
+        '        <h3 class="text-2xl font-bold" id="booking-modal-title" style="font-family:\'Newsreader\',serif">Book a Session</h3>',
+        '      </div>',
+        '      <button id="booking-modal-close" type="button" aria-label="Close"',
+        '              class="text-outline hover:text-on-surface p-1 rounded-full">',
+        '        <span class="material-symbols-outlined text-2xl">close</span>',
+        '      </button>',
+        '    </div>',
+        '    <p class="text-sm text-on-surface-variant mb-4">Choose a date, time, and venue that works for you.</p>',
+        '    <form class="space-y-4" id="booking-form">',
+        '      <div>',
+        '        <label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-1" for="booking-date">Date</label>',
+        '        <input id="booking-date" name="date" type="date" required',
+        '               class="w-full rounded-xl border-outline-variant bg-surface-container-low px-4 py-2.5 text-sm focus:border-primary focus:ring-primary">',
+        '      </div>',
+        '      <div>',
+        '        <label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-1" for="booking-time">Time (optional)</label>',
+        '        <input id="booking-time" name="time" type="time"',
+        '               class="w-full rounded-xl border-outline-variant bg-surface-container-low px-4 py-2.5 text-sm focus:border-primary focus:ring-primary">',
+        '      </div>',
+        '      <div>',
+        '        <label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-1" for="booking-venue">Venue</label>',
+        '        <select id="booking-venue" name="venue" required',
+        '                class="w-full rounded-xl border-outline-variant bg-surface-container-low px-4 py-2.5 text-sm focus:border-primary focus:ring-primary">',
+        '          <option disabled selected value="">Select a venue</option>',
+        '        </select>',
+        '      </div>',
+        '      <div>',
+        '        <label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-1" for="booking-message">Message (optional)</label>',
+        '        <textarea id="booking-message" name="message" rows="3"',
+        '                  placeholder="Anything you would like the counsellor to know beforehand."',
+        '                  class="w-full rounded-xl border-outline-variant bg-surface-container-low px-4 py-2.5 text-sm focus:border-primary focus:ring-primary resize-y"></textarea>',
+        '      </div>',
+        '      <p class="hidden text-sm text-error font-bold" id="booking-error"></p>',
+        '      <div class="flex items-center justify-end gap-3 pt-2">',
+        '        <button type="button" id="booking-cancel"',
+        '                class="px-5 py-2.5 rounded-full text-sm font-bold text-on-surface-variant hover:bg-surface-container">Cancel</button>',
+        '        <button type="submit"',
+        '                class="px-6 py-2.5 rounded-full text-sm font-bold bg-primary text-on-primary hover:bg-primary/90 shadow-md flex items-center gap-2">',
+        '          <span class="material-symbols-outlined text-sm">send</span><span>Confirm Request</span>',
+        '        </button>',
+        '      </div>',
+        '    </form>',
+        '    <p class="hidden text-sm text-primary font-bold mt-4" id="booking-success"></p>',
+        '  </div>',
+        '</div>'
+    ].join('\n');
 
+    function init() {
         var openers = document.querySelectorAll('[data-open-booking]');
         if (!openers.length) return;
+
+        // Injected only when the page hasn't kept its own copy, so a page that
+        // still carries the old inline markup keeps working unchanged.
+        var modal = document.getElementById('booking-modal');
+        if (!modal) {
+            var host = document.createElement('div');
+            host.innerHTML = MODAL_HTML;
+            modal = host.firstElementChild;
+            document.body.appendChild(modal);
+        }
 
         var closeBtn = document.getElementById('booking-modal-close');
         var cancelBtn = document.getElementById('booking-cancel');

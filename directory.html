@@ -67,44 +67,7 @@
 
   <body class="bg-background text-on-surface font-body font-normal antialiased min-h-screen flex flex-col">
     <!-- Header Navigation -->
-    <header class="fixed top-0 z-50 w-full bg-surface/60 backdrop-blur-md border-b border-transparent transition-all duration-500 h-20" id="main-header">
-      <div class="flex justify-between items-center w-full px-margin-page max-w-screen-2xl mx-auto h-full">
-        <div class="flex items-center gap-4">
-          <a href="index.html" class="flex items-center gap-4">
-            <img alt="IIT Madras Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4">
-            <div class="h-10 w-px bg-outline-variant/40"></div>
-            <img alt="Team MITR Logo" class="h-12 w-auto" src="mitr-logo.png">
-          </a>
-        </div>
-        <nav class="hidden md:flex items-center space-x-8">
-          <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Home</a>
-          <a href="emergency.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Support Desk</a>
-          <a href="directory.html" class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md text-body-md">Contact Us</a>
-          <a href="yearbook.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Gallery</a>
-          <a href="https://app.youform.com/forms/7nivpjkd" target="_blank" rel="noopener" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Self-Check Up</a>
-        </nav>
-        <div class="flex items-center gap-6">
-          <button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200" id="sos-btn" type="button">
-            Support
-          </button>
-          <a href="https://dost.iitm.ac.in" target="_blank" rel="noopener">
-            <img src="dostiitmlogo.svg" alt="Dost IITM Logo" class="h-12 w-auto text-primary cursor-pointer hover:opacity-70 transition-opacity">
-          </a>
-          <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" class="md:hidden flex items-center justify-center w-11 h-11 -mr-2 rounded-full text-primary hover:bg-primary/5 transition-colors" id="mobile-menu-btn" type="button">
-            <span class="material-symbols-outlined text-3xl">menu</span>
-          </button>
-        </div>
-      </div>
-      <!-- Mobile menu -->
-      <nav class="hidden md:hidden absolute top-20 inset-x-0 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-lg px-margin-page py-4 flex flex-col" id="mobile-menu">
-        <a href="index.html" class="text-on-surface-variant font-body-md text-body-md py-3">Home</a>
-        <a href="emergency.html" class="text-on-surface-variant font-body-md text-body-md py-3">Support Desk</a>
-        <a href="directory.html" class="text-primary font-bold font-body-md text-body-md py-3">Contact Us</a>
-        <a href="yearbook.html" class="text-on-surface-variant font-body-md text-body-md py-3">Gallery</a>
-        <a href="https://app.youform.com/forms/7nivpjkd" target="_blank" rel="noopener" class="text-on-surface-variant font-body-md text-body-md py-3">Self-Check Up</a>
-        <button class="bg-primary text-on-primary mt-3 px-6 py-3 rounded-full font-bold active:scale-95 transition-transform duration-200" type="button">Support</button>
-      </nav>
-    </header>
+    <div data-site-header></div>
 
     <!-- Main Title & Filter Bar -->
     <section class="pt-32 pb-8 px-margin-page max-w-screen-2xl mx-auto">
@@ -129,7 +92,7 @@
           </div>
         </div>
 
-        <button id="quick-coffee-btn" type="button" class="shrink-0 bg-primary text-on-primary px-6 py-3 rounded-full font-bold text-sm hover:bg-primary/90 transition-all shadow-md flex items-center gap-2">
+        <button id="quick-coffee-btn" type="button" data-open-coffee data-coffee-target="Any Available MITR Coordinator" class="shrink-0 bg-primary text-on-primary px-6 py-3 rounded-full font-bold text-sm hover:bg-primary/90 transition-all shadow-md flex items-center gap-2">
           <span class="material-symbols-outlined text-base">local_cafe</span>
           <span>Book a Coffee Chat</span>
         </button>
@@ -222,16 +185,6 @@
 
     <!-- Directory Content Container -->
     <main class="px-margin-page max-w-screen-2xl mx-auto pb-section-gap flex-1 space-y-16">
-      <!-- Student Peer Coordinators Section -->
-      <div>
-        <h2 class="font-headline-lg text-2xl text-primary border-l-4 border-primary pl-4 font-bold mb-6">
-          MITR Student Peer Coordinators
-        </h2>
-        <div id="coordinators-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <!-- Dynamically populated peer cards -->
-        </div>
-      </div>
-
       <!-- Faculty Coordinators Section -->
       <div>
         <h2 class="font-headline-lg text-2xl text-primary border-l-4 border-primary pl-4 font-bold mb-6">
@@ -241,126 +194,26 @@
           <!-- Dynamically populated faculty cards -->
         </div>
       </div>
+
+      <!-- Student Peer Coordinators Section -->
+      <div>
+        <h2 class="font-headline-lg text-2xl text-primary border-l-4 border-primary pl-4 font-bold mb-6">
+          MITR Student Peer Coordinators
+        </h2>
+        <div id="coordinators-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Dynamically populated peer cards -->
+        </div>
+      </div>
     </main>
 
     <!-- Footer -->
-    <footer class="w-full px-margin-page py-12 bg-surface-container-high border-t border-outline-variant/40 mt-auto">
-      <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="flex items-center gap-4">
-          <img src="mitr-logo.png" alt="MITR Logo" class="h-10 w-auto">
-          <div>
-            <p class="font-bold text-primary font-headline text-lg">IITM Team MITR</p>
-            <p class="text-xs text-on-surface-variant">Student Wellness Portal • IIT Madras</p>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap items-center gap-6 text-sm text-on-surface-variant font-medium">
-          <a href="index.html" class="hover:text-primary transition-colors">Home</a>
-          <a href="emergency.html" class="hover:text-primary transition-colors">Support Desk</a>
-          <a href="directory.html" class="hover:text-primary transition-colors">Contact Us</a>
-          <a href="yearbook.html" class="hover:text-primary transition-colors">Gallery</a>
-          <a href="https://app.youform.com/forms/7nivpjkd" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Self-Check Up</a>
-        </div>
-
-        <p class="text-xs text-outline text-center md:text-right">
-          © IIT Madras MITR. All rights reserved.
-        </p>
-      </div>
-    </footer>
-
-    <!-- Book a Coffee with MITR Modal -->
-    <div id="coffee-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
-      <div class="bg-surface max-w-lg w-full rounded-3xl p-6 shadow-2xl border border-outline-variant/40 relative">
-        <div class="flex items-center justify-between pb-4 border-b border-outline-variant/30 mb-4">
-          <div class="flex items-center gap-2.5 text-primary">
-            <span class="material-symbols-outlined text-2xl">local_cafe</span>
-            <h3 class="font-headline text-2xl font-bold">Book a Coffee with MITR</h3>
-          </div>
-          <button id="coffee-modal-close" class="text-outline hover:text-on-surface p-1 rounded-full">
-            <span class="material-symbols-outlined text-2xl">close</span>
-          </button>
-        </div>
-
-        <form id="coffee-form" class="space-y-4">
-          <div>
-            <label for="coffee-peer" class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-1">Target Coordinator / Team</label>
-            <input type="text" id="coffee-peer" readonly class="w-full rounded-xl border-outline-variant bg-surface-container px-4 py-2.5 text-sm font-semibold text-primary">
-          </div>
-
-          <div>
-            <label for="coffee-location" class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-1">Preferred Meeting Spot</label>
-            <select id="coffee-location" class="w-full rounded-xl border-outline-variant bg-surface-container-low px-4 py-2.5 text-sm focus:border-primary focus:ring-primary">
-              <option value="Himalaya Food Court">Himalaya Food Court</option>
-              <option value="CCD / Library Cafe">CCD / Library Cafe</option>
-              <option value="Hostel Common Room">Hostel Common Room</option>
-              <option value="Department Quadrangle">Department Quadrangle</option>
-              <option value="Any quiet spot on campus">Any quiet spot on campus</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="coffee-note" class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-1">Brief Note (Optional)</label>
-            <textarea id="coffee-note" rows="3" placeholder="Hi! I would love to catch up for a coffee and chat about campus life..." class="w-full rounded-xl border-outline-variant bg-surface-container-low px-4 py-2.5 text-sm focus:border-primary focus:ring-primary"></textarea>
-          </div>
-
-          <div class="flex items-center justify-end gap-3 pt-2">
-            <button type="button" id="coffee-cancel" class="px-5 py-2.5 rounded-full text-sm font-bold text-on-surface-variant hover:bg-surface-container">Cancel</button>
-            <button type="submit" class="px-6 py-2.5 rounded-full text-sm font-bold bg-primary text-on-primary hover:bg-primary/90 shadow-md flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm">local_cafe</span>
-              <span>Send Coffee Request</span>
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <!-- Booking Session Modal -->
-    <div id="booking-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
-      <div class="bg-surface max-w-lg w-full rounded-3xl p-6 shadow-2xl border border-outline-variant/40 relative">
-        <div class="flex items-center justify-between pb-4 border-b border-outline-variant/30 mb-4">
-          <h3 class="font-headline text-2xl font-bold text-primary">Book a Counselling Session</h3>
-          <button id="booking-modal-close" class="text-outline hover:text-on-surface p-1 rounded-full">
-            <span class="material-symbols-outlined text-2xl">close</span>
-          </button>
-        </div>
-
-        <form id="booking-form" class="space-y-4">
-          <div>
-            <label for="booking-venue" class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-1">Preferred Venue</label>
-            <select id="booking-venue" class="w-full rounded-xl border-outline-variant bg-surface-container-low px-4 py-2.5 text-sm focus:border-primary focus:ring-primary"></select>
-          </div>
-
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label for="booking-date" class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-1">Preferred Date</label>
-              <input type="date" id="booking-date" class="w-full rounded-xl border-outline-variant bg-surface-container-low px-4 py-2.5 text-sm focus:border-primary focus:ring-primary">
-            </div>
-
-            <div>
-              <label for="booking-time" class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-1">Time (Optional)</label>
-              <input type="time" id="booking-time" class="w-full rounded-xl border-outline-variant bg-surface-container-low px-4 py-2.5 text-sm focus:border-primary focus:ring-primary">
-            </div>
-          </div>
-
-          <div>
-            <label for="booking-message" class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-1">Note (Optional & Confidential)</label>
-            <textarea id="booking-message" rows="3" placeholder="Anything you would like the counsellor to know beforehand..." class="w-full rounded-xl border-outline-variant bg-surface-container-low px-4 py-2.5 text-sm focus:border-primary focus:ring-primary"></textarea>
-          </div>
-
-          <p id="booking-error" class="hidden text-xs font-bold text-secondary bg-secondary/10 p-3 rounded-xl"></p>
-          <p id="booking-success" class="hidden text-xs font-bold text-green-700 bg-green-100 p-3 rounded-xl"></p>
-
-          <div class="flex items-center justify-end gap-3 pt-2">
-            <button type="button" id="booking-cancel" class="px-5 py-2.5 rounded-full text-sm font-bold text-on-surface-variant hover:bg-surface-container">Cancel</button>
-            <button type="submit" class="px-6 py-2.5 rounded-full text-sm font-bold bg-primary text-on-primary hover:bg-primary/90 shadow-md">Continue to Email</button>
-          </div>
-        </form>
-      </div>
-    </div>
+    <div data-site-footer></div>
 
     <!-- Scripts -->
-    <script src="nav.js"></script>
+    <script src="site-chrome.js"></script>
+    <script src="departments.js"></script>
     <script src="booking.js"></script>
+    <script src="coffee.js"></script>
 
     <script>
       (function() {
@@ -390,67 +243,18 @@
         const coordGrid = document.getElementById("coordinators-grid");
         const facultyGrid = document.getElementById("faculty-grid");
 
-        // Coffee modal elements
-        const coffeeModal = document.getElementById("coffee-modal");
-        const coffeePeerInput = document.getElementById("coffee-peer");
-        const coffeeForm = document.getElementById("coffee-form");
-        const coffeeClose = document.getElementById("coffee-modal-close");
-        const coffeeCancel = document.getElementById("coffee-cancel");
-        const quickCoffeeBtn = document.getElementById("quick-coffee-btn");
-
-        let selectedPeerEmail = "mitr@smail.iitm.ac.in";
-
-        function openCoffeeModal(peerName, peerEmail) {
-          coffeePeerInput.value = peerName || "Team MITR Coordinator";
-          selectedPeerEmail = peerEmail || "mitr@smail.iitm.ac.in";
-          coffeeModal.classList.remove("hidden");
-          coffeeModal.classList.add("flex");
-        }
-
-        function closeCoffeeModal() {
-          coffeeModal.classList.add("hidden");
-          coffeeModal.classList.remove("flex");
-        }
-
-        if (quickCoffeeBtn) {
-          quickCoffeeBtn.addEventListener("click", () => openCoffeeModal("Any Available MITR Coordinator", "mitr@smail.iitm.ac.in"));
-        }
-        if (coffeeClose) coffeeClose.addEventListener("click", closeCoffeeModal);
-        if (coffeeCancel) coffeeCancel.addEventListener("click", closeCoffeeModal);
-
-        if (coffeeForm) {
-          coffeeForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const location = document.getElementById("coffee-location").value;
-            const note = document.getElementById("coffee-note").value.trim();
-
-            const subject = "Book a Coffee with MITR — " + coffeePeerInput.value;
-            let body = "Hello " + coffeePeerInput.value + ",\n\n" +
-              "I would like to request a casual coffee chat as part of Book a Coffee with MITR!\n\n" +
-              "Preferred Spot: " + location + "\n\n";
-
-            if (note) {
-              body += "Note:\n" + note + "\n\n";
-            }
-
-            body += "Looking forward to hearing from you!\n\nBest regards,\nIIT Madras Student";
-
-            const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1" +
-              "&to=" + encodeURIComponent(selectedPeerEmail) +
-              "&cc=" + encodeURIComponent("mitr@smail.iitm.ac.in") +
-              "&su=" + encodeURIComponent(subject) +
-              "&body=" + encodeURIComponent(body);
-
-            window.open(gmailUrl, "_blank");
-            closeCoffeeModal();
-          });
-        }
+        // The coffee / mentor dialog lives in coffee.js and is opened by the
+        // banner button above. Peer cards deliberately have no per-coordinator
+        // booking button: requests go to the team, not to a chosen individual.
 
         // Populate department options
+        // Normalised before de-duplicating, so a department the peer list calls
+        // "Engineering Design" and faculty.json calls "ED" is one option, not two
+        // that each hide half the results.
         function populateDepts() {
           const depts = new Set();
-          peerCoordinators.forEach(p => depts.add(p.department));
-          facultyData.forEach(f => depts.add(f.department));
+          peerCoordinators.forEach(p => depts.add(departmentName(p.department)));
+          facultyData.forEach(f => depts.add(departmentName(f.department)));
 
           Array.from(depts).sort().forEach(d => {
             if (!d) return;
@@ -475,7 +279,7 @@
                   <span class="text-xs font-semibold text-outline">${p.hostel}</span>
                 </div>
                 <h3 class="font-headline text-xl font-bold text-on-surface">${p.name}</h3>
-                <p class="text-xs text-on-surface-variant font-medium">${p.department} Dept</p>
+                <p class="text-xs text-on-surface-variant font-medium">${departmentName(p.department)}</p>
                 
                 <div class="space-y-1.5 text-xs text-on-surface-variant pt-2">
                   <p class="flex items-center gap-1.5">
@@ -487,13 +291,6 @@
                     <a href="mailto:${p.email}" class="hover:underline truncate">${p.email}</a>
                   </p>
                 </div>
-              </div>
-
-              <div class="pt-4 border-t border-outline-variant/30 mt-5">
-                <button type="button" onclick="window.openCoffeeModal('${p.name}', '${p.email}')" class="w-full bg-primary/10 hover:bg-primary text-primary hover:text-on-primary py-2.5 rounded-full font-bold text-xs flex items-center justify-center gap-1.5 transition-all">
-                  <span class="material-symbols-outlined text-sm">local_cafe</span>
-                  <span>Book Coffee</span>
-                </button>
               </div>
             </article>
           `).join("");
@@ -515,7 +312,7 @@
                     <span class="absolute bottom-2 right-2 bg-primary text-on-primary text-[10px] px-2 py-0.5 rounded font-bold uppercase">${f.department}</span>
                   </div>
                   <h3 class="font-headline text-xl font-bold text-on-surface">${f.name}</h3>
-                  <p class="text-xs text-on-surface-variant">${f.department} Faculty Coordinator</p>
+                  <p class="text-xs text-on-surface-variant">${departmentName(f.department)}</p>
                 </div>
 
                 <div class="pt-4 border-t border-outline-variant/30 mt-4 space-y-2 text-xs">
@@ -542,24 +339,24 @@
           const selectedLang = langFilter.value;
 
           const filteredPeers = peerCoordinators.filter(p => {
-            const matchesSearch = p.name.toLowerCase().includes(q) || p.email.toLowerCase().includes(q) || p.department.toLowerCase().includes(q);
-            const matchesDept = selectedDept === "all" || p.department === selectedDept;
+            const dept = departmentName(p.department);
+            const matchesSearch = p.name.toLowerCase().includes(q) || p.email.toLowerCase().includes(q) || p.department.toLowerCase().includes(q) || dept.toLowerCase().includes(q);
+            const matchesDept = selectedDept === "all" || dept === selectedDept;
             const matchesHostel = selectedHostel === "all" || p.hostel === selectedHostel;
             const matchesLang = selectedLang === "all" || p.language.includes(selectedLang);
             return matchesSearch && matchesDept && matchesHostel && matchesLang;
           });
 
           const filteredFaculty = facultyData.filter(f => {
-            const matchesSearch = f.name.toLowerCase().includes(q) || f.email.toLowerCase().includes(q) || f.department.toLowerCase().includes(q);
-            const matchesDept = selectedDept === "all" || f.department === selectedDept;
+            const dept = departmentName(f.department);
+            const matchesSearch = f.name.toLowerCase().includes(q) || f.email.toLowerCase().includes(q) || f.department.toLowerCase().includes(q) || dept.toLowerCase().includes(q);
+            const matchesDept = selectedDept === "all" || dept === selectedDept;
             return matchesSearch && matchesDept;
           });
 
           renderPeers(filteredPeers);
           renderFaculty(filteredFaculty);
         }
-
-        window.openCoffeeModal = openCoffeeModal;
 
         // Fetch faculty.json
         fetch("Faculty co  ord/faculty.json")
