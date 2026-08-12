@@ -125,23 +125,47 @@
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-primary/20">
 <!-- TopNavBar -->
-<header class="fixed top-0 z-50 w-full bg-surface/60 backdrop-blur-md border-b border-transparent transition-all duration-500 h-20" id="main-header"><div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-page max-w-screen-2xl mx-auto h-full"><div class="flex items-center gap-3 md:gap-4 min-w-0"><img alt="IIT Madras Logo" class="h-9 md:h-12 w-auto shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4"/><div class="h-8 md:h-10 w-px bg-outline-variant/40 shrink-0"></div><img alt="Team MITR Logo" class="h-9 md:h-12 w-auto shrink-0" src="mitr-logo.png"/></div><nav class="hidden md:flex items-center space-x-8">
-  <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Home</a>
-  <a href="emergency.html" class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md text-body-md">Emergency</a>
-  <a href="Faculty co  ord\directory.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Directory</a>
-  <a href="yearbook.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Year Book</a>
-</nav><div class="hidden md:flex items-center gap-6"><button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200">Support</button><span class="material-symbols-outlined text-primary text-3xl cursor-pointer hover:opacity-70 transition-opacity">account_circle</span></div><button id="mobile-menu-btn" class="md:hidden flex items-center justify-center text-primary shrink-0" aria-label="Open menu" aria-expanded="false" type="button"><span class="material-symbols-outlined text-3xl">menu</span></button></div>
-<nav id="mobile-menu" class="md:hidden hidden flex-col bg-surface/95 backdrop-blur-md border-t border-outline-variant/40 px-margin-mobile py-4 space-y-1">
-  <a href="index.html" class="block py-2.5 text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Home</a>
-  <a href="emergency.html" class="block py-2.5 text-primary font-bold font-body-md text-body-md">Emergency</a>
-  <a href="Faculty co  ord\directory.html" class="block py-2.5 text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Directory</a>
-  <a href="yearbook.html" class="block py-2.5 text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Year Book</a>
-  <button class="w-full mt-2 bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold" type="button">Support</button>
-</nav>
-</header>
+<header class="fixed top-0 z-50 w-full bg-surface/60 backdrop-blur-md border-b border-transparent transition-all duration-500 h-20" id="main-header">
+      <div class="flex justify-between items-center w-full px-margin-page max-w-screen-2xl mx-auto h-full">
+        <div class="flex items-center gap-4">
+          <a href="index.html" class="flex items-center gap-4">
+            <img alt="IIT Madras Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4">
+            <div class="h-10 w-px bg-outline-variant/40"></div>
+            <img alt="Team MITR Logo" class="h-12 w-auto" src="mitr-logo.png">
+          </a>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Home</a>
+          <a href="emergency.html" class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md text-body-md">Support Desk</a>
+          <a href="directory.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Contact Us</a>
+          <a href="yearbook.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Gallery</a>
+          <a href="https://app.youform.com/forms/7nivpjkd" target="_blank" rel="noopener" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Self-Check Up</a>
+        </nav>
+        <div class="flex items-center gap-6">
+          <button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200" id="sos-btn" type="button">
+            Support
+          </button>
+          <a href="https://dost.iitm.ac.in" target="_blank" rel="noopener">
+            <img src="dostiitmlogo.svg" alt="Dost IITM Logo" class="h-12 w-auto text-primary cursor-pointer hover:opacity-70 transition-opacity">
+          </a>
+          <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" class="md:hidden flex items-center justify-center w-11 h-11 -mr-2 rounded-full text-primary hover:bg-primary/5 transition-colors" id="mobile-menu-btn" type="button">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <nav class="hidden md:hidden absolute top-20 inset-x-0 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-lg px-margin-page py-4 flex flex-col" id="mobile-menu">
+        <a href="index.html" class="text-on-surface-variant font-body-md text-body-md py-3">Home</a>
+        <a href="emergency.html" class="text-primary font-bold font-body-md text-body-md py-3">Support Desk</a>
+        <a href="directory.html" class="text-on-surface-variant font-body-md text-body-md py-3">Contact Us</a>
+        <a href="yearbook.html" class="text-on-surface-variant font-body-md text-body-md py-3">Gallery</a>
+        <a href="https://app.youform.com/forms/7nivpjkd" target="_blank" rel="noopener" class="text-on-surface-variant font-body-md text-body-md py-3">Self-Check Up</a>
+        <button class="bg-primary text-on-primary mt-3 px-6 py-3 rounded-full font-bold active:scale-95 transition-transform duration-200" type="button">Support</button>
+      </nav>
+    </header>
 <main class="pt-24 min-h-screen">
 <!-- High-Priority Helpline Banner -->
-<section class="px-margin-mobile md:px-margin-page py-12">
+<section class="px-margin-page py-12">
 <div class="hero-gradient rounded-xl p-8 md:p-12 shadow-2xl relative overflow-hidden group">
 <!-- Abstract Design Elements -->
 <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -152,13 +176,13 @@
 <span class="material-symbols-outlined text-white text-3xl animate-pulse">emergency_home</span>
 <span class="font-label-sm text-label-sm uppercase tracking-widest bg-white/20 px-3 py-1 rounded-full">Available 24/7</span>
 </div>
-<h1 class="font-headline-xl text-3xl md:text-headline-xl mb-4">Immediate Emergency Assistance</h1>
+<h1 class="font-headline-xl text-headline-xl mb-4">Immediate Emergency Assistance</h1>
 <p class="font-body-lg text-body-lg text-white/90">If you are in immediate danger or experiencing a crisis, please call our dedicated helpline immediately. We are here to support you at any hour.</p>
 </div>
 <div class="flex flex-col items-center md:items-end space-y-6">
 <div class="text-center md:text-right">
 <p class="text-white/80 font-label-sm uppercase mb-1">Emergency Hotline</p>
-<span class="font-headline-xl text-3xl md:text-headline-xl text-white font-bold block">+91 44 2257 8000</span>
+<span class="font-headline-xl text-headline-xl text-white font-bold block">+91 44 2257 8000</span>
 </div>
 <a class="group flex items-center space-x-4 bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-surface transition-all shadow-lg active:scale-95" href="tel:+914422578000">
 <span class="material-symbols-outlined">call</span>
@@ -168,27 +192,28 @@
 </div>
 </div>
 </section>
-<section class="px-margin-mobile md:px-margin-page pb-section-gap">
+<section class="px-margin-page pb-section-gap">
 <div class="space-y-8">
 <!-- Emergency Resource Cards Grid -->
 <div class="space-y-8">
-<h2 class="font-headline-lg text-headline-lg text-primary border-l-4 border-primary pl-4">Crisis Support Network</h2>
+<h2 class="font-headline-lg text-headline-lg text-primary border-l-4 border-primary pl-4">Support Network</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<!-- Card: MITR Help Desk -->
+<!-- Card: Mitr Helpdesk -->
 <div class="glass-card p-6 rounded-xl hover:shadow-xl transition-all duration-300 group flex flex-col justify-between h-full">
 <div>
 <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
 <span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">support_agent</span>
 </div>
-<h3 class="font-headline-lg text-2xl mb-2">MITR Help Desk</h3>
-<p class="font-body-md text-on-surface-variant mb-6">Peer-led support for emotional well-being and campus navigation during difficult times.</p>
+<h3 class="font-headline-lg text-2xl mb-2">Mitr Helpdesk</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Peer-led support for emotional well-being and navigating through difficult times.
+<div class="text-center font-bold text-sm text-primary mt-2">Operational Timing: Available 24/7</div></p>
 </div>
 <div class="flex flex-wrap gap-3">
 <button type="button" class="flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all" title="Calling not enabled yet">
 <span class="material-symbols-outlined text-sm">call</span>
 <span>Call</span>
 </button>
-<button type="button" class="contact-trigger flex-1 flex items-center justify-center space-x-2 border border-secondary text-secondary px-4 py-2 rounded font-bold hover:bg-secondary/5 transition-all" data-type="email" data-label="MITR Help Desk" data-values="mitr@iitm.ac.in">
+<button type="button" class="contact-trigger flex-1 flex items-center justify-center space-x-2 border border-secondary text-secondary px-4 py-2 rounded font-bold hover:bg-secondary/5 transition-all" data-type="email" data-label="Mitr Helpdesk" data-values="mitr@iitm.ac.in">
 <span class="material-symbols-outlined text-sm">mail</span>
 <span>Email</span>
 </button>
@@ -200,7 +225,7 @@
 <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
 <span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">medical_services</span>
 </div>
-<h3 class="font-headline-lg text-2xl mb-2">Institute Hospital</h3>
+<div class="flex items-center justify-between"><h3 class="font-headline-lg text-2xl mb-2">Institute Hospital</h3><span class="text-xs font-bold text-green-700 bg-green-100 px-2.5 py-1 rounded-full">Walk-In (No Pre-Booking)</span></div>
 <p class="font-body-md text-on-surface-variant mb-6">Medical emergencies and clinical psychological consultation for all campus residents. Counselling available 10:00 am &ndash; 6:00 pm and 8:00 pm &ndash; 6:00 am, 365 days.</p>
 </div>
 <div class="flex flex-wrap gap-3">
@@ -214,6 +239,27 @@
 </button>
 </div>
 </div>
+<!-- Card: Wellness Centre -->
+<div class="glass-card p-6 rounded-xl hover:shadow-xl transition-all duration-300 group flex flex-col justify-between h-full">
+<div>
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">self_improvement</span>
+</div>
+<div class="flex items-center justify-between"><h3 class="font-headline-lg text-2xl mb-2">Wellness Centre</h3><span class="text-xs font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-full">Walk-In & Pre-Booking</span></div>
+<p class="font-body-md text-on-surface-variant mb-6">Licensed mental health professionals providing confidential counselling. Book an appointment or walk in at the DoSt Office, 1st Floor &mdash; Mon to Sat, 10 am &ndash; 6 pm.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button type="button" class="contact-trigger flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all" data-type="phone" data-label="Wellness Centre" data-values="044 2257 8521,044 2257 8522,044 2257 8523,044 2257 8524,044 2257 8527,9498665101">
+<span class="material-symbols-outlined text-sm">call</span>
+<span>Call</span>
+</button>
+<button type="button" class="contact-trigger flex-1 flex items-center justify-center space-x-2 border border-secondary text-secondary px-4 py-2 rounded font-bold hover:bg-secondary/5 transition-all" data-type="email" data-label="Wellness Centre" data-values="wellnesswc1@smail.iitm.ac.in,wellnesswc2@smail.iitm.ac.in,wellnesswc3@smail.iitm.ac.in,wellnesswc4@smail.iitm.ac.in,wo@smail.iitm.ac.in">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span>Email</span>
+</button>
+</div>
+</div>
+
 <!-- Card: Campus Security -->
 <div class="glass-card p-6 rounded-xl hover:shadow-xl transition-all duration-300 group flex flex-col justify-between h-full">
 <div>
@@ -234,26 +280,6 @@
 </button>
 </div>
 </div>
-<!-- Card: Wellness Centre -->
-<div class="glass-card p-6 rounded-xl hover:shadow-xl transition-all duration-300 group flex flex-col justify-between h-full">
-<div>
-<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">self_improvement</span>
-</div>
-<h3 class="font-headline-lg text-2xl mb-2">Wellness Centre</h3>
-<p class="font-body-md text-on-surface-variant mb-6">Licensed mental health professionals providing confidential counselling. Book an appointment or walk in at the DoSt Office, 1st Floor &mdash; Mon to Sat, 10 am &ndash; 6 pm.</p>
-</div>
-<div class="flex flex-wrap gap-3">
-<button type="button" class="contact-trigger flex-1 flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded font-bold hover:opacity-90 active:scale-95 transition-all" data-type="phone" data-label="Wellness Centre" data-values="044 2257 8521,044 2257 8522,044 2257 8523,044 2257 8524,044 2257 8527,9498665101">
-<span class="material-symbols-outlined text-sm">call</span>
-<span>Call</span>
-</button>
-<button type="button" class="contact-trigger flex-1 flex items-center justify-center space-x-2 border border-secondary text-secondary px-4 py-2 rounded font-bold hover:bg-secondary/5 transition-all" data-type="email" data-label="Wellness Centre" data-values="wellnesswc1@smail.iitm.ac.in,wellnesswc2@smail.iitm.ac.in,wellnesswc3@smail.iitm.ac.in,wellnesswc4@smail.iitm.ac.in,wo@smail.iitm.ac.in">
-<span class="material-symbols-outlined text-sm">mail</span>
-<span>Email</span>
-</button>
-</div>
-</div>
 <!-- Card: Professional Counsellors -->
 <div class="glass-card p-6 rounded-xl hover:shadow-xl transition-all duration-300 group flex flex-col justify-between h-full md:col-span-2">
 <div class="flex flex-col md:flex-row gap-6">
@@ -261,8 +287,8 @@
 <span class="material-symbols-outlined text-primary text-3xl group-hover:text-white transition-colors">psychology</span>
 </div>
 <div>
-<h3 class="font-headline-lg text-2xl mb-2">Professional Counsellors</h3>
-<p class="font-body-md text-on-surface-variant mb-4">Dedicated clinical psychologists available for private sessions to discuss mental health, academic stress, or personal challenges.</p>
+<div class="flex flex-wrap items-center justify-between gap-2"><h3 class="font-headline-lg text-2xl mb-2">YourDOST & Professional Counsellors</h3><span class="text-xs font-bold text-secondary bg-secondary/10 px-2.5 py-1 rounded-full">Pre-Booking Required (Online & Offline)</span></div>
+<p class="font-body-md text-on-surface-variant mb-4">Dedicated clinical psychologists and YourDOST professionals available both online and offline for private 100% confidential sessions.</p>
 <div class="flex flex-wrap gap-4">
 <div class="flex items-center text-primary font-bold">
 <span class="material-symbols-outlined mr-2">event_available</span>
@@ -292,7 +318,7 @@
 </section>
 
 <!-- Where to Find Us: full-width, 3 locations side by side -->
-<section class="px-margin-mobile md:px-margin-page pb-section-gap">
+<section class="px-margin-page pb-section-gap">
 <h2 class="font-headline-lg text-headline-lg text-primary border-l-4 border-primary pl-4 mb-8 flex items-center">
 <span class="material-symbols-outlined mr-2">location_on</span>
 Where to Find Us
@@ -415,7 +441,7 @@ Chennai, Tamil Nadu 600036
 <div class="campus-divider"></div>
 </main>
 <!-- Footer -->
-<footer class="w-full px-margin-mobile md:px-margin-page py-section-gap flex flex-col items-center space-y-8 bg-surface-container border-t border-outline-variant/50"><div class="flex flex-col items-center space-y-6"><div class="flex items-center space-x-3"><img alt="Footer Logo" class="h-16 w-16 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpmZIoxlCn2Lsg7_x9N7QoLqWIk6yddBaZonLCFUDRotGSG5vYMYzD-DqPvBRMHXSrUNlkcEjHZAZ-PVzP1ORqNi0r3M-T6FbpbG8JuCH8G2X516JCYez_BobmVQfmWRmNu8EadmTbTVVxt2WKqS-nhlsvGQnc__srd_TFDkJlgIHwUyi8FUstbymupm8Xh6htGfEe_Mq19GeTUx5gp10K56AQqYddgwP7rIi8XWde3wWdbxxP1dMj_KIFCcZW36K"/><div class="text-center md:text-left"><h2 class="font-headline-lg text-headline-lg font-bold text-primary">IITM MITR</h2><p class="font-label-sm text-on-surface-variant">Empowering Wellbeing Since 2010</p></div></div><div class="flex flex-wrap justify-center gap-8"><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Privacy Policy</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Terms of Service</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Campus Map</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="directory.html">Directory</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Feedback</a></div></div><div class="w-full max-w-screen-xl border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-70"><p class="font-body-md text-sm text-on-surface-variant text-center">© 2024 Indian Institute of Technology Madras. All rights reserved.</p><div class="flex space-x-6"><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">qr_code_2</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">alternate_email</span></div></div></footer>
+<footer class="w-full px-margin-page py-section-gap flex flex-col items-center space-y-8 bg-surface-container border-t border-outline-variant/50"><div class="flex flex-col items-center space-y-6"><div class="flex items-center space-x-3"><img alt="Footer Logo" class="h-16 w-16 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpmZIoxlCn2Lsg7_x9N7QoLqWIk6yddBaZonLCFUDRotGSG5vYMYzD-DqPvBRMHXSrUNlkcEjHZAZ-PVzP1ORqNi0r3M-T6FbpbG8JuCH8G2X516JCYez_BobmVQfmWRmNu8EadmTbTVVxt2WKqS-nhlsvGQnc__srd_TFDkJlgIHwUyi8FUstbymupm8Xh6htGfEe_Mq19GeTUx5gp10K56AQqYddgwP7rIi8XWde3wWdbxxP1dMj_KIFCcZW36K"/><div class="text-center md:text-left"><h2 class="font-headline-lg text-headline-lg font-bold text-primary">IITM MITR</h2><p class="font-label-sm text-on-surface-variant">Empowering Wellbeing Since 2010</p></div></div><div class="flex flex-wrap justify-center gap-8"><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Privacy Policy</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Terms of Service</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Campus Map</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="directory.html">Contact Us</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Feedback</a></div></div><div class="w-full max-w-screen-xl border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-70"><p class="font-body-md text-sm text-on-surface-variant text-center">© 2024 Indian Institute of Technology Madras. All rights reserved.</p><div class="flex space-x-6"><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">qr_code_2</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">alternate_email</span></div></div></footer>
 <!-- Contact Popover (shared by all Call/Email quick-action buttons) -->
 <div class="hidden fixed z-[100] bg-white rounded-lg shadow-2xl border border-outline-variant/30 p-4 w-72" id="contact-popover" role="dialog" aria-live="polite">
 <div class="flex items-center justify-between mb-3">
@@ -482,28 +508,6 @@ Chennai, Tamil Nadu 600036
                 nav.classList.add('h-20');
             }
         });
-
-        // Mobile hamburger menu toggle
-        (function () {
-            var btn = document.getElementById('mobile-menu-btn');
-            var menu = document.getElementById('mobile-menu');
-            if (!btn || !menu) return;
-
-            function setOpen(isOpen) {
-                menu.classList.toggle('flex', isOpen);
-                menu.classList.toggle('hidden', !isOpen);
-                btn.setAttribute('aria-expanded', String(isOpen));
-                btn.querySelector('.material-symbols-outlined').textContent = isOpen ? 'close' : 'menu';
-            }
-
-            btn.addEventListener('click', function () {
-                setOpen(!menu.classList.contains('flex'));
-            });
-
-            menu.querySelectorAll('a, button').forEach(function (el) {
-                el.addEventListener('click', function () { setOpen(false); });
-            });
-        })();
     </script>
     <script>
         // ---- Shared Call/Email popover ----
