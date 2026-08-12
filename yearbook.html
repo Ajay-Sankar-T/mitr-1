@@ -3,7 +3,7 @@
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>MITR Year Book | IITM MITR Wellness Portal</title>
+<title>MITR Gallery & Student Experiences | IITM MITR Wellness Portal</title>
 <link rel="icon" href="favicon.ico" sizes="any"/>
 <link rel="icon" href="favicon.png" type="image/png"/>
 <link rel="apple-touch-icon" href="favicon.png"/>
@@ -245,19 +245,51 @@
 </head>
 <body class="bg-surface font-body-md text-on-surface leading-relaxed overflow-x-hidden">
 <!-- TopNavBar -->
-<header class="fixed top-0 z-50 w-full bg-surface/60 backdrop-blur-md border-b border-transparent transition-all duration-500 h-20" id="main-header"><div class="flex justify-between items-center w-full px-margin-page max-w-screen-2xl mx-auto h-full"><div class="flex items-center gap-4"><img alt="IIT Madras Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4"/><div class="h-10 w-px bg-outline-variant/40"></div><img alt="Team MITR Logo" class="h-12 w-auto" src="mitr-logo.png"/></div><nav class="hidden md:flex items-center space-x-8">
-  <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Home</a>
-  <a href="emergency.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Emergency</a>
-  <a href="Faculty co  ord\directory.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Directory</a>
-  <a href="yearbook.html" class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md text-body-md">Year Book</a>
-</nav><div class="flex items-center gap-6"><button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200">Support</button><span class="material-symbols-outlined text-primary text-3xl cursor-pointer hover:opacity-70 transition-opacity">account_circle</span></div></div></header>
+<header class="fixed top-0 z-50 w-full bg-surface/60 backdrop-blur-md border-b border-transparent transition-all duration-500 h-20" id="main-header">
+      <div class="flex justify-between items-center w-full px-margin-page max-w-screen-2xl mx-auto h-full">
+        <div class="flex items-center gap-4">
+          <a href="index.html" class="flex items-center gap-4">
+            <img alt="IIT Madras Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4">
+            <div class="h-10 w-px bg-outline-variant/40"></div>
+            <img alt="Team MITR Logo" class="h-12 w-auto" src="mitr-logo.png">
+          </a>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Home</a>
+          <a href="emergency.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Support Desk</a>
+          <a href="directory.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Contact Us</a>
+          <a href="yearbook.html" class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md text-body-md">Gallery</a>
+          <a href="https://app.youform.com/forms/7nivpjkd" target="_blank" rel="noopener" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Self-Check Up</a>
+        </nav>
+        <div class="flex items-center gap-6">
+          <button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200" id="sos-btn" type="button">
+            Support
+          </button>
+          <a href="https://dost.iitm.ac.in" target="_blank" rel="noopener">
+            <img src="dostiitmlogo.svg" alt="Dost IITM Logo" class="h-12 w-auto text-primary cursor-pointer hover:opacity-70 transition-opacity">
+          </a>
+          <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" class="md:hidden flex items-center justify-center w-11 h-11 -mr-2 rounded-full text-primary hover:bg-primary/5 transition-colors" id="mobile-menu-btn" type="button">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <nav class="hidden md:hidden absolute top-20 inset-x-0 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-lg px-margin-page py-4 flex flex-col" id="mobile-menu">
+        <a href="index.html" class="text-on-surface-variant font-body-md text-body-md py-3">Home</a>
+        <a href="emergency.html" class="text-on-surface-variant font-body-md text-body-md py-3">Support Desk</a>
+        <a href="directory.html" class="text-on-surface-variant font-body-md text-body-md py-3">Contact Us</a>
+        <a href="yearbook.html" class="text-primary font-bold font-body-md text-body-md py-3">Gallery</a>
+        <a href="https://app.youform.com/forms/7nivpjkd" target="_blank" rel="noopener" class="text-on-surface-variant font-body-md text-body-md py-3">Self-Check Up</a>
+        <button class="bg-primary text-on-primary mt-3 px-6 py-3 rounded-full font-bold active:scale-95 transition-transform duration-200" type="button">Support</button>
+      </nav>
+    </header>
 <main class="pt-20">
 <!-- Hero Section -->
 <section class="relative min-h-[60vh] flex items-center overflow-hidden bg-surface-container-low">
 <div class="absolute inset-0 z-0 opacity-10 bg-cover bg-center" data-alt="A wide panoramic shot of the Indian Institute of Technology Madras campus at golden hour, highlighting the lush greenery, historic architecture, and the serene academic atmosphere. The lighting is soft and warm, casting long shadows across the pathways. The visual style is professional, capturing the heritage and prestige of the institution." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiolApNwN1XbI1wbzAzZxKxMFyWLaX-FBp-YYf_Ganjr_yylbka3X9kH0R8B5ap01ZYW_UVljCWUmsPTMVojG-fcz_EDD9FkYBiIVbuLVFRUzslwG0J4xitw6UwWxllTIZzTV4RKqECagP2WDdqUyhcHvV2mQFfZDckgiWG-aBPLusjvq15mAp8p8CNNXamFniCwiLPpk2A6trhZ4CtwGQ12LVN56WLcZmr8fH2hSjZTEA2NoszeU')"></div>
 <div class="relative z-10 w-full px-margin-page max-w-screen-2xl mx-auto">
 <div class="max-w-3xl space-y-6">
-<h1 class="font-headline-xl text-headline-xl text-primary leading-tight">MITR Year Book</h1>
+<h1 class="font-headline-xl text-headline-xl text-primary leading-tight">MITR Gallery & Student Experiences</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant">Preserving the legacy, campus memories, barefoot training batches, and student achievements of Team MITR at IIT Madras.</p>
 <div class="flex gap-4">
 <button class="px-8 py-3 bg-primary text-on-primary font-bold rounded-lg primary-glow hover:bg-primary-container transition-colors">Explore Events</button>
@@ -376,7 +408,80 @@
 </div>
 </div>
 </section>
-<!-- Achievements & Media -->
+<!-- Student Experiences & Sticky Notes Wall -->
+    <section class="px-margin-page py-16 bg-surface-container-low border-y border-outline-variant/30">
+      <div class="max-w-6xl mx-auto space-y-8">
+        <div class="text-center space-y-2">
+          <span class="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">Wellness Wall</span>
+          <h2 class="font-headline-lg text-headline-lg text-primary">Student Experiences & Sticky Notes</h2>
+          <p class="text-body-md text-on-surface-variant max-w-xl mx-auto">Real handwritten notes, reflections, and thank-you messages from students in different languages across hostels.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+          <!-- Note 1: English -->
+          <div class="bg-amber-100/90 border border-amber-300 p-6 rounded-2xl shadow-sm rotate-[-2deg] hover:rotate-0 transition-transform">
+            <div class="flex items-center justify-between text-xs text-amber-800 font-bold mb-2">
+              <span>Exam Stress & Academics</span>
+              <span class="bg-amber-200 px-2 py-0.5 rounded">English</span>
+            </div>
+            <p class="font-headline text-lg text-amber-950 italic mb-4">"During end-sems, I felt completely overwhelmed. Talking to my MITR hostel coord helped me structure my study plan and take healthy breaks."</p>
+            <p class="text-xs text-amber-800 font-bold">— 3rd Year B.Tech, Ganga Hostel</p>
+          </div>
+
+          <!-- Note 2: Hindi -->
+          <div class="bg-rose-100/90 border border-rose-300 p-6 rounded-2xl shadow-sm rotate-[1.5deg] hover:rotate-0 transition-transform">
+            <div class="flex items-center justify-between text-xs text-rose-800 font-bold mb-2">
+              <span>Homesickness</span>
+              <span class="bg-rose-200 px-2 py-0.5 rounded">Hindi</span>
+            </div>
+            <p class="font-headline text-lg text-rose-950 italic mb-4">"shuruaat me ghar ki bahut yaad aati thi. MITR ke bhaiya se milke baat ki to dil ka bojh halka ho gaya."</p>
+            <p class="text-xs text-rose-800 font-bold">— 1st Year M.Tech, Brahmaputra</p>
+          </div>
+
+          <!-- Note 3: Tamil -->
+          <div class="bg-emerald-100/90 border border-emerald-300 p-6 rounded-2xl shadow-sm rotate-[-1deg] hover:rotate-0 transition-transform">
+            <div class="flex items-center justify-between text-xs text-emerald-800 font-bold mb-2">
+              <span>Peer Support</span>
+              <span class="bg-emerald-200 px-2 py-0.5 rounded">Tamil</span>
+            </div>
+            <p class="font-headline text-lg text-emerald-950 italic mb-4">"எனக்கு ஏற்பட்ட பயத்தை MITR நண்பர்களிடம் பகிர்ந்தபோது தான் புரிந்தது, நாம் யாரும் தனியாக இல்லை!"</p>
+            <p class="text-xs text-emerald-800 font-bold">— Research Scholar, Sabarmati</p>
+          </div>
+
+          <!-- Note 4: Telugu -->
+          <div class="bg-blue-100/90 border border-blue-300 p-6 rounded-2xl shadow-sm rotate-[2deg] hover:rotate-0 transition-transform">
+            <div class="flex items-center justify-between text-xs text-blue-800 font-bold mb-2">
+              <span>Placements Pressure</span>
+              <span class="bg-blue-200 px-2 py-0.5 rounded">Telugu</span>
+            </div>
+            <p class="font-headline text-lg text-blue-950 italic mb-4">"ప్లేస్‌మెంట్స్ టైమ్‌లో వచ్చిన స్ట్రెస్ తట్టుకోలేకపోయాను. MITR సెషన్ వల్ల చాలా రిలీఫ్ లభించింది."</p>
+            <p class="text-xs text-blue-800 font-bold">— 4th Year B.Tech, Mandakini</p>
+          </div>
+
+          <!-- Note 5: Malayalam -->
+          <div class="bg-purple-100/90 border border-purple-300 p-6 rounded-2xl shadow-sm rotate-[-1.5deg] hover:rotate-0 transition-transform">
+            <div class="flex items-center justify-between text-xs text-purple-800 font-bold mb-2">
+              <span>Mental Peace</span>
+              <span class="bg-purple-200 px-2 py-0.5 rounded">Malayalam</span>
+            </div>
+            <p class="font-headline text-lg text-purple-950 italic mb-4">"ക്യാമ്പസിലെ തിരക്കുകൾക്കിടയിൽ സംസാരിക്കാൻ ഒരാളുണ്ട് എന്നത് വലിയൊരു ആശ്വാസമാണ്."</p>
+            <p class="text-xs text-purple-800 font-bold">— M.Sc Student, Sharavati Hostel</p>
+          </div>
+
+          <!-- Note 6: English Coffee Chat -->
+          <div class="bg-yellow-100/90 border border-yellow-300 p-6 rounded-2xl shadow-sm rotate-[1deg] hover:rotate-0 transition-transform">
+            <div class="flex items-center justify-between text-xs text-yellow-800 font-bold mb-2">
+              <span>Coffee Chat</span>
+              <span class="bg-yellow-200 px-2 py-0.5 rounded">English</span>
+            </div>
+            <p class="font-headline text-lg text-yellow-950 italic mb-4">"Met my MITR mentor at Himalaya food court for coffee. Just venting out without judgment gave me total peace of mind!"</p>
+            <p class="text-xs text-yellow-800 font-bold">— 2nd Year Student, Jamuna Hostel</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements & Media -->
 <section class="bg-surface-container-low py-section-gap">
 <div class="px-margin-page max-w-screen-2xl mx-auto">
 <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
@@ -516,7 +621,7 @@
 </div>
 </main>
 <!-- Footer -->
-<footer class="w-full px-margin-page py-section-gap flex flex-col items-center space-y-8 bg-surface-container border-t border-outline-variant/50"><div class="flex flex-col items-center space-y-6"><div class="flex items-center space-x-3"><img alt="Footer Logo" class="h-16 w-16 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpmZIoxlCn2Lsg7_x9N7QoLqWIk6yddBaZonLCFUDRotGSG5vYMYzD-DqPvBRMHXSrUNlkcEjHZAZ-PVzP1ORqNi0r3M-T6FbpbG8JuCH8G2X516JCYez_BobmVQfmWRmNu8EadmTbTVVxt2WKqS-nhlsvGQnc__srd_TFDkJlgIHwUyi8FUstbymupm8Xh6htGfEe_Mq19GeTUx5gp10K56AQqYddgwP7rIi8XWde3wWdbxxP1dMj_KIFCcZW36K"/><div class="text-center md:text-left"><h2 class="font-headline-lg text-headline-lg font-bold text-primary">IITM MITR</h2><p class="font-label-sm text-on-surface-variant">Empowering Wellbeing Since 2010</p></div></div><div class="flex flex-wrap justify-center gap-8"><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Privacy Policy</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Terms of Service</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Campus Map</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="directory.html">Directory</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Feedback</a></div></div><div class="w-full max-w-screen-xl border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-70"><p class="font-body-md text-sm text-on-surface-variant text-center">© 2024 Indian Institute of Technology Madras. All rights reserved.</p><div class="flex space-x-6"><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">qr_code_2</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">alternate_email</span></div></div></footer>
+<footer class="w-full px-margin-page py-section-gap flex flex-col items-center space-y-8 bg-surface-container border-t border-outline-variant/50"><div class="flex flex-col items-center space-y-6"><div class="flex items-center space-x-3"><img alt="Footer Logo" class="h-16 w-16 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpmZIoxlCn2Lsg7_x9N7QoLqWIk6yddBaZonLCFUDRotGSG5vYMYzD-DqPvBRMHXSrUNlkcEjHZAZ-PVzP1ORqNi0r3M-T6FbpbG8JuCH8G2X516JCYez_BobmVQfmWRmNu8EadmTbTVVxt2WKqS-nhlsvGQnc__srd_TFDkJlgIHwUyi8FUstbymupm8Xh6htGfEe_Mq19GeTUx5gp10K56AQqYddgwP7rIi8XWde3wWdbxxP1dMj_KIFCcZW36K"/><div class="text-center md:text-left"><h2 class="font-headline-lg text-headline-lg font-bold text-primary">IITM MITR</h2><p class="font-label-sm text-on-surface-variant">Empowering Wellbeing Since 2010</p></div></div><div class="flex flex-wrap justify-center gap-8"><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Privacy Policy</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Terms of Service</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Campus Map</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="directory.html">Contact Us</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Feedback</a></div></div><div class="w-full max-w-screen-xl border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-70"><p class="font-body-md text-sm text-on-surface-variant text-center">© 2024 Indian Institute of Technology Madras. All rights reserved.</p><div class="flex space-x-6"><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">qr_code_2</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">alternate_email</span></div></div></footer>
 <script>
     // Existing card hover effect
     document.querySelectorAll('.glass-card').forEach(card => {

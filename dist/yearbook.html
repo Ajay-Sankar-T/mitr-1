@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MITR Gallery & Student Experiences | IITM MITR Wellness Portal</title>
+<link rel="icon" href="/assets/favicon-C-D0HgRc.ico" sizes="any"/>
+<link rel="icon" href="/assets/favicon-BwjPOUOQ.png" type="image/png"/>
+<link rel="apple-touch-icon" href="/assets/favicon-BwjPOUOQ.png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&amp;family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#313030",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-surface": "#1c1b1b",
+                    "on-surface-variant": "#504539",
+                    "primary-fixed": "#ffddb8",
+                    "tertiary-fixed-dim": "#c9c6c2",
+                    "on-secondary-container": "#741818",
+                    "on-primary-container": "#482b00",
+                    "error-container": "#ffdad6",
+                    "surface": "#fcf9f8",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#2b1700",
+                    "surface-container": "#f0eded",
+                    "outline-variant": "#d4c4b4",
+                    "tertiary-container": "#9b9995",
+                    "surface-container-high": "#eae7e7",
+                    "on-secondary-fixed-variant": "#842322",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary": "#815518",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#c48f4d",
+                    "surface-variant": "#e5e2e1",
+                    "surface-tint": "#815518",
+                    "secondary-container": "#ff8078",
+                    "background": "#fcf9f8",
+                    "surface-dim": "#dcd9d9",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-bright": "#fcf9f8",
+                    "outline": "#827567",
+                    "on-tertiary-fixed": "#1c1c19",
+                    "secondary": "#a43b37",
+                    "on-tertiary-container": "#32312f",
+                    "on-secondary-fixed": "#410004",
+                    "on-tertiary-fixed-variant": "#484744",
+                    "on-primary-fixed-variant": "#653e00",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#605e5b",
+                    "secondary-fixed-dim": "#ffb3ad",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#ffdad7",
+                    "inverse-primary": "#f6bc75",
+                    "on-background": "#1c1b1b",
+                    "tertiary-fixed": "#e6e2de",
+                    "primary-fixed-dim": "#f6bc75"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "1.5rem",
+                    "section-gap": "8rem",
+                    "margin-page": "4rem",
+                    "gutter": "2rem"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Newsreader"],
+                    "body-lg": ["Work Sans"],
+                    "headline-xl": ["Newsreader"],
+                    "label-sm": ["Work Sans"],
+                    "headline-lg": ["Newsreader"],
+                    "body-md": ["Work Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "fontWeight": "600"}],
+                    "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+<style>
+        
+        .glass-card {
+            background: rgba(252, 249, 248, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(129, 85, 24, 0.1);
+        }
+        
+        .glass-header {
+            background: rgba(252, 249, 248, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .campus-line-art {
+            mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .active-nav-underline {
+            position: relative;
+        }
+        .active-nav-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #815518;
+        }
+
+        .primary-glow {
+            box-shadow: 0 4px 20px rgba(196, 143, 77, 0.08);
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .yearbook-viewer-shell {
+            background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(240,237,237,0.88));
+            border: 1px solid rgba(129, 85, 24, 0.12);
+            box-shadow: 0 20px 60px rgba(72, 43, 0, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .flipbook-stage {
+            width: 100%;
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        #yearbook {
+            margin: 0 auto;
+        }
+
+        .page {
+            background: #fff;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page--cover {
+            background: linear-gradient(160deg, #815518, #c48f4d);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .page canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            background: white;
+        }
+
+        .flipbook-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .flipbook-toolbar .controls {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .flipbook-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.1rem;
+            border-radius: 999px;
+            border: 1px solid rgba(129, 85, 24, 0.14);
+            background: rgba(255,255,255,0.75);
+            color: #815518;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .flipbook-btn:hover {
+            transform: translateY(-1px);
+            background: #815518;
+            color: white;
+        }
+
+        .flipbook-meta {
+            color: #504539;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .flipbook-empty {
+            min-height: 500px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: #504539;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .flipbook-stage {
+                min-height: 540px;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface leading-relaxed overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 z-50 w-full bg-surface/60 backdrop-blur-md border-b border-transparent transition-all duration-500 h-20" id="main-header">
+      <div class="flex justify-between items-center w-full px-margin-page max-w-screen-2xl mx-auto h-full">
+        <div class="flex items-center gap-4">
+          <a href="index.html" class="flex items-center gap-4">
+            <img alt="IIT Madras Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1n8lOW9_eqQl9UfG96njTZrftuphW1MbaA6n6q1Xcy5pzrYEkSKoxllnCHXsVxeDOGYc-JXXD77-moN7w4CbZ3yPv9ecW6vxl6JiHqJAFx9TBBq1iwPcUO9NK_aquo5q3H_qOEVmu9pzQcTOKAh6no-dPiiJmo75zCY8EUPomFxqW5rAuUPOh9Iiv1lhD_XOJxbe4jXwJjoXUfBoZGKCdO6MsaoOb_Go1HbOQleX7Y8ZWC_kwvzYvLlOnD8yTVR4">
+            <div class="h-10 w-px bg-outline-variant/40"></div>
+            <img alt="Team MITR Logo" class="h-12 w-auto" src="/assets/mitr-logo-Bl2t3_Yj.png">
+          </a>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Home</a>
+          <a href="emergency.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Support Desk</a>
+          <a href="directory.html" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Contact Us</a>
+          <a href="yearbook.html" class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md text-body-md">Gallery</a>
+          <a href="https://app.youform.com/forms/7nivpjkd" target="_blank" rel="noopener" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Self-Check Up</a>
+        </nav>
+        <div class="flex items-center gap-6">
+          <button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200" id="sos-btn" type="button">
+            Support
+          </button>
+          <a href="https://dost.iitm.ac.in" target="_blank" rel="noopener">
+            <img src="/assets/dostiitmlogo-SGtuH7ss.svg" alt="Dost IITM Logo" class="h-12 w-auto text-primary cursor-pointer hover:opacity-70 transition-opacity">
+          </a>
+          <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" class="md:hidden flex items-center justify-center w-11 h-11 -mr-2 rounded-full text-primary hover:bg-primary/5 transition-colors" id="mobile-menu-btn" type="button">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <nav class="hidden md:hidden absolute top-20 inset-x-0 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-lg px-margin-page py-4 flex flex-col" id="mobile-menu">
+        <a href="index.html" class="text-on-surface-variant font-body-md text-body-md py-3">Home</a>
+        <a href="emergency.html" class="text-on-surface-variant font-body-md text-body-md py-3">Support Desk</a>
+        <a href="directory.html" class="text-on-surface-variant font-body-md text-body-md py-3">Contact Us</a>
+        <a href="yearbook.html" class="text-primary font-bold font-body-md text-body-md py-3">Gallery</a>
+        <a href="https://app.youform.com/forms/7nivpjkd" target="_blank" rel="noopener" class="text-on-surface-variant font-body-md text-body-md py-3">Self-Check Up</a>
+        <button class="bg-primary text-on-primary mt-3 px-6 py-3 rounded-full font-bold active:scale-95 transition-transform duration-200" type="button">Support</button>
+      </nav>
+    </header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[60vh] flex items-center overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0 opacity-10 bg-cover bg-center" data-alt="A wide panoramic shot of the Indian Institute of Technology Madras campus at golden hour, highlighting the lush greenery, historic architecture, and the serene academic atmosphere. The lighting is soft and warm, casting long shadows across the pathways. The visual style is professional, capturing the heritage and prestige of the institution." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiolApNwN1XbI1wbzAzZxKxMFyWLaX-FBp-YYf_Ganjr_yylbka3X9kH0R8B5ap01ZYW_UVljCWUmsPTMVojG-fcz_EDD9FkYBiIVbuLVFRUzslwG0J4xitw6UwWxllTIZzTV4RKqECagP2WDdqUyhcHvV2mQFfZDckgiWG-aBPLusjvq15mAp8p8CNNXamFniCwiLPpk2A6trhZ4CtwGQ12LVN56WLcZmr8fH2hSjZTEA2NoszeU')"></div>
+<div class="relative z-10 w-full px-margin-page max-w-screen-2xl mx-auto">
+<div class="max-w-3xl space-y-6">
+<h1 class="font-headline-xl text-headline-xl text-primary leading-tight">MITR Gallery & Student Experiences</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Preserving the legacy, campus memories, barefoot training batches, and student achievements of Team MITR at IIT Madras.</p>
+<div class="flex gap-4">
+<button class="px-8 py-3 bg-primary text-on-primary font-bold rounded-lg primary-glow hover:bg-primary-container transition-colors">Explore Events</button>
+<button class="px-8 py-3 border border-secondary text-secondary font-bold rounded-lg hover:bg-secondary/5 transition-colors">Media Kit</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap px-margin-page max-w-screen-2xl mx-auto">
+  <div class="mb-12 max-w-3xl">
+    <h2 class="font-headline-lg text-headline-xl text-primary mb-4">Year Book Viewer</h2>
+    <p class="font-body-lg text-on-surface-variant">
+      Open your MITR year book PDF as a realistic two-page reading experience with click-to-flip navigation.
+    </p>
+  </div>
+
+  <div class="yearbook-viewer-shell rounded-[28px] p-6 md:p-8">
+
+
+    <div class="flipbook-stage rounded-2xl bg-surface-container-low">
+      <div id="yearbook-wrapper" class="w-full">
+        <div id="yearbook" class="mx-auto"></div>
+        <div id="yearbook-empty" class="flipbook-empty">
+            <div>
+                <p id="empty-title" class="text-2xl font-semibold text-primary mb-3">Loading yearbook.pdf</p>
+                <p id="empty-message" class="font-body-md text-on-surface-variant mb-4">
+                The year book viewer is preparing your PDF.
+                </p>
+                <button id="retry-load" class="flipbook-btn" type="button" style="display:none;">
+                <span class="material-symbols-outlined">restart_alt</span>
+                <span>Try Again</span>
+                </button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="flipbook-toolbar mb-6">
+  <div class="controls">
+    <button id="reload-pdf" class="flipbook-btn" type="button">
+      <span class="material-symbols-outlined">refresh</span>
+    </button>
+
+    <button id="prev-page" class="flipbook-btn" type="button">
+      <span class="material-symbols-outlined">arrow_back</span>
+      <span>Previous</span>
+    </button>
+
+    <button id="next-page" class="flipbook-btn" type="button">
+      <span>Next</span>
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </button>
+  </div>
+
+  <div class="flipbook-meta">
+    <span id="book-status">Loading yearbook.pdf...</span>
+  </div>
+</div>
+  </div>
+</section>
+
+<!-- Upcoming Events: Bento Grid Layout -->
+<section class="py-section-gap px-margin-page max-w-screen-2xl mx-auto">
+<div class="mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Upcoming Events</h2>
+<div class="w-24 h-1 bg-primary-container"></div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Primary Event Card -->
+<div class="col-span-12 lg:col-span-8 group">
+<div class="glass-card rounded-xl overflow-hidden flex flex-col md:flex-row h-full hover:shadow-xl transition-shadow duration-300">
+<div class="p-10 md:w-1/2 flex flex-col justify-between">
+<div class="space-y-4">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container text-label-sm font-bold rounded-full uppercase tracking-wider">Major Workshop</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Mindfulness &amp; Resilience Summit 2024</h3>
+<p class="text-on-surface-variant font-body-md">A full-day immersive experience featuring guest speakers from world-class wellness institutions, focusing on mental health tools for engineering students.</p>
+<div class="flex items-center space-x-4 text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-xl">calendar_today</span>
+<span class="text-label-sm">Nov 15, 2024</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-xl">location_on</span>
+<span class="text-label-sm">OAT, IITM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Event Cards Column -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-8">
+<div class="glass-card p-8 rounded-xl hover:shadow-lg transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-xs font-bold rounded">Seminar</span>
+<span class="material-symbols-outlined text-primary">groups</span>
+</div>
+<h4 class="font-headline-lg text-2xl text-on-surface mb-2 leading-snug">Peer Support Training Session</h4>
+<p class="text-on-surface-variant text-sm mb-6">Become a certified MITR peer supporter. Learn active listening and crisis intervention basics.</p>
+<div class="flex justify-between items-center">
+<span class="text-label-sm text-primary">Dec 2, 2024</span>
+<a class="text-primary font-bold text-sm hover:underline" href="#">View Details</a>
+</div>
+</div>
+<div class="glass-card p-8 rounded-xl hover:shadow-lg transition-shadow flex-grow">
+<div class="flex justify-between items-start mb-4">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-xs font-bold rounded">Webinar</span>
+<span class="material-symbols-outlined text-primary">videocam</span>
+</div>
+<h4 class="font-headline-lg text-2xl text-on-surface mb-2 leading-snug">Navigating Career Anxiety</h4>
+<p class="text-on-surface-variant text-sm mb-6">Join alumni experts for a session on managing stress during the placement season.</p>
+<div class="flex justify-between items-center">
+<span class="text-label-sm text-primary">Dec 10, 2024</span>
+<a class="text-primary font-bold text-sm hover:underline" href="#">Register</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Student Experiences & Sticky Notes Wall -->
+    <section class="px-margin-page py-16 bg-surface-container-low border-y border-outline-variant/30">
+      <div class="max-w-6xl mx-auto space-y-8">
+        <div class="text-center space-y-2">
+          <span class="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">Wellness Wall</span>
+          <h2 class="font-headline-lg text-headline-lg text-primary">Student Experiences & Sticky Notes</h2>
+          <p class="text-body-md text-on-surface-variant max-w-xl mx-auto">Real handwritten notes, reflections, and thank-you messages from students in different languages across hostels.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+          <!-- Note 1: English -->
+          <div class="bg-amber-100/90 border border-amber-300 p-6 rounded-2xl shadow-sm rotate-[-2deg] hover:rotate-0 transition-transform">
+            <div class="flex items-center justify-between text-xs text-amber-800 font-bold mb-2">
+              <span>Exam Stress & Academics</span>
+              <span class="bg-amber-200 px-2 py-0.5 rounded">English</span>
+            </div>
+            <p class="font-headline text-lg text-amber-950 italic mb-4">"During end-sems, I felt completely overwhelmed. Talking to my MITR hostel coord helped me structure my study plan and take healthy breaks."</p>
+            <p class="text-xs text-amber-800 font-bold">— 3rd Year B.Tech, Ganga Hostel</p>
+          </div>
+
+          <!-- Note 2: Hindi -->
+          <div class="bg-rose-100/90 border border-rose-300 p-6 rounded-2xl shadow-sm rotate-[1.5deg] hover:rotate-0 transition-transform">
+            <div class="flex items-center justify-between text-xs text-rose-800 font-bold mb-2">
+              <span>Homesickness</span>
+              <span class="bg-rose-200 px-2 py-0.5 rounded">Hindi</span>
+            </div>
+            <p class="font-headline text-lg text-rose-950 italic mb-4">"shuruaat me ghar ki bahut yaad aati thi. MITR ke bhaiya se milke baat ki to dil ka bojh halka ho gaya."</p>
+            <p class="text-xs text-rose-800 font-bold">— 1st Year M.Tech, Brahmaputra</p>
+          </div>
+
+          <!-- Note 3: Tamil -->
+          <div class="bg-emerald-100/90 border border-emerald-300 p-6 rounded-2xl shadow-sm rotate-[-1deg] hover:rotate-0 transition-transform">
+            <div class="flex items-center justify-between text-xs text-emerald-800 font-bold mb-2">
+              <span>Peer Support</span>
+              <span class="bg-emerald-200 px-2 py-0.5 rounded">Tamil</span>
+            </div>
+            <p class="font-headline text-lg text-emerald-950 italic mb-4">"எனக்கு ஏற்பட்ட பயத்தை MITR நண்பர்களிடம் பகிர்ந்தபோது தான் புரிந்தது, நாம் யாரும் தனியாக இல்லை!"</p>
+            <p class="text-xs text-emerald-800 font-bold">— Research Scholar, Sabarmati</p>
+          </div>
+
+          <!-- Note 4: Telugu -->
+          <div class="bg-blue-100/90 border border-blue-300 p-6 rounded-2xl shadow-sm rotate-[2deg] hover:rotate-0 transition-transform">
+            <div class="flex items-center justify-between text-xs text-blue-800 font-bold mb-2">
+              <span>Placements Pressure</span>
+              <span class="bg-blue-200 px-2 py-0.5 rounded">Telugu</span>
+            </div>
+            <p class="font-headline text-lg text-blue-950 italic mb-4">"ప్లేస్‌మెంట్స్ టైమ్‌లో వచ్చిన స్ట్రెస్ తట్టుకోలేకపోయాను. MITR సెషన్ వల్ల చాలా రిలీఫ్ లభించింది."</p>
+            <p class="text-xs text-blue-800 font-bold">— 4th Year B.Tech, Mandakini</p>
+          </div>
+
+          <!-- Note 5: Malayalam -->
+          <div class="bg-purple-100/90 border border-purple-300 p-6 rounded-2xl shadow-sm rotate-[-1.5deg] hover:rotate-0 transition-transform">
+            <div class="flex items-center justify-between text-xs text-purple-800 font-bold mb-2">
+              <span>Mental Peace</span>
+              <span class="bg-purple-200 px-2 py-0.5 rounded">Malayalam</span>
+            </div>
+            <p class="font-headline text-lg text-purple-950 italic mb-4">"ക്യാമ്പസിലെ തിരക്കുകൾക്കിടയിൽ സംസാരിക്കാൻ ഒരാളുണ്ട് എന്നത് വലിയൊരു ആശ്വാസമാണ്."</p>
+            <p class="text-xs text-purple-800 font-bold">— M.Sc Student, Sharavati Hostel</p>
+          </div>
+
+          <!-- Note 6: English Coffee Chat -->
+          <div class="bg-yellow-100/90 border border-yellow-300 p-6 rounded-2xl shadow-sm rotate-[1deg] hover:rotate-0 transition-transform">
+            <div class="flex items-center justify-between text-xs text-yellow-800 font-bold mb-2">
+              <span>Coffee Chat</span>
+              <span class="bg-yellow-200 px-2 py-0.5 rounded">English</span>
+            </div>
+            <p class="font-headline text-lg text-yellow-950 italic mb-4">"Met my MITR mentor at Himalaya food court for coffee. Just venting out without judgment gave me total peace of mind!"</p>
+            <p class="text-xs text-yellow-800 font-bold">— 2nd Year Student, Jamuna Hostel</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements & Media -->
+<section class="bg-surface-container-low py-section-gap">
+<div class="px-margin-page max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-xl text-on-surface mb-4">Achievements &amp; Media</h2>
+<p class="font-body-lg text-on-surface-variant">Our journey of impact through the years. Recognized by institutional leaders and media outlets for pioneering student-led wellness.</p>
+</div>
+<button class="px-6 py-2 border border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">View Media Archive</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Achievement 1 -->
+<div class="group">
+<div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+<img alt="IITM MITR Media Feature" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHhpPHPTcuXSkqrqFl2GfJwCCcXc46kjUabdYxb33Y8K36sCctHCb9PNqWzgVAGEfDXsLGchq9lPCYPsWzUKotlVwbpNOtegCJx6y7D1_OfMuLooM6RywvdxnRo8Bbn50_ahBmgW80Qu6slR8mDNjTM4T5LbxjAjfPGPwKTSPV_NLdxhtIQWTKkQ425KKE61CxxbEuLNh2xHTFtRYv5RqwtyMJ-8o6GwCUzCfOFWvI-N2oRH7Fa3jqge8W-fbyTXdz"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="text-white font-bold text-label-sm">THE HINDU • NOV 2023</p>
+</div>
+</div>
+<h3 class="font-headline-lg text-2xl text-primary mb-3">Redefining Campus Support Systems</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-3">IIT Madras MITR initiative sets a new benchmark for peer-to-peer mental health support in technical institutions across India.</p>
+</div>
+<!-- Achievement 2 -->
+<div class="group">
+<div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="A crisp, professional photograph of an award ceremony in a prestigious university hall. A group of diverse student leaders from Team MITR are receiving a trophy from a distinguished faculty member. The lighting is focused and celebratory, capturing a moment of institutional pride. The setting is clean, with dark wood accents and elegant academic regalia visible in the background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBaFVFnrT4j8u1WlNsqLfCot_VKueH7YE8vTeOc6OIBhK-Th2f4cF1CSKrdYSchdM_1UVaQNS68GFD8Q1kdjYQ3CoaBeAHpqN3IsmjDKlCujKmpqkJsorKPHJBO7Qo9vle1TVla_xBMwLu8fqi95HEaSqGCZEJsjx4DL6xhMZnkyh_mQX79des_rIX0LuaIRCT3-OijadHSA4ZMqUo4u7kJtrERslay17vHfg8i_9rq_93GiYbPW6s')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="text-white font-bold text-label-sm">INSTITUTIONAL AWARD • 2023</p>
+</div>
+</div>
+<h3 class="font-headline-lg text-2xl text-primary mb-3">Excellence in Student Outreach</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-3">Recognized for 'Outstanding Contribution to Campus Culture' during the annual Director's award ceremony.</p>
+</div>
+<!-- Achievement 3 -->
+<div class="group">
+<div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="A clean, minimalist shot of a stack of professionally printed wellness brochures and pamphlets featuring the MITR logo, neatly arranged on a modern desk. The background is a soft-focus view of a library or academic building. The light is bright and even, emphasizing clarity and information design. The color palette consists of whites, soft greys, and IITM gold accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHVSKu_ijbQrMt23jiZ_uwBf7G2ey_BNdgOG_qSfiICPXEtfFZuQpnWdpoPYb-s2v3ZtPhatifI0vZsOf2TIXqsJJwtWGpdBusg8zwEn9CYW8GlpTZo6PrUsb6ZEnjiI9XjQUyDZPHRQvDTZZvdCf958DVQdBrGxZriLCd7GD4SUWarBXrO9IlHnPxDKfuVez1CC_3tvzxlD6qZNJIPb31FUEXNmbqgH0uEUJzSoewwBLeAEkFAOU')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="text-white font-bold text-label-sm">MITR IMPACT REPORT • 2024</p>
+</div>
+</div>
+<h3 class="font-headline-lg text-2xl text-primary mb-3">Pioneering Wellness Outreach</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-3">How MITR reached 10,000+ students through 50+ targeted initiatives in the last academic cycle.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Statistics Banner -->
+<section class="py-16 bg-primary text-white">
+<div class="px-margin-page max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<div class="font-headline-xl text-5xl mb-2">500+</div>
+<div class="text-label-sm uppercase tracking-widest opacity-80">Events Hosted</div>
+</div>
+<div>
+<div class="font-headline-xl text-5xl mb-2">15k+</div>
+<div class="text-label-sm uppercase tracking-widest opacity-80">Students Guided</div>
+</div>
+<div>
+<div class="font-headline-xl text-5xl mb-2">80+</div>
+<div class="text-label-sm uppercase tracking-widest opacity-80">Media Features</div>
+</div>
+<div>
+<div class="font-headline-xl text-5xl mb-2">200+</div>
+<div class="text-label-sm uppercase tracking-widest opacity-80">Alumni Leads</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Alumni Network -->
+<section class="py-section-gap relative">
+<div class="px-margin-page max-w-screen-2xl mx-auto relative z-10">
+<div class="text-center max-w-3xl mx-auto mb-20">
+<h2 class="font-headline-lg text-headline-xl text-primary mb-6">Our Alumni Network</h2>
+<p class="font-body-lg text-on-surface-variant">The MITR legacy continues through our former leaders who have gone on to champion well-being in their professional journeys across the globe.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Alumnus 1 -->
+<div class="glass-card p-10 rounded-2xl relative">
+<div class="absolute -top-6 left-10">
+<div class="w-16 h-16 rounded-full border-4 border-surface overflow-hidden shadow-lg">
+<img alt="Alumni Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXBlWP6n2YKvx59AJv2MA76hDEWeBfiNUrIPoRDoGX-k-_IVEjLi_FuUo7V_pIJe4EqTBFl5Ay3TYX1lk-fTT9701oZSwWJC_jnjUxjfdAAgAGh51SkEg9pxS9liEwFxtJNuMrHE33mlsR1qYE8q1FB4RwAJpc0pdjEq3v4AnHlj3563LHbLAcDkJqZyJ_N0xru3b0LGSUJbgeXc2SFPiG9sLVJ3kWXWQe42438QeV46ixUQiyqP4IGyatbaDkROar"/>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-6 right-10">format_quote</span>
+<div class="mt-8 space-y-4">
+<p class="italic text-on-surface font-body-md leading-relaxed">"Being part of MITR was the most transformative part of my time at IIT Madras. It taught me that technical brilliance means nothing without emotional intelligence."</p>
+<div>
+<p class="font-bold text-primary font-body-md">Ananya Sharma</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-wide">Core Member 2019-21 • Software Engineer at Google</p>
+</div>
+</div>
+</div>
+<!-- Alumnus 2 -->
+<div class="glass-card p-10 rounded-2xl relative">
+<div class="absolute -top-6 left-10">
+<div class="w-16 h-16 rounded-full border-4 border-surface overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young male professional in his late 20s, with a warm and confident expression. He is dressed in a smart-casual blazer. The background is a soft, blurred corporate or academic setting with warm ambient lighting. The visual style is polished and high-end, reflecting a successful career path post-IIT Madras." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLO_aOH9ibQCiejf3nY5b5dqVC3bRxaoNLHzL-XGS-ucY6pPlA8XM2ufBDmQvzz7Uj1-0nY72c_TUlWNGVmcV3B_9bhix6f2EXBqJtg7-m3U0lCpT04-bc-kwDsp7Ajnkj24XSV4EcoNDCkbGoKW4oZ9sawaswo1SJklgrje84uDVbOp5IDtUV_MyruzeEMGeo_73T6NXMPeeaB3Ce5hCBn9Qv1CWLdF6tzn68154Kkg1iFC3gEzQ"/>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-6 right-10">format_quote</span>
+<div class="mt-8 space-y-4">
+<p class="italic text-on-surface font-body-md leading-relaxed">"The empathy and resilience I developed at Team MITR continue to serve me every day in my leadership role. Once a Mitr, always a Mitr."</p>
+<div>
+<p class="font-bold text-primary font-body-md">Rahul Verma</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-wide">Lead Coordinator 2020 • Founder, SustainAI</p>
+</div>
+</div>
+</div>
+<!-- Alumnus 3 -->
+<div class="glass-card p-10 rounded-2xl relative">
+<div class="absolute -top-6 left-10">
+<div class="w-16 h-16 rounded-full border-4 border-surface overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young female professional with an approachable and intelligent gaze. She is wearing elegant, modern business attire. The lighting is soft and professional, with a light neutral background that creates a clean and high-status aesthetic. Her expression conveys empathy and competence, aligning with the MITR alumni brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxeuDJhKOSBTK4DqyKY2OT-u-NGvKdJUt6MtV38XMzEo4X7hbRhGCErMa6_Mdi9cQzABJWkVjHJAcyOaZUOPJXlBGfWgATCIqPwa6drN_iZjEOhql0Ml07T1NfFbndm9qzRRd12d5I0W7WMYq5H92CGvv8KS5EJzLa8dnMbYbQMBF39X8j-j5cI3Q8lHMLnq-bLh25ktOzgeJv4OrOx2jUDKbQoQLHYgU3SfI1YcoELelF_tyfrIc"/>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-6 right-10">format_quote</span>
+<div class="mt-8 space-y-4">
+<p class="italic text-on-surface font-body-md leading-relaxed">"MITR isn't just an organization; it's a family that look out for each other. I am proud to see it growing stronger every year."</p>
+<div>
+<p class="font-bold text-primary font-body-md">Sanya Iyer</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-wide">Media Lead 2018 • Product Manager at Meta</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Subtle Campus Divider -->
+<div class="w-full h-32 relative opacity-20 pointer-events-none mb-12">
+<svg class="w-full h-full fill-primary" viewbox="0 0 1440 120">
+<path d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,85.3C672,75,768,85,864,96C960,107,1056,117,1152,106.7C1248,96,1344,64,1392,48L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+</svg>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-page py-section-gap flex flex-col items-center space-y-8 bg-surface-container border-t border-outline-variant/50"><div class="flex flex-col items-center space-y-6"><div class="flex items-center space-x-3"><img alt="Footer Logo" class="h-16 w-16 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpmZIoxlCn2Lsg7_x9N7QoLqWIk6yddBaZonLCFUDRotGSG5vYMYzD-DqPvBRMHXSrUNlkcEjHZAZ-PVzP1ORqNi0r3M-T6FbpbG8JuCH8G2X516JCYez_BobmVQfmWRmNu8EadmTbTVVxt2WKqS-nhlsvGQnc__srd_TFDkJlgIHwUyi8FUstbymupm8Xh6htGfEe_Mq19GeTUx5gp10K56AQqYddgwP7rIi8XWde3wWdbxxP1dMj_KIFCcZW36K"/><div class="text-center md:text-left"><h2 class="font-headline-lg text-headline-lg font-bold text-primary">IITM MITR</h2><p class="font-label-sm text-on-surface-variant">Empowering Wellbeing Since 2010</p></div></div><div class="flex flex-wrap justify-center gap-8"><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Privacy Policy</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Terms of Service</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Campus Map</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="directory.html">Contact Us</a><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline" href="#">Feedback</a></div></div><div class="w-full max-w-screen-xl border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-70"><p class="font-body-md text-sm text-on-surface-variant text-center">© 2024 Indian Institute of Technology Madras. All rights reserved.</p><div class="flex space-x-6"><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">qr_code_2</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span><span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">alternate_email</span></div></div></footer>
+<script>
+    // Existing card hover effect
+    document.querySelectorAll('.glass-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Existing header scroll effect
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 20) {
+            header.classList.add('py-2', 'h-16');
+            header.classList.remove('h-20');
+        } else {
+            header.classList.remove('py-2', 'h-16');
+            header.classList.add('h-20');
+        }
+    });
+
+    // ---------- PDF Flipbook with error handling ----------
+    const PDF_URL = 'yearbook.pdf';
+    const RENDER_SCALE = 1.5; // higher = crisper pages, slower to render
+
+    const prevBtn = document.getElementById('prev-page');
+    const nextBtn = document.getElementById('next-page');
+    const reloadBtn = document.getElementById('reload-pdf');
+    const retryBtn = document.getElementById('retry-load');
+
+    const yearbook = document.getElementById('yearbook');
+    const emptyState = document.getElementById('yearbook-empty');
+    const statusEl = document.getElementById('book-status');
+    const emptyTitle = document.getElementById('empty-title');
+    const emptyMessage = document.getElementById('empty-message');
+
+    let pageFlipInstance = null;
+    let currentPdf = null;
+    let totalPages = 0;
+    let isBookReady = false;
+    let isLoading = false;
+    let loadToken = 0;
+
+    function updateStatus(text) {
+        if (statusEl) statusEl.textContent = text;
+    }
+
+    function setButtonsDisabled(disabled) {
+        [prevBtn, nextBtn, reloadBtn].forEach(btn => {
+            if (!btn) return;
+            btn.disabled = disabled;
+            btn.style.opacity = disabled ? '0.5' : '1';
+            btn.style.pointerEvents = disabled ? 'none' : 'auto';
+        });
+    }
+
+    function showEmptyState(title, message, showRetry = false) {
+        emptyTitle.textContent = title;
+        emptyMessage.textContent = message;
+        retryBtn.style.display = showRetry ? 'inline-flex' : 'none';
+        emptyState.style.display = 'grid';
+        yearbook.style.display = 'none';
+    }
+
+    function hideEmptyState() {
+        emptyState.style.display = 'none';
+        yearbook.style.display = 'block';
+    }
+
+    function resetViewerState() {
+        isBookReady = false;
+        currentPdf = null;
+        totalPages = 0;
+        setButtonsDisabled(true);
+    }
+
+    function clearFlipbook() {
+        try {
+            if (pageFlipInstance) {
+                pageFlipInstance.destroy();
+                pageFlipInstance = null;
+            }
+        } catch (error) {
+            console.warn('Failed to destroy previous flipbook instance:', error);
+        }
+
+        yearbook.innerHTML = '';
+    }
+
+    function getReadablePdfError(error) {
+        const name = error?.name || '';
+        const message = error?.message || '';
+
+        if (name === 'MissingPDFException') {
+            return {
+                title: 'PDF file not found',
+                message: 'Could not find yearbook.pdf. Place it in the same folder as this HTML file.'
+            };
+        }
+
+        if (name === 'InvalidPDFException') {
+            return {
+                title: 'Invalid PDF file',
+                message: 'yearbook.pdf exists, but it is not a valid PDF or may be corrupted.'
+            };
+        }
+
+        if (name === 'PasswordException') {
+            return {
+                title: 'Password-protected PDF',
+                message: 'This PDF is protected by a password. Use an unlocked copy of yearbook.pdf.'
+            };
+        }
+
+        if (name === 'UnexpectedResponseException') {
+            return {
+                title: 'Unable to fetch PDF',
+                message: 'The browser could not fetch yearbook.pdf. Check the path and make sure the site is served correctly.'
+            };
+        }
+
+        if (message.includes('Failed to fetch') || message.includes('NetworkError')) {
+            return {
+                title: 'Unable to fetch PDF',
+                message: 'The browser could not reach yearbook.pdf. If you opened this file directly (file:///...), serve the folder with a local web server instead — fetch() is blocked on file:// pages.'
+            };
+        }
+
+        if (message) {
+            return {
+                title: 'Failed to load PDF',
+                message
+            };
+        }
+
+        return {
+            title: 'Failed to load PDF',
+            message: 'Something went wrong while opening yearbook.pdf.'
+        };
+    }
+
+    // Renders a single PDF page onto a canvas sized to RENDER_SCALE.
+    async function renderPageToCanvas(pdf, pageNumber) {
+        const page = await pdf.getPage(pageNumber);
+        const viewport = page.getViewport({ scale: RENDER_SCALE });
+
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        const context = canvas.getContext('2d');
+        await page.render({ canvasContext: context, viewport }).promise;
+
+        return canvas;
+    }
+
+    async function renderPdfToFlipbook(url = PDF_URL) {
+        if (isLoading) return;
+
+        const myToken = ++loadToken;
+        isLoading = true;
+        setButtonsDisabled(true);
+        resetViewerState();
+        clearFlipbook();
+        updateStatus('Loading yearbook.pdf...');
+        showEmptyState('Loading yearbook.pdf', 'The year book viewer is preparing your PDF.');
+
+        try {
+            pdfjsLib.GlobalWorkerOptions.workerSrc =
+                'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Failed to fetch PDF: ${response.status} ${response.statusText}`);
+            }
+
+            const arrayBuffer = await response.arrayBuffer();
+            const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+            const pdf = await loadingTask.promise;
+
+            // Bail out if a newer load started while we were fetching/parsing.
+            if (myToken !== loadToken) return;
+
+            currentPdf = pdf;
+            totalPages = pdf.numPages;
+
+            if (totalPages === 0) {
+                throw new Error('yearbook.pdf has no pages.');
+            }
+
+            updateStatus(`Rendering ${totalPages} page${totalPages === 1 ? '' : 's'}...`);
+
+            // Render every page to its own canvas, wrapped in a .page div
+            // that PageFlip will treat as one leaf of the book.
+            const pageEls = [];
+            for (let i = 1; i <= totalPages; i++) {
+                if (myToken !== loadToken) return;
+                const canvas = await renderPageToCanvas(pdf, i);
+                const pageDiv = document.createElement('div');
+                pageDiv.className = 'page';
+                pageDiv.appendChild(canvas);
+                pageEls.push(pageDiv);
+                updateStatus(`Rendering page ${i} of ${totalPages}...`);
+            }
+
+            if (myToken !== loadToken) return;
+
+            pageEls.forEach(el => yearbook.appendChild(el));
+
+            pageFlipInstance = new St.PageFlip(yearbook, {
+                width: 500,
+                height: 700,
+                size: 'stretch',
+                minWidth: 280,
+                maxWidth: 1000,
+                minHeight: 360,
+                maxHeight: 1350,
+                maxShadowOpacity: 0.5,
+                showCover: false,
+                mobileScrollSupport: false,
+                useMouseEvents: true
+            });
+
+            pageFlipInstance.loadFromHTML(document.querySelectorAll('#yearbook .page'));
+
+            pageFlipInstance.on('flip', (e) => {
+                updateStatus(`Page ${e.data + 1} of ${totalPages}`);
+            });
+
+            hideEmptyState();
+            isBookReady = true;
+            setButtonsDisabled(false);
+            updateStatus(`Page 1 of ${totalPages}`);
+        } catch (error) {
+            console.error('PDF flipbook error:', error);
+            if (myToken !== loadToken) return;
+            const { title, message } = getReadablePdfError(error);
+            resetViewerState();
+            clearFlipbook();
+            showEmptyState(title, message, true);
+            updateStatus('Failed to load yearbook.pdf');
+        } finally {
+            if (myToken === loadToken) isLoading = false;
+        }
+    }
+
+    prevBtn.addEventListener('click', () => {
+        if (!isBookReady || !pageFlipInstance) return;
+        try {
+            pageFlipInstance.flipPrev();
+        } catch (error) {
+            console.error('Failed to go to previous page:', error);
+            updateStatus('Could not flip to previous page');
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (!isBookReady || !pageFlipInstance) return;
+        try {
+            pageFlipInstance.flipNext();
+        } catch (error) {
+            console.error('Failed to go to next page:', error);
+            updateStatus('Could not flip to next page');
+        }
+    });
+
+    reloadBtn.addEventListener('click', () => {
+        if (isLoading) return;
+        renderPdfToFlipbook();
+    });
+
+    retryBtn.addEventListener('click', () => {
+        if (isLoading) return;
+        renderPdfToFlipbook();
+    });
+
+    window.addEventListener('error', (event) => {
+        console.error('Window error:', event.error || event.message);
+    });
+
+    window.addEventListener('unhandledrejection', (event) => {
+        console.error('Unhandled promise rejection:', event.reason);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        renderPdfToFlipbook();
+    });
+</script>
+</body></html>
