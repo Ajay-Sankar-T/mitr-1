@@ -46,6 +46,7 @@
     "email": "spdas@zmail.iitm.ac.in",
     "contact": "9498073791",
     "department": "ME",
+    "full-dept": "Mechanical Engineering",
     "image": "Shyama Prasad Das.jpg"
   },
   {
@@ -53,6 +54,7 @@
     "email": "guhanj@iitm.ac.in",
     "contact": "9444951263",
     "department": "BT",
+    "full-dept": "Biotechnology",
     "image": "Guhan Jayaraman.png"
   },
   {
@@ -60,6 +62,7 @@
     "email": "sureshr@zmail.iitm.ac.in",
     "contact": "7994308859",
     "department": "OE",
+    "full-dept": "Ocean Engineering",
     "image": "Dr Suresh Rajendran.png"
   },
   {
@@ -67,6 +70,7 @@
     "email": "boby@ee.iitm.ac.in",
     "contact": "9445485273",
     "department": "MST",
+    "full-dept": "Medical Sciences and Technology",
     "image": "Boby George.jpg"
   },
   {
@@ -74,6 +78,7 @@
     "email": "aarajan@zmail.iitm.ac.in",
     "contact": "9884953470",
     "department": "AMBE",
+    "full-dept": "Applied Mathematics and Biology Engineering",
     "image": "Prof. A. Arockiarajan.jpg"
   },
   {
@@ -81,6 +86,7 @@
     "email": "lnt@iitm.ac.in",
     "contact": "9741015481",
     "department": "DSAI",
+    "full-dept": "Data Science and Artificial Intelligence",
     "image": "Lakshmi Narasimhan T.jpg"
   },
   {
@@ -88,6 +94,7 @@
     "email": "skrishnam@cse.iitm.ac.in",
     "contact": "",
     "department": "CS",
+    "full-dept": "Computer Science and Engineering",
     "image": "Krishna Sivalingam.jpg"
   },
   {
@@ -95,6 +102,7 @@
     "email": "murgi@iitm.ac.in",
     "contact": "9840519578",
     "department": "AE",
+    "full-dept": "Aerospace Engineering",
     "image": "Dr.Muruganandam T M.jpg"
   },
   {
@@ -102,6 +110,7 @@
     "email": "arshinder@iitm.ac.in",
     "contact": "9962742211",
     "department": "MS",
+    "full-dept": "Mathematics",
     "image": "Arshinder Kaur.jpg"
   },
   {
@@ -109,6 +118,7 @@
     "email": "balajis@ee.iitm.ac.in",
     "contact": "9840732120",
     "department": "EE",
+    "full-dept": "Electrical Engineering",
     "image": "Balaji Srinivasan (ee).jpg"
   },
   {
@@ -116,6 +126,7 @@
     "email": "raghuc@iitm.ac.in",
     "contact": "9003590689",
     "department": "CH",
+    "full-dept": "Chemical Engineering",
     "image": "Raghuram Chetty.png"
   },
   {
@@ -123,6 +134,7 @@
     "email": "dks@iitm.ac.in",
     "contact": "9498035838",
     "department": "PH",
+    "full-dept": "Physics",
     "image": "Dillip Satapathy.jpg"
   }
 ]
