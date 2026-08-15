@@ -1,0 +1,65 @@
+{
+  "id": "quotes",
+  "quotes": [
+    {
+      "quote": "Nothing is impossible. The word itself says 'I'm possible!'",
+      "author": "Audrey Hepburn"
+    },
+    {
+      "quote": "Alone we can do so little; together we can do so much.",
+      "author": "Helen Keller"
+    },
+    {
+      "quote": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+      "author": "Nelson Mandela"
+    },
+    {
+      "quote": "It always seems impossible until it's done.",
+      "author": "Nelson Mandela"
+    },
+    {
+      "quote": "You never know how strong you are until being strong is your only choice.",
+      "author": "Bob Marley"
+    },
+    {
+      "quote": "Difficult roads often lead to beautiful destinations.",
+      "author": "Unknown"
+    },
+    {
+      "quote": "Out of difficulties grow miracles.",
+      "author": "Jean de La Bretonne"
+    },
+    {
+      "quote": "The wound is the place where the light enters you.",
+      "author": "Rumi"
+    },
+    {
+      "quote": "You are not alone in this. We are in this together.",
+      "author": "Unknown"
+    },
+    {
+      "quote": "Sometimes the bravest and most important thing you can do is just show up.",
+      "author": "Brené Brown"
+    },
+    {
+      "quote": "Asking for help is not a sign of weakness, it's a sign of strength.",
+      "author": "Unknown"
+    },
+    {
+      "quote": "Comparison is the thief of joy.",
+      "author": "Theodore Roosevelt"
+    },
+    {
+      "quote": "Develop a passion for learning. If you do, you will never cease to grow.",
+      "author": "Anthony J. D'Angelo"
+    },
+    {
+      "quote": "Change is the end result of all true learning.",
+      "author": "Leo Buscaglia"
+    },
+    {
+      "quote": "The expert in anything was once a beginner.",
+      "author": "Helen Hayes"
+    }
+  ]
+}

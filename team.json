@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Rahul Kumar Mahamalla",
+    "designation": "Student Advisor",
+    "rollNumber": "ED22B079",
+    "email": "ed22b079@smail.iitm.ac.in",
+    "department": "Engineering Design",
+    "hostel": "Ganga",
+    "language": ["English", "Hindi", "Chhattisgarhi"]
+  },
+  {
+    "name": "Sumit Prakash",
+    "designation": "Events Head",
+    "rollNumber": "CE23B118",
+    "email": "ce23b118@smail.iitm.ac.in",
+    "department": "Civil Engineering",
+    "hostel": "Godavari",
+    "language": ["English", "Hindi"]
+  },
+  {
+    "name": "Prasheel Mathray",
+    "designation": "Counselling Head",
+    "rollNumber": "NA24B039",
+    "email": "na24b039@smail.iitm.ac.in",
+    "department": "Naval Architecture and Ocean Engineering",
+    "hostel": "Ganga",
+    "language": ["English", "Telugu", "Hindi"]
+  },
+  {
+    "name": "Madhavi Avala",
+    "designation": "Design Core",
+    "rollNumber": "BS23B009",
+    "email": "bs23b009@smail.iitm.ac.in",
+    "department": "Bio-Technology",
+    "hostel": "Sharavati",
+    "language": ["English", "Telugu"]
+  },
+  {
+    "name": "Addala Pravallika",
+    "designation": "Events Core",
+    "rollNumber": "CH23B003",
+    "email": "ch23b003@smail.iitm.ac.in",
+    "department": "Chemical Engineering",
+    "hostel": "Bhadra",
+    "language": ["English", "Telugu"]
+  },
+  {
+    "name": "Russell",
+    "designation": "Finance Core",
+    "rollNumber": "CE23B106",
+    "email": "ce23b106@smail.iitm.ac.in",
+    "department": "Civil Engineering",
+    "hostel": "Godavari",
+    "language": ["English", "Hindi"]
+  },
+  {
+    "name": "Swati",
+    "designation": "Counselling Core",
+    "rollNumber": "NA24B033",
+    "email": "na24b033@smail.iitm.ac.in",
+    "department": "Naval Architecture and Ocean Engineering",
+    "hostel": "Bhadra",
+    "language": ["English", "Hindi"]
+  }
+]
