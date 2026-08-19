@@ -7,11 +7,12 @@
     "image": "Thanggoulen Kipgen.jpg"
   },
   {
-    "name": "Prof. R. Jayaganthan",
-    "email": "edjay@iitm.ac.in",
-    "contact": "7358048942",
-    "department": "ED",
-    "image": "Prof. R. Jayaganthan.jpg"
+    "name": "Dillip Satapathy",
+    "email": "dks@iitm.ac.in",
+    "contact": "9498035838",
+    "department": "PH",
+    "full-dept": "Physics",
+    "image": "Dillip Satapathy.jpg"
   },
   {
     "name": "Dr. Manam Srinivasa Rao",
@@ -130,11 +131,10 @@
     "image": "Raghuram Chetty.png"
   },
   {
-    "name": "Dillip Satapathy",
-    "email": "dks@iitm.ac.in",
-    "contact": "9498035838",
-    "department": "PH",
-    "full-dept": "Physics",
-    "image": "Dillip Satapathy.jpg"
+    "name": "Prof. R. Jayaganthan",
+    "email": "edjay@iitm.ac.in",
+    "contact": "7358048942",
+    "department": "ED",
+    "image": "Prof. R. Jayaganthan.jpg"
   }
 ]

@@ -171,6 +171,7 @@
       }
       .reveal-on-scroll {
         opacity: 0;
+        transform: translateY(30px);
       }
       .animate-fade-in-up {
         animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -1848,7 +1849,7 @@
     <!-- Top Navigation Bar -->
     <div data-site-header></div>
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section class="relative min-h-screen flex items-center pt-20 pb-32 overflow-hidden">
       <div class="absolute inset-0 z-0 overflow-hidden">
         <img
           alt="IIT Madras Campus"
@@ -1901,7 +1902,7 @@
     </section>
     <!-- Quick Access Tiles -->
     <section class="relative -mt-24 z-20 px-margin-page mb-section-gap">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
         <!-- Emergency Support -->
         <div
           class="glass p-8 shadow-sm glow-hover transition-all flex flex-col items-start h-full border-b-4 border-secondary backdrop-blur-md bg-surface/40 rounded-3xl border border-white/20 duration-700 opacity-100 translate-y-0"
@@ -1927,36 +1928,7 @@
             <span class="material-symbols-outlined" data-icon="call">call</span>
           </button>
         </div>
-        <!-- Self Check-In -->
-        <div
-          class="glass p-8 shadow-sm glow-hover transition-all flex flex-col items-start h-full border-b-4 border-primary backdrop-blur-md bg-surface/40 rounded-3xl border border-white/20 duration-700 opacity-100 translate-y-0"
-        >
-          <span
-            class="material-symbols-outlined text-primary text-5xl mb-6"
-            data-icon="psychology"
-            >psychology</span
-          >
-          <h3 class="font-headline-lg text-headline-lg text-on-surface mb-3">
-            Check your emotional wellbeing
-          </h3>
-          <p class="font-body-md text-on-surface-variant mb-6 flex-grow">
-            An anonymous, 2-minute check-in, based on clinically validated
-            mental health questionnaire to help you understand different aspects
-            of your wellbeing better.
-          </p>
-          <a
-            class="text-primary font-bold flex items-center gap-2"
-            href="https://app.youform.com/forms/7nivpjkd"
-            target="_blank"
-            rel="noopener"
-          >
-            Start Check-In
-            <span class="material-symbols-outlined" data-icon="open_in_new"
-              >open_in_new</span
-            >
-          </a>
-        </div>
-        <!-- Hospital -->
+         <!-- Hospital -->
         <div
           class="glass p-8 shadow-sm glow-hover transition-all flex flex-col items-start h-full border-b-4 border-primary-container backdrop-blur-md bg-surface/40 rounded-3xl border border-white/20 duration-700 opacity-100 translate-y-0"
         >
@@ -1986,7 +1958,7 @@
 
     <!-- Institutional Support -->
     <section
-      class="px-margin-page max-w-screen-2xl mx-auto mb-section-gap reveal-on-scroll animate-fade-in-up"
+      class="px-margin-page max-w-screen-2xl mx-auto mb-section-gap reveal-on-scroll"
     >
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="space-y-6">
@@ -1999,9 +1971,7 @@
           <p
             class="text-body-lg text-on-surface-variant max-w-lg leading-relaxed"
           >
-            MITR is a body of faculty and student MITRs. They offer peer counseling and support according to the student's needs. 
-            <br/>
-            All MITRs are trained in basic counseling skills and empathy. They are available in almost all the departments and hostels. Regardless of the department or hostel, any students can contact any MITR.
+            MITR, A Wellness body of IITM consisting of Faculty and Students trained appropriately with counselling skills and empathy to offer counselling to peers. <br/> We MITR are available in all departments, Hostels to enhance approachability.
           </p>
         </div>
         <div class="relative">
@@ -2038,7 +2008,7 @@
           <div
             class="absolute -bottom-6 -left-6 glass-panel p-6 rounded-xl hidden lg:block gold-glow max-w-xs hover:translate-x-2 transition-transform"
           >
-            <span class="font-headline-lg text-primary block">20+ Years</span>
+            <span class="font-headline-lg text-primary block">Fostering a healthy campus </span>
             <p class="text-label-sm text-on-surface-variant mt-1">
               Of dedicated student-centric wellness legacy
             </p>
@@ -2057,7 +2027,7 @@
           >Daily Mental Wellbeing Boost</span
         >
         <h3 class="font-headline-lg text-2xl text-on-surface">
-          Today's positive quote for you"
+          Today's positive quote for you
         </h3>
         <p
           id="positive-msg-display"
@@ -2071,13 +2041,13 @@
           type="button"
           class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:opacity-90 transition-all"
         >
-          Generate Positive Message
+          More positive quotes
         </button>
       </div>
     </section>
 
     <!-- Team MITR Motto -->
-    <section class="px-margin-page mb-24">
+    <section class="px-margin-page mb-24 reveal-on-scroll">
       <div class="max-w-5xl mx-auto text-center">
         <div class="flex items-center justify-center gap-6 mb-10">
           <span class="h-px w-16 bg-outline-variant"></span>
@@ -2102,7 +2072,7 @@
     </section>
 
     <!-- Message from Director -->
-    <section class="px-margin-page mb-24">
+    <section class="px-margin-page mb-24 reveal-on-scroll">
       <div
         class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16"
       >
@@ -2160,8 +2130,13 @@ Contentment, joy, satisfaction - words that are all used to express happiness. A
               <p class="font-bold text-primary font-headline-lg">
                 Prof. V. Kamakoti
               </p>
-              <a
-                class="inline-flex items-center gap-2 font-label-sm text-label-sm font-bold bg-primary text-on-primary border border-primary rounded-full px-4 py-1.5 hover:shadow-lg hover:scale-95 transition-all duration-200"
+            </div>
+            <p
+              class="font-label-sm text-on-surface-variant tracking-widest mt-2"
+            >
+              Director
+                            <a
+                class="inline-flex items-center gap-2 font-label-sm text-label-sm font-bold bg-primary text-on-primary border border-primary rounded-full px-5 py-2.5 hover:shadow-lg hover:scale-95 transition-all duration-200"
                 href="https://behappy.iitm.ac.in"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -2171,26 +2146,22 @@ Contentment, joy, satisfaction - words that are all used to express happiness. A
                   data-icon="sentiment_satisfied"
                   >sentiment_satisfied</span
                 >
-                Be Happy — A Director’s Initiative
+                Be Happy — A Director’s Initiative                
                 <span
                   class="material-symbols-outlined text-base"
                   data-icon="open_in_new"
                   >open_in_new</span
                 >
               </a>
-            </div>
-            <p
-              class="font-label-sm text-on-surface-variant tracking-widest mt-2"
-            >
-              Director
             </p>
+
           </div>
         </div>
       </div>
     </section>
 
     <!-- Message from Dean of Students (DoST) -->
-    <section class="px-margin-page mb-section-gap">
+    <section class="px-margin-page mb-section-gap reveal-on-scroll">
       <div
         class="max-w-6xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-16"
       >
@@ -2246,7 +2217,7 @@ Contentment, joy, satisfaction - words that are all used to express happiness. A
       </div>
     </section>
     <!-- Our Impact Section (Bento Style) -->
-    <section class="bg-surface-container py-24 px-margin-page mb-section-gap">
+    <section class="bg-surface-container py-24 px-margin-page mb-section-gap reveal-on-scroll">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="font-headline-xl text-headline-xl text-on-surface mb-4">
@@ -2258,24 +2229,7 @@ Contentment, joy, satisfaction - words that are all used to express happiness. A
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <!-- Stat 1 -->
-          <div
-            class="glass-dark p-10 rounded-xl flex flex-col justify-center items-center text-center group transition-all hover:bg-surface-container-highest duration-700 opacity-100 translate-y-0 opacity-0 translate-y-10"
-          >
-            <span
-              class="material-symbols-outlined text-primary text-4xl mb-2 block"
-              >medical_services</span
-            >
-            <span
-              class="font-label-sm text-on-surface-variant uppercase tracking-widest"
-              >Counselling Facilities</span
-            >
-            <p class="text-sm text-outline mt-4 leading-relaxed">
-              Brief overview of peer counselling, resident professional
-              counsellors, YourDOST 24/7 support, and Institute hospital care.
-            </p>
-          </div>
-          <!-- Stat 2 -->
+                    <!-- Stat 1 -->
           <div
             class="bg-primary p-10 rounded-xl flex flex-col justify-center items-center text-center text-on-primary"
           >
@@ -2297,6 +2251,60 @@ Contentment, joy, satisfaction - words that are all used to express happiness. A
               NORD.
             </p>
           </div>
+          <!-- Stat 2 -->
+          <div
+            class="glass-dark p-8 rounded-xl flex flex-col text-center group transition-all hover:bg-surface-container-highest duration-700 opacity-100 translate-y-0 opacity-0 translate-y-10"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-4xl mb-2 self-center"
+              >medical_services</span
+            >
+            <span
+              class="font-label-sm text-on-surface-variant uppercase tracking-widest self-center mb-5"
+              >Counselling Facilities</span
+            >
+            <!-- Escalation ladder: who to reach out to first, and where that
+                 can lead next if a deeper level of care is needed. -->
+            <ol class="text-left w-full">
+              <li class="relative pl-7 pb-5 border-l-2 border-primary/40">
+                <span
+                  class="absolute -left-[7px] top-0.5 w-3.5 h-3.5 rounded-full bg-primary"
+                ></span>
+                <p class="text-sm font-bold text-on-surface leading-tight">
+                  Peer Counsellor
+                </p>
+                <p class="text-xs text-outline mt-1 leading-relaxed">
+                  Trained student coordinators — your first, most approachable
+                  point of contact.
+                </p>
+              </li>
+              <li class="relative pl-7 pb-5 border-l-2 border-primary/40">
+                <span
+                  class="absolute -left-[7px] top-0.5 w-3.5 h-3.5 rounded-full bg-primary-container"
+                ></span>
+                <p class="text-sm font-bold text-on-surface leading-tight">
+                  Hostel / Department Counsellors
+                </p>
+                <p class="text-xs text-outline mt-1 leading-relaxed">
+                  Assigned professional counsellors for your specific hostel
+                  or department.
+                </p>
+              </li>
+              <li class="relative pl-7">
+                <span
+                  class="absolute -left-[7px] top-0.5 w-3.5 h-3.5 rounded-full bg-secondary"
+                ></span>
+                <p class="text-sm font-bold text-on-surface leading-tight">
+                  Wellness Centre / YourDOST / Institute Hospital
+                </p>
+                <p class="text-xs text-outline mt-1 leading-relaxed">
+                  Licensed clinical psychologists and 24/7 crisis support for
+                  deeper or urgent care.
+                </p>
+              </li>
+            </ol>
+          </div>
+
           <!-- Stat 3 -->
           <div
             class="glass-dark p-10 rounded-xl flex flex-col justify-center items-center text-center group transition-all hover:bg-surface-container-highest duration-700 opacity-100 translate-y-0 opacity-0 translate-y-10"
@@ -2338,7 +2346,7 @@ Contentment, joy, satisfaction - words that are all used to express happiness. A
     </section>
     <!-- Structure & Operations -->
     <section
-      class="bg-surface py-section-gap relative reveal-on-scroll animate-fade-in-up"
+      class="bg-surface py-section-gap relative reveal-on-scroll"
     >
       <div class="px-margin-page max-w-screen-2xl mx-auto">
         <div class="text-center max-w-3xl mx-auto mb-12">
@@ -2514,7 +2522,7 @@ Contentment, joy, satisfaction - words that are all used to express happiness. A
 
     <!-- All About MITR -->
     <section
-      class="px-margin-page max-w-screen-2xl mx-auto py-section-gap reveal-on-scroll animate-fade-in-up"
+      class="px-margin-page max-w-screen-2xl mx-auto py-section-gap reveal-on-scroll"
     >
       <div class="text-center mb-16">
         <h2 class="font-headline-lg text-headline-lg text-primary mb-4">
@@ -2524,7 +2532,7 @@ Contentment, joy, satisfaction - words that are all used to express happiness. A
 <br /><br />
 Almost every department has a Faculty MiTR Coordinator. Students can contact their Faculty MiTR Coordinator for any distress they are going through.
 <br /><br />
-Student MiTR Coordinators are available in all hostels. They undergo Barefoot Counseling training and work in coordination with the Wellness Centre.
+Student MiTR Coordinators are available in all hostels. They undergo Barefoot Counselling training and work in coordination with the Wellness Centre.
         </p>
       </div>
       <!-- Faculty Advisors -->
@@ -2739,7 +2747,7 @@ Student MiTR Coordinators are available in all hostels. They undergo Barefoot Co
             >
               <img
                 class="w-full h-full object-cover object-top"
-                alt="Russel"
+                alt="Russell"
                 src="core/russel.webp"
                 width="384"
                 height="384"
@@ -2747,7 +2755,7 @@ Student MiTR Coordinators are available in all hostels. They undergo Barefoot Co
               />
             </div>
             <div>
-              <h4 class="font-bold text-on-surface">Russel</h4>
+              <h4 class="font-bold text-on-surface">Russell</h4>
               <p class="text-label-sm text-primary">Finance Core</p>
               <p class="text-xs text-outline">CE23B106</p>
             </div>
@@ -2770,7 +2778,7 @@ Student MiTR Coordinators are available in all hostels. They undergo Barefoot Co
           <p
             class="font-body-lg text-on-surface-variant max-w-lg leading-relaxed"
           >
-            Our professional counselors and peer mentors are here to help you
+            Our professional counsellors and peer mentors are here to help you
             navigate academic pressure, personal challenges, and emotional
             well-being.
           </p>
@@ -2841,6 +2849,28 @@ Student MiTR Coordinators are available in all hostels. They undergo Barefoot Co
           "translate-y-10",
         );
         observer.observe(card);
+      });
+
+      // Section-level reveal: .reveal-on-scroll starts hidden (see the CSS
+      // above), and only actually plays the fadeInUp keyframe once it's
+      // scrolled into view — previously "animate-fade-in-up" was a static
+      // class in the markup, so the animation fired once at page load
+      // instead of on scroll, and had already finished by the time anyone
+      // scrolled down to see it.
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-fade-in-up");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -80px 0px" },
+      );
+
+      document.querySelectorAll(".reveal-on-scroll").forEach((section) => {
+        revealObserver.observe(section);
       });
 
       // Sound toggle for each institutional support video embed

@@ -175,10 +175,10 @@
               <span class="material-symbols-outlined text-base">calendar_month</span>
               <span>Book Slot</span>
             </button>
-            <a href="emergency.html" class="bg-surface-container text-on-surface hover:bg-surface-container-high px-5 py-2.5 rounded-full font-bold text-sm transition-all flex items-center gap-2">
+            <button type="button" id="view-schedule-btn" class="bg-surface-container text-on-surface hover:bg-surface-container-high px-5 py-2.5 rounded-full font-bold text-sm transition-all flex items-center gap-2">
               <span class="material-symbols-outlined text-base">picture_as_pdf</span>
               <span>View Full Schedule</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -206,6 +206,36 @@
         </div>
       </div>
     </main>
+
+    <!-- Counsellor Schedule PDF Modal -->
+    <div id="schedule-modal" role="dialog" aria-modal="true" aria-labelledby="schedule-modal-title"
+         class="hidden fixed inset-0 z-[110] bg-black/60 backdrop-blur-sm items-center justify-center p-4">
+      <div class="bg-surface max-w-3xl w-full rounded-3xl p-4 sm:p-6 shadow-2xl border border-outline-variant/40 relative flex flex-col max-h-[90vh]">
+        <div class="flex items-center justify-between pb-4 border-b border-outline-variant/30 mb-4 shrink-0 gap-3">
+          <div class="flex items-center gap-2.5 text-primary min-w-0">
+            <span class="material-symbols-outlined text-2xl shrink-0">picture_as_pdf</span>
+            <h3 class="text-xl sm:text-2xl font-bold truncate" id="schedule-modal-title" style="font-family:'Newsreader',serif">Counsellor Schedule</h3>
+          </div>
+          <div class="flex items-center gap-3 shrink-0">
+            <a href="counsellors.pdf" target="_blank" rel="noopener"
+               class="hidden sm:inline-flex items-center gap-1.5 text-sm font-bold text-secondary hover:underline whitespace-nowrap">
+              <span class="material-symbols-outlined text-base">open_in_new</span>Open in new tab
+            </a>
+            <button id="schedule-modal-close" type="button" aria-label="Close"
+                    class="text-outline hover:text-on-surface p-1 rounded-full">
+              <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+          </div>
+        </div>
+        <div class="flex-1 overflow-hidden rounded-xl border border-outline-variant/30 bg-surface-container-low min-h-0">
+          <iframe src="counsellors.pdf" title="Department &amp; Hostel Counsellor Schedule" class="w-full h-[60vh] sm:h-[70vh]"></iframe>
+        </div>
+        <a href="counsellors.pdf" target="_blank" rel="noopener"
+           class="sm:hidden mt-4 flex items-center justify-center gap-2 bg-primary text-on-primary px-4 py-2.5 rounded-full font-bold text-sm shrink-0">
+          <span class="material-symbols-outlined text-base">open_in_new</span>Open in new tab
+        </a>
+      </div>
+    </div>
 
     <!-- Footer -->
     <div data-site-footer></div>
@@ -367,6 +397,32 @@
         deptFilter.addEventListener("change", filterAll);
         hostelFilter.addEventListener("change", filterAll);
         langFilter.addEventListener("change", filterAll);
+
+        // Counsellor schedule PDF modal, opened from the "View Full Schedule"
+        // button in the Department & Hostel Professional Counsellors banner.
+        const scheduleModal = document.getElementById("schedule-modal");
+        const scheduleBtn = document.getElementById("view-schedule-btn");
+        const scheduleClose = document.getElementById("schedule-modal-close");
+
+        if (scheduleBtn && scheduleModal) {
+          const openSchedule = () => {
+            scheduleModal.classList.remove("hidden");
+            scheduleModal.classList.add("flex");
+          };
+          const closeSchedule = () => {
+            scheduleModal.classList.add("hidden");
+            scheduleModal.classList.remove("flex");
+          };
+
+          scheduleBtn.addEventListener("click", openSchedule);
+          scheduleClose.addEventListener("click", closeSchedule);
+          scheduleModal.addEventListener("click", (e) => {
+            if (e.target === scheduleModal) closeSchedule();
+          });
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && !scheduleModal.classList.contains("hidden")) closeSchedule();
+          });
+        }
       })();
     </script>
   </body>

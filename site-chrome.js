@@ -74,13 +74,22 @@
     function navLinks(active, mobile) {
         return NAV.map(function (item) {
             var isActive = !item.external && item.key === active;
-            var cls = mobile
-                ? (isActive
+            var cls;
+            if (mobile) {
+                cls = isActive
                     ? 'text-primary font-bold text-base py-3'
-                    : 'text-on-surface-variant text-base py-3')
-                : (isActive
-                    ? 'text-primary border-b-2 border-primary pb-1 font-bold text-base'
-                    : 'text-on-surface-variant hover:text-primary transition-colors text-base');
+                    : 'text-on-surface-variant text-base py-3 transition-colors hover:text-primary';
+            } else {
+                // A tab-style underline that grows in from the left on hover
+                // rather than snapping on, and stays fully drawn for the
+                // active page instead of a static border.
+                var underline = "relative pb-1 text-base transition-colors duration-200 after:content-[''] " +
+                    'after:absolute after:left-0 after:-bottom-0.5 after:h-0.5 after:bg-primary ' +
+                    'after:transition-all after:duration-300 after:ease-out';
+                cls = isActive
+                    ? underline + ' text-primary font-bold after:w-full'
+                    : underline + ' text-on-surface-variant hover:text-primary after:w-0 hover:after:w-full';
+            }
             return '<a href="' + url(item.href, item.external) + '"'
                 + (item.external ? ' target="_blank" rel="noopener"' : '')
                 + (isActive ? ' aria-current="page"' : '')
@@ -97,22 +106,37 @@
               '<span class="hidden sm:block h-8 sm:h-10 w-px bg-outline-variant/40 shrink-0"></span>' +
               '<img alt="Team MITR" class="h-7 sm:h-9 md:h-12 w-auto shrink-0" src="' + BASE + 'mitr-logo.png">' +
             '</a>' +
-            '<nav class="hidden md:flex items-center space-x-8" aria-label="Main">' +
+            // The full link row (5 links) plus the confidential badge, Support
+            // button and DOST logo don't comfortably fit until genuine
+            // desktop/laptop widths — even at exactly 1024px (a very common
+            // tablet landscape width, e.g. iPad) it still wrapped and
+            // overlapped the logo. Every tablet size, including landscape,
+            // keeps the hamburger; the full row only shows from xl: (1280px).
+            '<nav class="hidden xl:flex items-center space-x-6" aria-label="Main">' +
               navLinks(active, false) +
             '</nav>' +
-            '<div class="flex items-center gap-1.5 sm:gap-4 md:gap-6 shrink-0">' +
-              '<button class="bg-primary text-on-primary px-3 py-1.5 sm:px-6 sm:py-2.5 rounded-full font-bold text-xs sm:text-base hover:scale-95 transition-transform duration-200 whitespace-nowrap" id="sos-btn" data-support-btn type="button">Support</button>' +
+            '<div class="flex items-center gap-1.5 sm:gap-4 xl:gap-6 shrink-0">' +
+              '<span class="hidden xl:inline-flex items-center gap-1 text-secondary font-bold text-xs uppercase tracking-wide animate-pulse whitespace-nowrap" aria-hidden="true">' +
+                '<span class="material-symbols-outlined text-sm">encrypted</span>Highly Confidential' +
+              '</span>' +
+              '<button class="relative bg-primary text-on-primary px-3 py-1.5 sm:px-6 sm:py-2.5 rounded-full font-bold text-xs sm:text-base hover:scale-95 transition-transform duration-200 whitespace-nowrap" id="sos-btn" data-support-btn type="button" aria-label="Support — every service is confidential">' +
+                'Support' +
+                '<span class="xl:hidden absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-secondary animate-pulse ring-2 ring-surface" aria-hidden="true"></span>' +
+              '</button>' +
               '<a href="' + DOST_URL + '" target="_blank" rel="noopener" class="shrink-0">' +
-                '<img src="' + BASE + 'dostiitmlogo.svg" alt="Dost IITM" class="h-7 sm:h-10 md:h-12 w-auto cursor-pointer hover:opacity-70 transition-opacity">' +
+                '<img src="' + BASE + 'dostiitmlogo.svg" alt="Dost IITM" class="h-7 sm:h-10 xl:h-12 w-auto cursor-pointer hover:opacity-70 transition-opacity">' +
               '</a>' +
-              '<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" class="md:hidden flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 -mr-1 sm:-mr-2 rounded-full text-primary hover:bg-primary/5 transition-colors shrink-0" id="mobile-menu-btn" type="button">' +
+              '<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" class="xl:hidden flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 -mr-1 sm:-mr-2 rounded-full text-primary hover:bg-primary/5 transition-colors shrink-0" id="mobile-menu-btn" type="button">' +
                 '<span class="material-symbols-outlined text-2xl sm:text-3xl">menu</span>' +
               '</button>' +
             '</div>' +
           '</div>' +
-          '<nav class="hidden md:hidden absolute top-20 inset-x-0 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-lg px-6 py-4 flex-col" id="mobile-menu" aria-label="Mobile">' +
+          '<nav class="hidden xl:hidden absolute top-20 inset-x-0 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-lg px-6 py-4 flex-col opacity-0 -translate-y-2 transition-all duration-300 ease-out" id="mobile-menu" aria-label="Mobile">' +
             navLinks(active, true) +
-            '<button class="bg-primary text-on-primary mt-3 px-6 py-3 rounded-full font-bold active:scale-95 transition-transform duration-200" data-support-btn type="button">Support</button>' +
+            '<button class="bg-primary text-on-primary mt-3 px-6 py-3 rounded-full font-bold active:scale-95 transition-transform duration-200" data-support-btn type="button" aria-label="Support — every service is confidential">Support</button>' +
+            '<p class="flex items-center justify-center gap-1.5 text-secondary font-bold text-xs uppercase tracking-wide animate-pulse mt-2" aria-hidden="true">' +
+              '<span class="material-symbols-outlined text-sm">encrypted</span>Highly Confidential' +
+            '</p>' +
           '</nav>' +
         '</header>';
     }
@@ -211,18 +235,35 @@
         var panel = document.getElementById('mobile-menu');
         if (!btn || !panel) return;
 
+        var CLOSE_DURATION = 250;
+        var closeTimer = null;
+
         function isOpen() { return !panel.classList.contains('hidden'); }
         function open() {
+            if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
             panel.classList.remove('hidden');
             panel.classList.add('flex');
+            // Force layout so the browser registers the closed state above
+            // before the class swap below — otherwise both happen in the same
+            // frame and the transition never plays.
+            void panel.offsetHeight;
+            panel.classList.remove('opacity-0', '-translate-y-2');
+            panel.classList.add('opacity-100', 'translate-y-0');
             btn.setAttribute('aria-expanded', 'true');
             btn.setAttribute('aria-label', 'Close menu');
         }
         function close() {
-            panel.classList.add('hidden');
-            panel.classList.remove('flex');
+            panel.classList.remove('opacity-100', 'translate-y-0');
+            panel.classList.add('opacity-0', '-translate-y-2');
             btn.setAttribute('aria-expanded', 'false');
             btn.setAttribute('aria-label', 'Open menu');
+            // Keep `flex` through the fade-out, then drop to `hidden` once the
+            // transition finishes so a closed menu still has zero layout impact.
+            closeTimer = window.setTimeout(function () {
+                panel.classList.add('hidden');
+                panel.classList.remove('flex');
+                closeTimer = null;
+            }, CLOSE_DURATION);
         }
 
         btn.addEventListener('click', function (e) {
@@ -240,9 +281,9 @@
             if (e.key === 'Escape' && isOpen()) { close(); btn.focus(); }
         });
 
-        // Widening past md swaps the desktop nav back in; an open panel would
+        // Widening past xl swaps the desktop nav back in; an open panel would
         // otherwise be stranded on screen with nothing to close it.
-        var desktop = window.matchMedia('(min-width: 768px)');
+        var desktop = window.matchMedia('(min-width: 1280px)');
         var onWidthChange = function (e) { if (e.matches) close(); };
         if (desktop.addEventListener) {
             desktop.addEventListener('change', onWidthChange);
