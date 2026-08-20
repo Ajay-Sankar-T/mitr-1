@@ -9,9 +9,7 @@
     'use strict';
 
     var RECIPIENTS = [
-        'mitr@smail.iitm.ac.in',
-        'me25b012@smail.iitm.ac.in',
-        'ce24b102@smail.iitm.ac.in'
+        'mitr@smail.iitm.ac.in'
     ];
 
     var CATEGORIES = [

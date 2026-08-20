@@ -32,7 +32,7 @@
         return src.replace(/site-chrome\.js.*$/, '');
     })();
 
-    var FEEDBACK_URL = 'https://app.youform.com/forms/7nivpjkd';
+
     var DOST_URL = 'https://dost.iitm.ac.in';
     var CONTACT_EMAIL = 'mitrevents@smail.iitm.ac.in';
     var INSTAGRAM_URL = 'https://www.instagram.com/mitr_iitm/?hl=en';
@@ -53,7 +53,6 @@
         { key: 'emergency', label: 'Support Desk', href: 'emergency.html' },
         { key: 'directory', label: 'Contact Us', href: 'directory.html' },
         { key: 'yearbook', label: 'Gallery', href: 'yearbook.html' },
-        { key: 'selfcheck', label: 'Self-Check Up', href: FEEDBACK_URL, external: true }
     ];
 
     function url(href, external) {

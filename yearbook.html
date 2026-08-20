@@ -456,7 +456,9 @@
 <h2 class="font-headline-lg text-headline-xl text-on-surface mb-4">Achievements &amp; Media</h2>
 <p class="font-body-lg text-on-surface-variant">Our journey of impact through the years. Recognized by institutional leaders and media outlets for pioneering student-led wellness.</p>
 </div>
+<a href="https://dost.iitm.ac.in/photo_gallery.php" target="_blank" rel="noopener">
 <button class="px-6 py-2 border border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">View Media Archive</button>
+</a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <!-- Achievement 1 -->
@@ -495,6 +497,10 @@
 <div class="text-center max-w-3xl mx-auto mb-20">
 <h2 class="font-headline-lg text-headline-xl text-primary mb-6">Our Alumni Network</h2>
 <p class="font-body-lg text-on-surface-variant">The MITR legacy continues through our former leaders who have gone on to champion well-being in their professional journeys across the globe.</p>
+<button type="button" id="alumni-preview-btn" class="mt-6 inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-full font-bold text-sm hover:bg-primary/90 transition-all shadow-md">
+<span class="material-symbols-outlined text-base">groups</span>
+<span>Preview MITR Alumni Data</span>
+</button>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
 
@@ -542,6 +548,68 @@ Student Advisor 2024-25
 </svg>
 </div>
 </main>
+
+<!-- Alumni Data Preview Modal -->
+<div id="alumni-modal" role="dialog" aria-modal="true" aria-labelledby="alumni-modal-title"
+     class="hidden fixed inset-0 z-[110] bg-black/60 backdrop-blur-sm items-center justify-center p-4">
+  <div class="bg-surface max-w-3xl w-full rounded-3xl p-4 sm:p-6 shadow-2xl border border-outline-variant/40 relative flex flex-col max-h-[90vh]">
+    <div class="flex items-center justify-between pb-4 border-b border-outline-variant/30 mb-4 shrink-0 gap-3">
+      <div class="flex items-center gap-2.5 text-primary min-w-0">
+        <button type="button" id="alumni-modal-back" aria-label="Back to year selection"
+                class="hidden shrink-0 text-outline hover:text-on-surface p-1 -ml-1 rounded-full">
+          <span class="material-symbols-outlined text-2xl">arrow_back</span>
+        </button>
+        <span class="material-symbols-outlined text-2xl shrink-0">groups</span>
+        <h3 class="text-xl sm:text-2xl font-bold truncate" id="alumni-modal-title" style="font-family:'Newsreader',serif">MITR Alumni Data</h3>
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <a id="alumni-modal-open-tab" href="#" target="_blank" rel="noopener"
+           class="hidden sm:inline-flex items-center gap-1.5 text-sm font-bold text-secondary hover:underline whitespace-nowrap">
+          <span class="material-symbols-outlined text-base">open_in_new</span>Open in new tab
+        </a>
+        <button id="alumni-modal-close" type="button" aria-label="Close"
+                class="text-outline hover:text-on-surface p-1 rounded-full">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Year chooser -->
+    <div id="alumni-modal-chooser" class="py-4">
+      <p class="text-sm text-on-surface-variant mb-6">Choose an academic year to preview the MITR team roster.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <button type="button" data-alumni-year="2024-25" data-alumni-pdf="Mitr Team detail 2024-25.pdf"
+                class="alumni-year-btn flex items-center gap-3 p-5 rounded-2xl border-2 border-outline-variant/40 hover:border-primary hover:bg-primary/5 transition-all text-left">
+          <span class="material-symbols-outlined text-primary text-3xl shrink-0">description</span>
+          <span>
+            <span class="block font-bold text-on-surface">2024–25</span>
+            <span class="block text-xs text-on-surface-variant">Academic year roster</span>
+          </span>
+        </button>
+        <button type="button" data-alumni-year="2025-26" data-alumni-pdf="Mitr team detail 2025-26.pdf"
+                class="alumni-year-btn flex items-center gap-3 p-5 rounded-2xl border-2 border-outline-variant/40 hover:border-primary hover:bg-primary/5 transition-all text-left">
+          <span class="material-symbols-outlined text-primary text-3xl shrink-0">description</span>
+          <span>
+            <span class="block font-bold text-on-surface">2025–26</span>
+            <span class="block text-xs text-on-surface-variant">Academic year roster</span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- PDF viewer -->
+    <div id="alumni-modal-viewer" class="hidden flex-1 flex-col min-h-0">
+      <div class="flex-1 overflow-hidden rounded-xl border border-outline-variant/30 bg-surface-container-low min-h-0">
+        <iframe id="alumni-modal-iframe" title="MITR alumni data" class="w-full h-[60vh] sm:h-[70vh]"></iframe>
+      </div>
+      <a id="alumni-modal-open-tab-mobile" href="#" target="_blank" rel="noopener"
+         class="sm:hidden mt-4 flex items-center justify-center gap-2 bg-primary text-on-primary px-4 py-2.5 rounded-full font-bold text-sm shrink-0">
+        <span class="material-symbols-outlined text-base">open_in_new</span>Open in new tab
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- Footer -->
 <div data-site-footer></div>
 <script>
@@ -568,6 +636,71 @@ Student Advisor 2024-25
                 console.error('Failed to load events.json', err);
                 grid.innerHTML = '<p class="col-span-full text-center py-8 text-on-surface-variant text-sm">Unable to load events right now.</p>';
             });
+    })();
+
+    // Alumni data preview modal: one button opens a chooser for the two
+    // academic-year rosters, each of which then previews that year's PDF
+    // in the same modal (rather than stacking a second dialog on top).
+    (function alumniPreview() {
+        var openBtn = document.getElementById('alumni-preview-btn');
+        var modal = document.getElementById('alumni-modal');
+        if (!openBtn || !modal) return;
+
+        var closeBtn = document.getElementById('alumni-modal-close');
+        var backBtn = document.getElementById('alumni-modal-back');
+        var chooser = document.getElementById('alumni-modal-chooser');
+        var viewer = document.getElementById('alumni-modal-viewer');
+        var iframe = document.getElementById('alumni-modal-iframe');
+        var openTabDesktop = document.getElementById('alumni-modal-open-tab');
+        var openTabMobile = document.getElementById('alumni-modal-open-tab-mobile');
+        var title = document.getElementById('alumni-modal-title');
+        var yearButtons = modal.querySelectorAll('.alumni-year-btn');
+
+        function showChooser() {
+            chooser.classList.remove('hidden');
+            viewer.classList.add('hidden');
+            viewer.classList.remove('flex');
+            backBtn.classList.add('hidden');
+            title.textContent = 'MITR Alumni Data';
+            iframe.src = '';
+        }
+
+        function showYear(year, pdf) {
+            chooser.classList.add('hidden');
+            viewer.classList.remove('hidden');
+            viewer.classList.add('flex');
+            backBtn.classList.remove('hidden');
+            title.textContent = year + ' Roster';
+            iframe.src = pdf;
+            openTabDesktop.href = pdf;
+            openTabMobile.href = pdf;
+        }
+
+        function open() {
+            showChooser();
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function close() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            iframe.src = '';
+        }
+
+        openBtn.addEventListener('click', open);
+        closeBtn.addEventListener('click', close);
+        backBtn.addEventListener('click', showChooser);
+        modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) close();
+        });
+
+        Array.prototype.forEach.call(yearButtons, function (btn) {
+            btn.addEventListener('click', function () {
+                showYear(btn.getAttribute('data-alumni-year'), btn.getAttribute('data-alumni-pdf'));
+            });
+        });
     })();
 
     // Hero photo carousel: cycles through the "Event Carosel" photos
