@@ -62,7 +62,7 @@ Then open the printed local URL (e.g. `http://localhost:5173`). All pages are st
 
 ## Deployment
 
-[`vercel.json`](vercel.json) sets `buildCommand: ""` and `outputDirectory: "."` — **Vercel serves the repository root directly, with no build step.** `npm run build` (→ `vite build`, output to `dist/`) is *not* part of the deploy path today. See [IMPROVEMENTS.md](IMPROVEMENTS.md) for what that means for the `dist/` folder currently checked into the repo.
+[`vercel.json`](vercel.json) sets `buildCommand: ""` and `outputDirectory: "."` — **Vercel serves the repository root directly, with no build step.** `npm run build` (→ `vite build`, output to a local `dist/`) is *not* part of the deploy path today, and `dist/` is not checked into the repo — running the build script just produces a local build artifact that nothing consumes.
 
 ## Known quirks worth knowing before you touch things
 
