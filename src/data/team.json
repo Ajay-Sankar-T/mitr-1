@@ -483,7 +483,7 @@
       "Hindi",
       "Malayalam"
     ],
-    "image": "assets/images/team/stephen-babu.webp"
+    "image": "assets/images/team/stephen-babu.jpeg"
   },
   {
     "name": "Avichal Singh",
@@ -571,7 +571,7 @@
       "English",
       "Hindi"
     ],
-    "image": "assets/images/team/rohit-thakur.webp"
+    "image": "assets/images/team/rohit-thakur.jpeg"
   },
   {
     "name": "Beemanapalli Siddharth",
@@ -597,7 +597,7 @@
       "Tamil",
       "Telugu"
     ],
-    "image": "assets/images/team/saikumar-v.webp"
+    "image": "assets/images/team/saikumar.jpeg"
   },
   {
     "name": "Fatmata Jalloh",
@@ -697,9 +697,11 @@
     "department": "Aerospace Engineering",
     "hostel": "G2",
     "language": [
-      "English"
+      "English",
+      "Hindi",
+      "Malayalam"
     ],
-    "image": "assets/images/team/vidhya-radhakrishnan.webp"
+    "image": "assets/images/team/vidhya-radhakrishnan.jpeg"
   },
   {
     "name": "Prachi",
@@ -733,7 +735,7 @@
     "email": "ee25m068@smail.iitm.ac.in",
     "department": "Electrical Engineering",
     "hostel": "",
-    "language": [],
+    "language": ["English","Hindi","Telugu"],
     "image": "assets/images/team/upputuri-sai-srujan.webp"
   },
   {
@@ -774,7 +776,7 @@
     "department": "Mechanical Engineering",
     "hostel": "",
     "language": [],
-    "image": "assets/images/team/achuthan-k.webp"
+    "image": "assets/images/team/achuthan-k.png"
   },
   {
     "name": "Shree Krishna Shrestha",
